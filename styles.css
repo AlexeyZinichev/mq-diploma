@@ -712,7 +712,7 @@ a:hover {
 }
 
 .product-second::before {
-  background-image: url(../images/img/shop-item-desk2.jpg);
+  background-image: url(https://github.com/AlexeyZinichev/mq-diploma/blob/main/images/img/shop-item-desk2.jpg?raw=true);
 }
 
 .product-third::before {
