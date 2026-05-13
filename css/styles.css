@@ -730,21 +730,25 @@ a:hover {
   text-transform: lowercase;
 }
 
+.product-third .product-discription a {
+  text-transform: none;
+}
+
 .product-first a:hover {
   text-decoration: underline;
 }
 
-.product-wapper {
+.product-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 23px;
+  width: 100%;
 }
 
 .product-price {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
 }
 
 .product-price .old-price {
@@ -757,8 +761,8 @@ a:hover {
 }
 
 .buy-button {
-  display: block;
-  padding: 8px 16px;
+  min-width: 120px;
+  padding: 15px 30px;
   background-color: #b59f5b;
   color: #fff;
   border: none;
