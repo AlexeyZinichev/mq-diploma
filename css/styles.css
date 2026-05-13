@@ -206,19 +206,19 @@ a:hover {
 
 
 .trend-first {
-  background-image: url(/images/img/trend1.jpg);
+  background-image: url(../images/img/trend1.jpg);
 }
 
 .trend-second {
-  background-image: url(/images/img/trend2.jpg);
+  background-image: url(../images/img/trend2.jpg);
 }
 
 .trend-third {
-  background-image: url(/images/img/trend3.jpg);
+  background-image: url(../images/img/trend3.jpg);
 }
 
 .trend-fourth {
-  background-image: url(/images/img/trend4.jpg);
+  background-image: url(../images/img/trend4.jpg);
 }
 
 .trend-info {
