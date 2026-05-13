@@ -12,8 +12,8 @@
 /* Регулярный шрифт (Regular) */
 @font-face {
   font-family: 'Open Sans';
-  src: url('fonts/fonts/OpenSans-Regular.woff2') format('woff2'),
-       url('fonts/fonts/OpenSans-Regular.woff') format('woff');
+  src: url(..fonts/fonts/OpenSans-Regular.woff2),
+       url(..fonts/fonts/OpenSans-Regular.woff);
   font-weight: normal; /* Обычный вес */
   font-style: normal; /* Нормальный стиль */
 }
@@ -21,8 +21,8 @@
 /* Жирный шрифт (Bold) */
 @font-face {
   font-family: "Open Sans";
-  src: url('fonts/fonts/OpenSans-Bold.woff2') format('woff2'),
-       url('fonts/fonts/OpenSans-Bold.woff') format('woff');
+  src: url(..fonts/fonts/OpenSans-Bold.woff2),
+       url(..fonts/fonts/OpenSans-Bold.woff);
   font-weight: 700; /* Жирный вес */
   font-style: normal; /* Нормальный стиль */
 }
@@ -78,7 +78,7 @@ a:hover {
   min-height: 300px; /* Минимальная высота шапки */
   color: white; /* Белый текст для контраста */
   margin-bottom: 65px;
-  background-image: url('https://netology-code.github.io/html-2-diploma/sources/images/banner-bg.jpg');
+  background-image: url(../images/img/banner-bg.jpg);
   background-size: cover; /* Масштабируем фон на всю область */
   background-position: center; /* Центрируем фон */
   background-repeat: no-repeat; /* Не повторяем фон */
@@ -185,7 +185,7 @@ a:hover {
 }
 
 .trend-article {
-   flex: 1 1 auto;
+  flex: 1 1 auto;
   position: relative;
   overflow: hidden;
   background-size: cover;
@@ -645,6 +645,128 @@ a:hover {
   display: none; /* Убираем линию */
 }
 
+.product-section {
+  display: flex;
+  flex-direction: column;
+	width: 100%;
+}
+
+.product-title {
+	font-weight: bold;
+	font-size: 24px;
+	text-align: center;
+  position: relative; 
+  text-align: center; /* Убедитесь, что текст по центру */
+  margin-bottom: 40px;
+}
+
+.product-title::after {
+    content: "";
+    display: block;
+    
+    /* Ширина и высота линии */
+    width: 80px; /* Немного длиннее, чтобы было заметнее */
+    height: 4px; /* Чуть толще */
+
+    /* Позиционирование */
+    position: absolute;
+    bottom: -10px; /* Чуть больше отступа от текста */
+    left: 50%;
+    
+    /* Центровка линии по горизонтали */
+    transform: translateX(-50%);
+
+    /* Стили линии */
+    background-color: #b59f5b; /* Золотой цвет, как в вашем примере */
+    border-radius: 2px; /* Небольшое скругление концов линии (опционально) */
+}
+.product-grid {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.product-card {
+  width: 300px;
+  min-height: 300px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* === ФОНОВОЕ ИЗОБРАЖЕНИЕ === */
+.product-card::before {
+  content: '';
+  display: block;
+  height: 200px; /* Фиксированная высота изображения */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.product-first::before {
+  background-image: url(../images/img/shop-item-desk1.jpg);
+}
+
+.product-second::before {
+  background-image: url(../images/img/shop-item-desk2.jpg);
+}
+
+.product-third::before {
+  background-image: url(../images/img/shop-item-desk3.jpg);
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.product-discription a {
+  color: #b59f5b;
+  text-transform: lowercase;
+}
+
+.product-first a:hover {
+  text-decoration: underline;
+}
+
+.product-wapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 23px;
+}
+
+.product-price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.product-price .old-price {
+  text-decoration: line-through;
+}
+
+.product-price .new-price {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.buy-button {
+  display: block;
+  padding: 8px 16px;
+  background-color: #b59f5b;
+  color: #fff;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
 .social-icons-list {
   list-style: none; /* Убираем маркеры списка */
   display: flex; /* Гибкое размещение */
@@ -687,4 +809,5 @@ a:hover {
   text-decoration: none; /* Без подчеркивания */
   font-size: 12px;
   font-weight: bold;
-}  
+}
+
