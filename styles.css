@@ -708,15 +708,15 @@ a:hover {
 }
 
 .product-first::before {
-  background-image: url(../images/img/shop-item-desk1.jpg);
+  background-image: url(images/img/shop-item-desk1.jpg);
 }
 
 .product-second::before {
-  background-image: url(../images/img/shop-item-desk2.jpg);
+  background-image: url(images/img/shop-item-desk2.jpg);
 }
 
 .product-third::before {
-  background-image: url(../images/img/shop-item-desk3.jpg);
+  background-image: url(images/img/shop-item-desk3.jpg);
 }
 
 .product-info {
