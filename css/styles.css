@@ -729,7 +729,7 @@ a:hover {
 
 /* 2. Создаем рамку */
 .product-info::after {
-    content: '';
+    content: ' ';
     position: absolute;
     inset: 0; /* Растягиваем на всю площадь блока */
     
@@ -740,7 +740,7 @@ a:hover {
     outline-offset: -25px;
     
     /* Помещаем под содержимое */
-    z-index: 1;
+    z-index: -1;
 }
 
 .product-discription a {
