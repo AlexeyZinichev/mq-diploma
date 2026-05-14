@@ -724,23 +724,6 @@ a:hover {
   align-items: flex-start;
   flex-grow: 1;
   position: relative;
-  height: 100%;	
-}
-
-/* 2. Создаем рамку */
-.product-info::after {
-    content: ' ';
-    position: absolute;
-    inset: 0; /* Растягиваем на всю площадь блока */
-    
-    /* Сплошная рамка */
-    outline: 2px solid #b59f5b; /* Цвет как у кнопки */
-    
-    /* Смещаем рамку на 25px во все стороны */
-    outline-offset: -25px;
-    
-    /* Помещаем под содержимое */
-    z-index: -1;
 }
 
 .product-discription a {
