@@ -738,7 +738,7 @@ a:hover {
     left: -25px;
     right: -25px;
     bottom: -25px;
-    
+     height: 4px;
     /* Сама рамка */
     outline: 2px solid #b59f5b;
     
