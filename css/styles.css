@@ -95,7 +95,6 @@ a:hover {
   z-index: 1; /* Поверх фона */
 }
 
-
 /* Логотип и навигация (внутри шапки) */
 .header-content {
   position: relative; /* Над полупрозрачным слоем */
@@ -723,6 +722,8 @@ a:hover {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+	position: relative;
+	z-index: 1;
 	flex-grow: 1;
     outline: 2px solid #b59f5b;
     outline-offset: 25px;
