@@ -725,10 +725,25 @@ a:hover {
 	position: relative;
 	z-index: 1;
 	flex-grow: 1;
-    outline: 2px solid #b59f5b;
-    outline-offset: 25px;
     padding-top: 5px;
     padding-bottom: 5px;
+}
+
+.product-info::after {
+    content: '';
+    position: absolute; /* Позиционируем относительно .product-info */
+    
+    /* Смещаем рамку на 25px во все стороны */
+    top: -25px;
+    left: -25px;
+    right: -25px;
+    bottom: -25px;
+    
+    /* Сама рамка */
+    outline: 2px solid #b59f5b;
+    
+    /* Помещаем рамку под текст, но над фоном */
+    z-index: -1; 
 }
 
 .product-discription a {
