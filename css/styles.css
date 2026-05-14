@@ -729,23 +729,6 @@ a:hover {
     padding-bottom: 5px;
 }
 
-.product-info::after {
-    content: '';
-    position: absolute; /* Позиционируем относительно .product-info */
-    
-    /* Смещаем рамку на 25px во все стороны */
-    top: -25px;
-    left: -25px;
-    right: -25px;
-    bottom: -25px;
-     height: 4px;
-    /* Сама рамка */
-    outline: 2px solid #b59f5b;
-    
-    /* Помещаем рамку под текст, но над фоном */
-    z-index: -1; 
-}
-
 .product-discription a {
   color: #b59f5b;
   text-transform: lowercase;
