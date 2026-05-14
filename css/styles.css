@@ -729,7 +729,7 @@ a:hover {
 
 /* 2. Создаем рамку */
 .product-info::after {
-    content: '';
+    content: ' ';
     position: absolute;
     inset: 0; /* Растягиваем на всю площадь блока */
     
