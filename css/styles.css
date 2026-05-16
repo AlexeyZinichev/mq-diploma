@@ -892,25 +892,6 @@ label {
   pointer-events: none; 
 }
 
-.radio-group {
-  display: flex;
-  gap: 10px;
-}
-
-.radio-button input[type="radio"] {
-  display: none; 
-}
-
-.radio-button {
-  display: flex;
-  align-items: center;
-}
-
-radio-button label {
-  display: flex; 
-  align-items: center; 
-}
-
 .radio-icon {
   width: 20px;
   height: 20px;
