@@ -66,7 +66,7 @@ a:hover {
 
 /* === Общий контейнер (.container) === */
 .container {
-  max-width: 1200px;
+  max-width: 1220px;
   margin: 0 auto; /* Централизация */
   padding: 0 20px; /* Боковые отступы */
 }
@@ -94,6 +94,7 @@ a:hover {
   background-color: rgba(0, 0, 0, 0.5); /* Тёмный цвет с прозрачностью 50% */
   z-index: 1; /* Поверх фона */
 }
+
 
 /* Логотип и навигация (внутри шапки) */
 .header-content {
@@ -224,7 +225,7 @@ a:hover {
   position: absolute;
   left: 20px;
   bottom: 20px;
-  right: 20px;
+  right: 15px;
   padding: 20px;
   border: 2px solid #b59f5b;
   overflow: hidden;
@@ -652,7 +653,7 @@ a:hover {
 
 .product-title {
 	font-weight: bold;
-	font-size: 24px;
+	font-size: 20px;
 	text-align: center;
   position: relative; 
   text-align: center; /* Убедитесь, что текст по центру */
@@ -679,43 +680,47 @@ a:hover {
     background-color: #b59f5b; /* Золотой цвет, как в вашем примере */
     border-radius: 2px; /* Небольшое скругление концов линии (опционально) */
 }
+
 .product-grid {
   display: flex;
   justify-content: space-between;
-  margin-left: 25px;
-  margin-right: 25px;
+}
+
+.product-card img {
+  width: 100%;       /* изображение заполнит всю ширину карточки */
+  height: auto;      /* сохранятся исходные пропорции */
+  object-fit: cover; /* изображение равномерно заполнит ячейку, обрезая лишнее */
+  display: block;    /* уберётся пустое пространство под картинкой */
 }
 
 .product-card {
-  width: 300px;
-  min-height: 300px;
+  max-width: 350px;
+  height: auto;
   overflow: hidden;
   position: relative;
   display: flex;
   flex-direction: column;
+  margin-bottom: 65px;
 }
 
-/* === ФОНОВОЕ ИЗОБРАЖЕНИЕ === */
-.product-card::before {
-  content: '';
+.img-wrp {
   display: block;
-  height: 200px; /* Фиксированная высота изображения */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: 0;
+  padding: 0 20px;
+  position: relative;
 }
 
-.product-first::before {
-  background-image: url(../images/img/shop-item-desk1.jpg);
-}
-
-.product-second::before {
-  background-image: url(../images/img/shop-item-desk2.jpg);
-}
-
-.product-third::before {
-  background-image: url(../images/img/shop-item-desk3.jpg);
+/* Маска под изображением */
+.img-wrp::after {
+  content: ""; /* Обязательное свойство для псевдоэлемента */
+  position: absolute;
+  bottom: 0; /* Маска снизу */
+  left: 20px;
+  right: 20px;
+  width: calc(100% - 40px); /* Минус удвоенная ширина отступов */
+  height: 50%; /* Высота маски (можно регулировать) */
+  background-color: #eff5f1; /* Светло-зеленый цвет маски */
+  z-index: -1; /* Маска ПОД изображением */
+  filter: blur(10px); /* Размытие для мягкости эффекта */
 }
 
 .product-info {
@@ -723,7 +728,9 @@ a:hover {
   flex-direction: column;
   align-items: flex-start;
   flex-grow: 1;
-  position: relative;
+  border: 2px solid #b59f5b;
+  padding: 55px 25px 25px;
+  margin-top: -30px;
 }
 
 .product-discription a {
@@ -735,7 +742,7 @@ a:hover {
   text-transform: none;
 }
 
-.product-first a:hover {
+.product-first .product-discription a:hover {
   text-decoration: underline;
 }
 
@@ -759,7 +766,7 @@ a:hover {
 .product-price .new-price {
   font-weight: bold;
   font-size: 18px;
-}
+}  
 
 .buy-button {
   min-width: 120px;
@@ -770,6 +777,10 @@ a:hover {
   font-size: 14px;
   font-weight: bold;
   text-transform: uppercase;
+}
+
+.buy-button:hover {
+   background-color: #000;
 }
 
 .social-icons-list {
@@ -816,3 +827,117 @@ a:hover {
   font-weight: bold;
 }
 
+/* Поп-ап окно
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup {
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  max-width: 350px;
+  position: relative;
+}
+
+/*
+.btn {
+  position: absolute;
+  top: -30px;
+  right: 0;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+}
+
+.popup-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin: 10px;
+}
+
+.dropdown {
+  position: relative; 
+}
+
+
+.dropdown select {
+  width: 100%; 
+  padding: 15px 30px; 
+  appearance: none; 
+  border: none;
+  background-color: #f3f7f5;
+}
+
+.dropdown-arrow {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  pointer-events: none; 
+}
+
+.radio-group {
+  display: flex;
+  gap: 10px;
+}
+
+.radio-button input[type="radio"] {
+  display: none; 
+}
+
+.radio-button {
+  display: flex;
+  align-items: center;
+}
+
+radio-button label {
+  display: flex; 
+  align-items: center; 
+}
+
+.radio-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #b59f5b;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+button[type="submit"]:hover {
+  background-color: #b59f5b
+}
+
+textarea {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: none;
+} */
