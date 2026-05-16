@@ -178,19 +178,19 @@ a:hover {
 
 .trend-grid {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   gap: 5px;	
   margin-top: 40px;
   justify-content: space-between;
 }
 
 .trend-article {
-  flex: 1 1 auto;
+  flex: 1 1 calc(25% - 15px);
   position: relative;
   overflow: hidden;
   background-size: cover;
   background-position: center;
-  min-height: 320px;
+  min-height: 280px;
 }
 
 .trend-article::before {
