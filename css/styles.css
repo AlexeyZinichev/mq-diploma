@@ -178,7 +178,7 @@ a:hover {
 
 .trend-grid {
   display: flex;
-  lex-wrap: nowrap;
+  flex-wrap: nowrap;
   gap: 5px;	
   margin-top: 40px;
   justify-content: space-between;
