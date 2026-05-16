@@ -177,9 +177,8 @@ a:hover {
 }
 
 .trend-grid {
-	display: flex;
-	flex-wrap: nowrap;
-  gap: 5px;
+  display: flex;
+  lex-wrap: nowrap;
   margin-top: 40px;
   justify-content: space-between;
 }
@@ -225,7 +224,7 @@ a:hover {
   position: absolute;
   left: 20px;
   bottom: 20px;
-  right: 15px;
+  right: 20px;
   padding: 20px;
   border: 2px solid #b59f5b;
   overflow: hidden;
