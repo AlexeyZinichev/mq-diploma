@@ -485,6 +485,62 @@
     </p>
   </footer>
   </div>
-		
+	<label for="popup-open" class="open-button">Открыть окно</label>
+	<input type="checkbox" id="popup-open>	
+  
+	<div class="popup">
+  
+    <div class="popup-content">
+        <h3 class="popup-title">ВАШ ФИДБЕК</h3>
+        
+        <form action="#0" method="post">
+            <label for="visit-frequency">Как часто вы заходите на сайт?</label>
+            <div class="dropdown">
+            <select id="visit-frequency" name="visit-frequency">
+                <option value="daily">Почти каждый день</option>
+                <option value="weekly">Раз в несколько дней</option>
+                <option value="monthly">Раз в несколько недель</option>
+                <option value="year">Несколько раз в год</option>
+            </select>
+
+              <img class="dropdown-arrow" src="svg/form-arrows.svg" alt="Бургер меню">
+
+            </div>
+            
+            <!-- Вопрос 2: Подписка на рассылку с SVG-радиокнопками -->
+        <label>Вы подписаны на e-mail рассылку?</label>
+        <div class="radio-group">
+          <div class="radio-button">
+                <input type="radio" id="yes" name="subscription" value="yes">
+                <label for="yes">
+
+                      <img class="radio-icon" src="svg/form-circle.svg" alt="Да">
+
+                    Да
+                </label>
+            </div>
+            <div class="radio-button">
+                <input type="radio" id="no" name="subscription" value="no">
+                <label for="no">
+                  
+                      <img class="radio-icon" src="svg/form-empty-circle.svg" alt="Нет">
+
+                    Нет
+                </label>
+            </div>
+        </div>
+        
+        <!-- Вопрос 3: Предложение контента -->
+        <label for="content-preference">Расскажите, какой контент вы хотели бы видеть на нашем сайте?</label>
+        <textarea id="content-preference" name="content-preference" rows="4" cols="30"></textarea>
+        
+        <!-- Кнопка "Отправить" -->
+        <button type="submit">ОТПРАВИТЬ</button>
+        </form>
+		<label for="popup-open" class="close-icon>
+		<img class="btn" src="svg/form-x.svg" alt="Закрытие">
+		</label>
+    </div>
+  </div>	
 </body>
 </html>
