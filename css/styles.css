@@ -860,6 +860,10 @@ a:hover {
     z-index: 10; /* Вполне достаточно */
 }
 
+/* Логика показа окна (теперь работает) */
+#popup-open:checked + .popup {
+    display: flex;
+
 .popup-content {
     position: relative;
     background: #fff;
