@@ -886,3 +886,20 @@ a:hover {
     width: 30px;
     height: 30px;
 }
+
+.popup-title {
+    font-size: 20px; /* Размер шрифта по вкусу */
+    margin-bottom: 10px; /* Расстояние до черты */
+    position: relative; /* Для добавления линии */
+}
+
+.popup-title::after {
+    content: ""; /* Создание псевдоэлемента */
+    display: block; /* Превращаем в блочный элемент */
+    width: 50%; /* Длина черты (можно регулировать) */
+    height: 3px; /* Толщина черты */
+    background-color: ; /* Цвет черты */
+    margin-top: 10px; /* Расстояние от текста */
+    margin-left: auto; /* Централизация */
+    margin-right: auto; /* Централизация */
+}
