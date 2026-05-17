@@ -859,33 +859,33 @@ a:hover {
 	
 }
 
-/* 3. Стили для самого контента окна */
+/* Основной контейнер окна */
 .popup-content {
+    position: relative; /* Нужно для абсолютного позиционирования кнопки */
     background: #fff;
-    max-width: 500px; /* Ограничиваем максимальный размер */
-	height: auto;
+    max-width: 500px;
+    height: auto;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-	position: relative;
-	z-index: 1000;
+    overflow: hidden; /* Чтобы кнопка не выходила за края */
 }
 
-/* Главное изменение: выносим кнопку за пределы окна */
+/* Кнопка закрытия */
 .close-icon {
     position: absolute; /* Абсолютное позиционирование */
-    top: -20px; /* Выносим верхнюю границу */
-    right: calc(50% - 250px); /* Центруем горизонтально */
+    top: -15px; /* Немного выше контейнера */
+    right: 0; /* Справа по границе */
     cursor: pointer;
-    z-index: 1001; /* Важно! */
+    z-index: 100; /* Поверх всего */
 }
 
-/* Опционально: улучшим внешний вид иконки */
+/* Сам значок кнопки */
 .btn {
-    width: 30px;
+    width: 30px; /* Размер иконки */
     height: 30px;
     background: #fff; /* Белое заполнение */
     border-radius: 50%; /* Круглая форма */
-    padding: 5px; /* Внутренний отступ */
-    box-sizing: border-box; /* Учёт отступов */
-    box-shadow: 0 0 5px rgba(0,0,0,.3); /* Легкая тень */
+    padding: 5px;
+    box-sizing: border-box;
+    box-shadow: 0 0 5px rgba(0,0,0,.3); /* Мягкая тень */
 }
