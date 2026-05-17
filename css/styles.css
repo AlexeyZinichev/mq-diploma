@@ -895,6 +895,7 @@ a:hover {
     font-size: 20px; /* Размер шрифта по вкусу */
     margin-bottom: 10px; /* Расстояние до черты */
     position: relative; /* Для добавления линии */
+	text-align: center;
 }
 
 .popup-title::after {
