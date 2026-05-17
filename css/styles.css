@@ -908,3 +908,54 @@ a:hover {
     margin-left: auto; /* Централизация */
     margin-right: auto; /* Централизация */
 }
+/* Общий стиль для всей группы */
+.dropdown {
+    position: relative; /* Необходим для стрелки */
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Стилизация select */
+.select-styled {
+    appearance: none; /* Убираем стандартный дизайн */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    
+    padding: 10px 40px 10px 15px; /* Место для стрелки */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit; /* Наследуем шрифт */
+    font-size: 16px;
+    background-color: #fff;
+    outline: none; /* Убираем фокус-обводку */
+    transition: border-color 0.2s ease;
+}
+
+/* Стилизуем фокус */
+.select-styled:focus {
+    border-color: #007bff;
+}
+
+/* Стрелка */
+.dropdown-arrow {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%); /* Центр по вертикали */
+    pointer-events: none; /* Чтобы не мешала клику */
+    width: 15px; /* Размер иконки */
+    height: auto;
+}
+
+/* Скрываем нативную стрелку браузера */
+/* Для IE/Edge */
+select::-ms-expand {
+    display: none;
+}
+
+/* Для Chrome/Safari */
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
