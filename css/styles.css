@@ -867,7 +867,7 @@ a:hover {
 .popup-content {
     position: relative;
     background: #fff;
-    max-width: 500px;
+    max-width: 350px;
     height: auto;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -984,8 +984,6 @@ input[type="radio"] {
 /* Основная стилизация текстовой области */
 textarea {
     width: 100%; /* Занимает всю ширину контейнера */
-    padding: 15px; /* Внутренние отступы */
-    font-size: 16px; /* Размер шрифта */
     border: 2px solid #ddd; /* Тонкая светлая рамка */
     border-radius: 5px; /* Скругленные углы */
     resize: vertical; /* Возможность растягивания только по высоте */
@@ -1003,7 +1001,6 @@ textarea:focus {
 /* Стилизация плейсхолдера */
 ::placeholder {
     color: #aaa; /* Серый цвет плейсхолдера */
-    font-style: italic; /* Курсивный шрифт */
 }
 
 /* Основная стилизация кнопки */
