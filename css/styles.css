@@ -1007,3 +1007,35 @@ textarea:focus {
     color: #aaa; /* Серый цвет плейсхолдера */
     font-style: italic; /* Курсивный шрифт */
 }
+
+/* Основная стилизация кнопки */
+.submit-btn {
+    display: inline-block; /* Блочно-строчный элемент */
+    padding: 12px 24px; /* Внутренние отступы */
+    font-size: 16px; /* Размер шрифта */
+    font-weight: bold; /* Жирный шрифт */
+    color: #fff; /* Белый текст */
+    background-color: #007bff; /* Голубой фон */
+    border: none; /* Без рамки */
+    border-radius: 5px; /* Скругленные углы */
+    cursor: pointer; /* Курсор-рука */
+    transition: background-color 0.2s ease, transform 0.2s ease; /* Плавные эффекты */
+}
+
+/* Эффект при наведении */
+.submit-btn:hover {
+    background-color: #0056b3; /* Темнее при наведении */
+    transform: scale(1.05); /* Незначительное увеличение */
+}
+
+/* Эффект при фокусе */
+.submit-btn:focus {
+    outline: none; /* Убираем стандартную синюю обводку */
+    box-shadow: 0 0 5px rgba(0,123,255,0.5); /* Внешняя тень */
+}
+
+/* Эффект при нажатии */
+.submit-btn:active {
+    background-color: #004085; /* Самый темный оттенок */
+    transform: scale(0.95); /* Незначительное уменьшение */
+}
