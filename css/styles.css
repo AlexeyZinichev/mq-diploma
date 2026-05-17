@@ -959,3 +959,26 @@ select {
     -moz-appearance: none;
     appearance: none;
 }
+
+.radio-group {
+    display: flex; /* Группировка в ряд */
+    gap: 20px; /* Промежуток между кнопками */
+    align-items: center; /* Выравнивание по вертикали */
+}
+
+.radio-button {
+    display: flex; /* Радиокнопка + текст в ряд */
+    align-items: center; /* Выравнивание по вертикали */
+    cursor: pointer; /* Курсор-рука */
+}
+
+.radio-icon {
+    width: 20px; /* Размер иконки */
+    height: 20px;
+    margin-right: 5px; /* Отступ от текста */
+}
+
+/* Скрываем стандартные радиокнопки */
+input[type="radio"] {
+    display: none;
+}
