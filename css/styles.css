@@ -867,13 +867,12 @@ a:hover {
     height: auto;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    overflow: hidden; /* Чтобы кнопка не выходила за края */
 }
 
 /* Кнопка закрытия */
 .close-icon {
     position: absolute; /* Абсолютное позиционирование */
-    top: -100px; /* Немного выше контейнера */
+    top: -30px; /* Немного выше контейнера */
     right: 0; /* Справа по границе */
     cursor: pointer;
     z-index: 10000; /* Поверх всего */
