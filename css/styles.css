@@ -874,8 +874,8 @@ a:hover {
 
 .close-icon {
     position: absolute;
-    top: -30px; /* Немного выше */
-    right: 20px; /* Справа */
+    top: -40px; /* Немного выше */
+    right: 0;
     cursor: pointer;
     
     /* Убираем гигантский z-index */
