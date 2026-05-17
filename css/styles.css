@@ -850,6 +850,8 @@ a:hover {
 
 .popup {
     display: flex;
+	width: 100%;
+	height: 100%;
     position: fixed;
     inset: 0; /* top, right, bottom, left = 0 (современная замена) */
 
@@ -857,4 +859,12 @@ a:hover {
     justify-content: center;
     align-items: center;
     z-index: 1000;
+}
+
+/* 3. Стили для самого контента окна */
+.popup-content {
+    background: #fff;
+    max-width: 500px; /* Ограничиваем максимальный размер */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
