@@ -852,7 +852,6 @@ a:hover {
 	height: 100%;
     position: fixed;
     inset: 0; /* top, right, bottom, left = 0 (современная замена) */
-	position: relative;
     background: rgba(0, 0, 0, 0.7);
     justify-content: center;
     align-items: center;
@@ -869,13 +868,14 @@ a:hover {
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 	z-index: 10000;
+	 overflow: visible;
 }
 
 /* Кнопка закрытия */
 .close-icon {
     position: absolute; /* Абсолютное позиционирование */
-    top: 20px; /* Немного отступ сверху */
-    right: calc(50% - 250px); /* Ровно по правому краю окна */
+	top: -30px; /* Немного выше контейнера */
+    right: 20px; /* Справа с отступом */
     cursor: pointer;
     z-index: 10001; /* Поверх всего */
 }
@@ -885,8 +885,6 @@ a:hover {
     width: 30px; /* Размер иконки */
     height: 30px;
     background: #fff; /* Белое заполнение */
-    border-radius: 50%; /* Круглая форма */
     padding: 5px;
-    box-sizing: border-box;
     box-shadow: 0 0 5px rgba(0,0,0,.3); /* Мягкая тень */
 }
