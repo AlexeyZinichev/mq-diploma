@@ -843,7 +843,7 @@ a:hover {
 
 /* 1. Скрываем сам чекбокс */
 #popup-open {
-    display: absolute;
+    position: absolute;
 	top: -9999px;
     left: -9999px;
 }
