@@ -928,7 +928,7 @@ label {
     appearance: none; /* Убираем стандартный дизайн */
     -webkit-appearance: none;
     -moz-appearance: none;
-    padding: 15px 500px 15px 20px; /* Место для стрелки */
+    padding: 15px 50px 15px 20px; /* Место для стрелки */
     border: 1px solid #ddd;
     border-radius: 6px;
     background-color: #f3f7f5;
