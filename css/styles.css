@@ -862,7 +862,7 @@ a:hover {
 .popup-content {
     background: #fff;
     max-width: 500px; /* Ограничиваем максимальный размер */
-	min-height: 600px;
+	height: auto;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 	position: relative;
