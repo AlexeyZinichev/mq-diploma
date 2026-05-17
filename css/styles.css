@@ -870,14 +870,22 @@ a:hover {
 	z-index: 1000;
 }
 
-* Стили для крестика закрытия */
+/* Главное изменение: выносим кнопку за пределы окна */
 .close-icon {
-    position: absolute;
-    top: 10px;
-    right: -10px;
-	z-index: 1001;
-	width: 30px; /* Размеры иконки */
-    height: 30px;
-	cursor: pointer;
+    position: absolute; /* Абсолютное позиционирование */
+    top: -20px; /* Выносим верхнюю границу */
+    right: calc(50% - 250px); /* Центруем горизонтально */
+    cursor: pointer;
+    z-index: 1001; /* Важно! */
 }
 
+/* Опционально: улучшим внешний вид иконки */
+.btn {
+    width: 30px;
+    height: 30px;
+    background: #fff; /* Белое заполнение */
+    border-radius: 50%; /* Круглая форма */
+    padding: 5px; /* Внутренний отступ */
+    box-sizing: border-box; /* Учёт отступов */
+    box-shadow: 0 0 5px rgba(0,0,0,.3); /* Легкая тень */
+}
