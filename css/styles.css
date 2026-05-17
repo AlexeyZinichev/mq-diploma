@@ -856,7 +856,7 @@ a:hover {
     background: rgba(0, 0, 0, 0.7);
     justify-content: center;
     align-items: center;
-	z-index: 1000;
+	
 }
 
 /* 3. Стили для самого контента окна */
@@ -867,6 +867,7 @@ a:hover {
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 	position: relative;
+	z-index: 1000;
 }
 
 * Стили для крестика закрытия */
