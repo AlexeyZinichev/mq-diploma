@@ -827,46 +827,58 @@ a:hover {
   font-weight: bold;
 }
 
-/* Поп-ап окно
-.popup-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
+.open-button {
+    padding: 12px 25px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
 }
+
+/* --- Стили всплывающего окна --- */
+
+/* 1. Скрываем сам чекбокс */
+#popup-open {
+    display: none; /* Делаем его невидимым */
+}	
 
 .popup {
-  background-color: white;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  max-width: 350px;
-  position: relative;
+	display: none;
+	position: fixed;
+	width: 100%;
+	height 100%;
+	top: 0;
+	left: 0;
+	
+	background: rgba(0, 0, 0, 0.7);
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
 }
 
-/*
-.btn {
-  position: absolute;
-  top: -30px;
-  right: 0;
-  cursor: pointer;
-  width: 25px;
-  height: 25px;
+/* Логика показа окна */
+#popup-open:checked + .popup-overlay {
+    display: flex;
 }
 
-.popup-title {
-  text-align: center;
-  margin-bottom: 20px;
+popup-content {
+	background: #fff;
+	width: 350px;
+	height auto;
+	padding: 20px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	position: relative;
 }
 
-label {
-  display: block;
-  margin: 10px;
+.close-icon {
+	position: absolute;
+	top: -30px;
+	right: 0;
+	cursor: pointer;
+	font-size: 30px;
 }
 
 .dropdown {
@@ -892,33 +904,32 @@ label {
   pointer-events: none; 
 }
 
+/* 1. Базовые стили для группы, чтобы убрать отступы по умолчанию */
+.radio-group {
+  display: flex; /* Располагаем сами кнопки в ряд */
+  gap: 20px;     /* Расстояние между вариантами "Да" и "Нет" */
+}
+
+/* 2. Стили для самой метки (label) */
+.radio-button label {
+  display: inline-flex; /* Делаем контейнер гибким и строчным */
+  align-items: center;  /* Вертикальное выравнивание по центру */
+  gap: 8px;             /* Расстояние между иконкой и текстом */
+  cursor: pointer;      /* Показываем, что на элемент можно нажать */
+  font-size: 16px;
+  user-select: none;    /* Чтобы текст не выделялся при клике */
+}
+
+/* 3. Скрываем стандартный вид радиокнопки */
+.radio-button input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* (Опционально) Стили для иконки, чтобы она не ломала верстку */
 .radio-icon {
-  width: 20px;
-  height: 20px;
-  margin-right: 5px;
+  flex-shrink: 0; /* Запрещаем картинке сжиматься */
 }
 
-
-button[type="submit"] {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  background-color: #b59f5b;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  margin-top: 20px;
-}
-
-button[type="submit"]:hover {
-  background-color: #b59f5b
-}
-
-textarea {
-  width: 100%;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  resize: none;
-} */
