@@ -903,7 +903,7 @@ a:hover {
     display: block; /* Превращаем в блочный элемент */
     width: 50%; /* Длина черты (можно регулировать) */
     height: 3px; /* Толщина черты */
-    background-color: ; /* Цвет черты */
+    background-color: #b59f5b; /* Цвет черты */
     margin-top: 10px; /* Расстояние от текста */
     margin-left: auto; /* Централизация */
     margin-right: auto; /* Централизация */
