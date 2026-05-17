@@ -843,9 +843,7 @@ a:hover {
 
 /* 1. Скрываем сам чекбокс */
 #popup-open {
-    position: absolute;
-	top: -9999px;
-    left: -9999px;
+    display: none;	
 }
 
 .popup {
@@ -858,14 +856,14 @@ a:hover {
     background: rgba(0, 0, 0, 0.7);
     justify-content: center;
     align-items: center;
-    z-index: 1000;
 }
 
 /* 3. Стили для самого контента окна */
 .popup-content {
     background: #fff;
     max-width: 500px; /* Ограничиваем максимальный размер */
-	min-height: 800px;
+	min-height: 600px;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	
 }
