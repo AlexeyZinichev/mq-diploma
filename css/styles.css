@@ -924,16 +924,14 @@ a:hover {
     padding: 10px 40px 10px 15px; /* Место для стрелки */
     border: 1px solid #ddd;
     border-radius: 5px;
-    font-family: inherit; /* Наследуем шрифт */
-    font-size: 16px;
-    background-color: #fff;
+    background-color: #f3f7f5;
     outline: none; /* Убираем фокус-обводку */
     transition: border-color 0.2s ease;
 }
 
 /* Стилизуем фокус */
 .select-styled:focus {
-    border-color: #007bff;
+    border-color: #b59f5b;
 }
 
 /* Стрелка */
@@ -997,7 +995,7 @@ textarea {
 
 /* Эффект при фокусе */
 textarea:focus {
-    border-color: #007bff; /* Яркий синий цвет */
+    border-color: #b59f5b;
     outline: none; /* Убираем стандартную синюю обводку */
     box-shadow: 0 0 5px rgba(0,123,255,0.5); /* Внешняя тень */
 }
@@ -1011,11 +1009,9 @@ textarea:focus {
 /* Основная стилизация кнопки */
 .submit-btn {
     display: inline-block; /* Блочно-строчный элемент */
-    padding: 12px 24px; /* Внутренние отступы */
-    font-size: 16px; /* Размер шрифта */
     font-weight: bold; /* Жирный шрифт */
     color: #fff; /* Белый текст */
-    background-color: #007bff; /* Голубой фон */
+    background-color: #b59f5b; 
     border: none; /* Без рамки */
     border-radius: 5px; /* Скругленные углы */
     cursor: pointer; /* Курсор-рука */
@@ -1024,18 +1020,6 @@ textarea:focus {
 
 /* Эффект при наведении */
 .submit-btn:hover {
-    background-color: #0056b3; /* Темнее при наведении */
+    background-color: #313131; /* Темнее при наведении */
     transform: scale(1.05); /* Незначительное увеличение */
-}
-
-/* Эффект при фокусе */
-.submit-btn:focus {
-    outline: none; /* Убираем стандартную синюю обводку */
-    box-shadow: 0 0 5px rgba(0,123,255,0.5); /* Внешняя тень */
-}
-
-/* Эффект при нажатии */
-.submit-btn:active {
-    background-color: #004085; /* Самый темный оттенок */
-    transform: scale(0.95); /* Незначительное уменьшение */
 }
