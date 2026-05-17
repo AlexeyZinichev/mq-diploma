@@ -883,7 +883,4 @@ a:hover {
 .btn {
     width: 30px; /* Размер иконки */
     height: 30px;
-    background: #fff; /* Белое заполнение */
-    padding: 5px;
-    box-shadow: 0 0 5px rgba(0,0,0,.3); /* Мягкая тень */
 }
