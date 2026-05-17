@@ -876,3 +876,11 @@ a:hover {
     top: 10px;
     right: 10px;
 }
+/* Общие стили для лейблов */
+.popup-content label {
+    display: block; /* Чтобы лейблы занимали всю ширину и не висели на одной строке с инпутами */
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
