@@ -928,7 +928,6 @@ label {
     appearance: none; /* Убираем стандартный дизайн */
     -webkit-appearance: none;
     -moz-appearance: none;
-    width: 100%; /* Занимает всю ширину контейнера */
     padding: 15px 500px 15px 20px; /* Место для стрелки */
     border: 1px solid #ddd;
     border-radius: 6px;
