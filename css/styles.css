@@ -911,19 +911,27 @@ a:hover {
 /* Общий стиль для всей группы */
 .dropdown {
     position: relative; /* Необходим для стрелки */
-    display: inline-block;
-    vertical-align: middle;
+    display: block;
+	margin-top: 15px; 
 }
-
+	
+/* Стилизация лейбл */
+label {
+    display: block; /* Лейбл на отдельной строке */
+    margin-bottom: 10px; /* Отступ между лейблом и полем */
+    font-size: 16px;
+    font-weight: bold;
+}
+	
 /* Стилизация select */
 .select-styled {
     appearance: none; /* Убираем стандартный дизайн */
     -webkit-appearance: none;
     -moz-appearance: none;
-    
-    padding: 10px 40px 10px 15px; /* Место для стрелки */
+    width: 100%; /* Занимает всю ширину контейнера */
+    padding: 15px 500px 15px 20px; /* Место для стрелки */
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 6px;
     background-color: #f3f7f5;
     outline: none; /* Убираем фокус-обводку */
     transition: border-color 0.2s ease;
@@ -938,7 +946,7 @@ a:hover {
 .dropdown-arrow {
     position: absolute;
     top: 50%;
-    right: 10px;
+    right: 15px;
     transform: translateY(-50%); /* Центр по вертикали */
     pointer-events: none; /* Чтобы не мешала клику */
     width: 15px; /* Размер иконки */
