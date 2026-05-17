@@ -847,7 +847,7 @@ a:hover {
 }
 
 .popup {
-    display: flex;
+    display: none;
     width: 100%;
     height: 100%;
     position: fixed;
@@ -878,7 +878,7 @@ a:hover {
 
 .close-icon {
     position: absolute;
-    top: -30px;
+    top: -50px;
     right: 0;
     cursor: pointer;
     
