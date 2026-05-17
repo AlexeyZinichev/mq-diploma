@@ -860,7 +860,7 @@ a:hover {
 }
 
 /* Логика показа окна */
-#popup-open:checked + .popup-overlay {
+#popup-open:checked + .popup {
     display: flex;
 }
 
