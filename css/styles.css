@@ -874,7 +874,7 @@ a:hover {
 
 .close-icon {
     position: absolute;
-    top: -40px; /* Немного выше */
+    top: 41px; /* Немного выше */
     right: 0;
     cursor: pointer;
     
