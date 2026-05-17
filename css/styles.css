@@ -873,8 +873,8 @@ a:hover {
 * Стили для крестика закрытия */
 .close-icon {
     position: absolute;
-    top: -30px;
-    right: 0;
+    top: 10px;
+    right: 10px;
     cursor: pointer;
     font-size: 30px;
 }
