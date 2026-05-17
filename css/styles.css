@@ -845,3 +845,44 @@ a:hover {
 #popup-open {
     display: none;	
 }
+
+.popup {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    
+    /* Убираем огромный z-index */
+    z-index: 10; /* Вполне достаточно */
+}
+
+.popup-content {
+    position: relative;
+    background: #fff;
+    max-width: 500px;
+    height: auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    
+    /* Убираем лишний z-index */
+    z-index: 11; /* Просто чуть выше фона */
+}
+
+.close-icon {
+    position: absolute;
+    top: -30px; /* Немного выше */
+    right: 20px; /* Справа */
+    cursor: pointer;
+    
+    /* Убираем гигантский z-index */
+    z-index: 12; /* Просто выше всего */
+}
+
+.btn {
+    width: 30px;
+    height: 30px;
+}
