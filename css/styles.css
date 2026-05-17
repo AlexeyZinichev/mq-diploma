@@ -871,17 +871,13 @@ a:hover {
 }
 
 * Стили для крестика закрытия */
-.close-icon {
+.close-icon .btn {
     position: absolute;
     top: 10px;
     right: 10px;
 	z-index: 1001;
+	width: 30px; /* Размеры иконки */
+    height: 30px;
+	 fill: #fff;
 }
-/* Общие стили для лейблов */
-.popup-content label {
-    display: block; /* Чтобы лейблы занимали всю ширину и не висели на одной строке с инпутами */
-    margin-bottom: 8px;
-    font-size: 14px;
-    font-weight: bold;
-    color: #333;
-}
+
