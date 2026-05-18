@@ -975,16 +975,28 @@ label {
     opacity: 0;
 }
 
-/* 2. Стили для лейбла (кликабельная область) */
+/* 2. Стили для общего контейнера группы (ВАЖНОЕ ИЗМЕНЕНИЕ) */
+.radio-group {
+    display: flex; /* Включаем Flexbox для расположения в строку */
+    gap: 1rem;      /* Добавляем отступ между кнопками (современный и удобный способ) */
+}
+
+/* 3. Стили для отдельного варианта ответа (кнопки) */
+.radio-button {
+    flex: 1; /* Позволяет кнопкам растягиваться и занимать доступное место равномерно */
+}	
+
 .radio-button label {
     display: flex;
     align-items: center;
     cursor: pointer;
     padding: 0.6rem 1rem;
     position: relative; /* Важно для позиционирования иконок */
+	/* Убираем рамку и фон, так как они будут у всего блока .radio-button */
+    border: none;
+    background-color: transparent;
 }
 
-/* 3. Стили для текста */
 .radio-label {
     margin-left: 0.8rem;
 }
