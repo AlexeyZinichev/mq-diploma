@@ -909,49 +909,58 @@ a:hover {
     margin-right: auto; /* Централизация */
 }
 
-/* Стили для формы */
+/* 1. Базовые стили для контейнера группы */
 .form-group {
   margin-bottom: 1.5rem;
 }
 
-/* Лейбл сверху */
+/* 2. Стили для лейбла */
 label {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 600;
 }
 
-/* Контейнер для селекта и стрелки */
+/* 3. Контейнер для селекта (относительное позиционирование нужно для абсолютного размещения иконки) */
 .select-wrapper {
   position: relative;
   width: 100%;
 }
 
-/* Стилизация селекта */
+/* 4. Стилизация самого селекта */
 .styled-select {
   width: 100%;
-  padding: 0.6rem 2.5rem 0.6rem 1rem; /* Отступ справа для иконки */
+  padding: 0.6rem 1rem 0.6rem 1rem; /* Убрал большой отступ справа */
   font-size: 1rem;
-  border: 1px solid #ccc;
+  
+  border: 2px solid transparent; /* Прозрачная рамка по умолчанию */
   border-radius: 4px;
+  
   background-color: #fff;
-  -webkit-appearance: none; /* Убираем стандартную стрелку в Safari */
-    -moz-appearance: none;     /* Убираем стандартную стрелку в Firefox */
-       appearance: none;
+  
+  /* --- Ключевые изменения --- */
+  
+  /* Убираем стандартную стрелку */
+  -webkit-appearance: none;
+     -moz-appearance: none;
+        appearance: none;
+        
+  /* Добавляем нашу иконку как фон */
+  background-image: url('svg/svg/form-arrows.svg');
+  background-repeat: no-repeat;
+  background-position: right center; /* Позиционируем иконку */
+  background-size: 1rem; /* Размер иконки (подгоните под размер вашей SVG) */
+  
+  padding-right: calc(1rem + 20px); /* Добавляем отступ справа, чтобы текст не залезал на иконку */
 }
 
-/* Иконка стрелки */
-.select-arrow {
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none; /* Не мешает кликам по селекту */
-}	
-
-/* Стилизуем фокус */
-.select-styled:focus {
+/* Стили при фокусе на поле */
+.styled-select:focus {
+    /* Убираем стандартную обводку браузера */
+    outline: none; 
+    /* Задаем нашу рамку золотистого цвета */
     border-color: #b59f5b;
+    box-shadow: 0 0 0 3px rgba(181, 159, 91, 0.3); /* Красивое свечение вокруг рамки */
 }
 
 .radio-group {
