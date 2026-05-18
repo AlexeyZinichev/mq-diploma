@@ -974,13 +974,6 @@ label {
     margin-top: 1rem;
 }
 
-/* Общий стиль для каждой кнопки */
-.radio-button {
-    display: inline-flex;
-    align-items: center;
-    cursor: pointer;
-}
-
 /* Прячем стандартный input */
 .radio-button input[type="radio"] {
     position: absolute;
@@ -988,6 +981,13 @@ label {
     width: 0;
     height: 0;
 }
+
+.radio-button label {
+    display: flex; /* Выравнивает иконку и текст в одну линию */
+    align-items: center; /* Централизация по вертикали */
+    cursor: pointer; /* Курсор руки */
+    user-select: none; /* Запрет выделения текста */
+}	
 
 /* Стили для иконок (кружочки) */
 .radio-button img {
@@ -999,20 +999,22 @@ label {
 /* --- РАБОЧИЙ КОД ДЛЯ ПЕРЕКЛЮЧЕНИЯ --- */
 
 /* По умолчанию показываем пустую иконку */
-.radio-button .radio-icon-filled {
-    display: none;
-}
-
-/* Если input выбран, показываем активную иконку */
-.radio-button input[type="radio"]:checked + label .radio-icon-filled {
+.radio-button .radio-icon-empty {
     display: block;
 }
 
 /* Одновременно прячем пустую иконку */
 .radio-button input[type="radio"]:checked + label .radio-icon-empty {
-    display: none;
+	content: url("svg/svg/form-filled-circle.svg");
 }
 
+	.radio-button input[type="radio"]:checked + label {
+    background-color: #fafafa;
+
+	.radio-button:hover label {
+    background-color: #f5f5f5;
+}	
+		
 /* Эффект при фокусе */
 textarea:focus {
     border-color: #b59f5b;
