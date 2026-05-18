@@ -967,7 +967,7 @@ label {
     box-shadow: 0 0 0 3px rgba(181, 159, 91, 0.3); /* Красивое свечение вокруг рамки */
 }
 
-/* --- Блок для радиокнопок --- */
+	/* --- Блок для радиокнопок --- */
 
 /* 1. Прячем стандартный input */
 .radio-button input[type="radio"] {
@@ -975,79 +975,82 @@ label {
     opacity: 0;
 }
 
-/* 2. Стили для общего контейнера группы (ВАЖНОЕ ИЗМЕНЕНИЕ) */
+/* 2. Стили для общего контейнера группы */
 .radio-group {
     display: flex; /* Включаем Flexbox для расположения в строку */
-    gap: 1rem;      /* Добавляем отступ между кнопками (современный и удобный способ) */
-	height: 100%;
+    gap: 1rem;      /* Отступ между кнопками Да/Нет */
+    height: 100%;
 }
 
 /* 3. Стили для отдельного варианта ответа (кнопки) */
 .radio-button {
-    flex: 1; /* Позволяет кнопкам растягиваться и занимать доступное место равномерно */
-	position: relative; /* Нужно для позиционирования иконок и стилизации при наведении */
-}	
+    flex: 1; /* Кнопки равномерно распределяют доступное место */
+    position: relative; /* Нужно для позиционирования иконок */
+}
 
+/* 4. Стили для лейбла (кликабельная область) */
 .radio-button label {
-    display: flex;
+    display: flex; /* Это ОЧЕНЬ ВАЖНО! Оставляем flex для выравнивания иконки и текста */
     align-items: center;
     cursor: pointer;
     padding: 0.6rem 1rem;
-	/* Убираем рамку и фон, так как они будут у всего блока .radio-button */
+    
+    /* Убираем рамку и фон, чтобы стилизовать весь блок .radio-button при наведении */
     border: none;
     background-color: transparent;
-	min-height: 40px;
-	width: 100%;
+    width: 100%;
+    min-height: 40px; /* Делаем область клика понятной */
 }
 
+/* 5. Стили для текста */
 .radio-label {
-    margin-left: 0.8rem;
+    margin-left: 0.5rem; /* Подвинули текст ближе к иконке */
 }
+
+/* 6. Общие стили для иконок */
 .radio-button label .radio-icon {
   position: absolute; /* Позиционируем относительно label */
   left: 0; /* Прижимаем к левому краю кликабельной области */
   top: 50%;
-  transform: translateY(-50%); /* Центрируем по вертикали */
   
-  /* --- Фиксируем размер иконок --- */
-  width: 1.25rem; 
+  /* --- ИЗМЕНЕНИЯ ЗДЕСЬ --- */
+  width: 1.5rem; /* УВЕЛИЧИЛИ ИКОНКУ! */
   height: auto;
+  
+  transform: translateY(-50%); /* Центрируем по вертикали */
 }
 
 /* --- Логика переключения --- */
 
 /* По умолчанию показываем "пустую" иконку */
 .radio-button label .radio-icon-empty {
-    display: block; /* Показываем */
+    display: block;
 }
 .radio-button label .radio-icon-filled {
-    display: none; /* Скрываем заполненную */
+    display: none;
 }
 
 /* Если input выбран, меняем видимость иконок местами */
 .radio-button input[type="radio"]:checked + label .radio-icon-empty {
-    display: none; /* Прячем пустую */
+    display: none;
 }
 .radio-button input[type="radio"]:checked + label .radio-icon-filled {
-    display: block; /* Показываем заполненную */
+    display: block;
 }
 
-/* Стилизация выбранного варианта */
+/* --- Стили при наведении и выборе --- */
+
+/* Стили при наведении курсора на весь блок кнопки */
+.radio-button:hover {
+    background-color: #f5f5f5; 
+    border-radius: 6px;        
+}
+
+/* Стиль для выбранного варианта (белый фон) */
 .radio-button input[type="radio"]:checked + label {
     background-color: #fff;
-    border-color: #b59f5b;
+    border-radius: inherit;
 }
-	
-/* Основная стилизация текстовой области */
-textarea {
-    width: 100%; /* Занимает всю ширину контейнера */
-    border: 2px solid #ddd; /* Тонкая светлая рамка */
-    border-radius: 5px; /* Скругленные углы */
-    resize: vertical; /* Возможность растягивания только по высоте */
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1); /* Внутренняя тень */
-    transition: border-color 0.2s ease; /* Плавный переход */
-}
-
 /* Эффект при фокусе */
 textarea:focus {
     border-color: #b59f5b;
