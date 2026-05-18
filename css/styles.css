@@ -934,7 +934,8 @@ label {
   border: 2px solid transparent; /* Прозрачная рамка по умолчанию */
   border-radius: 4px;
   background-color: #f3f7f5;
-	
+  /* --- Ключевое исправление для позиционирования иконки --- */
+  position: relative;
   /* Убираем стандартную стрелку */
   -webkit-appearance: none;
      -moz-appearance: none;
