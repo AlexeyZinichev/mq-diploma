@@ -1005,7 +1005,7 @@ label {
 
 /* Одновременно прячем пустую иконку */
 .radio-button input[type="radio"]:checked + label .radio-icon-empty {
-	content: url("svg/svg/form-filled-circle.svg");
+	content: url("svg/svg/form-circle.svg");
 }
 
 	.radio-button input[type="radio"]:checked + label {
