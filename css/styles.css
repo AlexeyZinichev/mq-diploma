@@ -997,6 +997,7 @@ label {
     border: none;
     background-color: transparent;
 	min-height: 40px;
+	width: 100%;
 }
 
 .radio-label {
