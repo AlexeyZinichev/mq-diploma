@@ -930,30 +930,33 @@ label {
 /* 4. Стилизация самого селекта */
 .styled-select {
   width: 100%;
-  padding: 0.6rem 1rem 0.6rem 1rem; /* Убрал большой отступ справа */
-  font-size: 1rem;
-  
+  padding: 0.6rem 1rem; /* Убрал большой отступ справа */  
   border: 2px solid transparent; /* Прозрачная рамка по умолчанию */
   border-radius: 4px;
-  
-  background-color: #fff;
-  
-  /* --- Ключевые изменения --- */
-  
+  background-color: #f3f7f5;
+	
   /* Убираем стандартную стрелку */
   -webkit-appearance: none;
      -moz-appearance: none;
-        appearance: none;
-        
-  /* Добавляем нашу иконку как фон */
-  background-image: url('svg/svg/form-arrows.svg');
-  background-repeat: no-repeat;
-  background-position: right center; /* Позиционируем иконку */
-  background-size: 1rem; /* Размер иконки (подгоните под размер вашей SVG) */
-  
-  padding-right: calc(1rem + 20px); /* Добавляем отступ справа, чтобы текст не залезал на иконку */
+        appearance: none;  
 }
 
+	/* Иконка стрелки (теперь она снова работает) */
+.select-arrow {
+  position: absolute;
+  
+  /* --- Ключевое исправление --- */
+  right: 1rem; /* Отступ от правого края */
+  top: 50%;
+  
+  transform: translateY(-50%);
+  
+  width: 1rem; /* Явно задаем размер иконки */
+  height: auto; 
+  
+  pointer-events: none;
+}
+	
 /* Стили при фокусе на поле */
 .styled-select:focus {
     /* Убираем стандартную обводку браузера */
