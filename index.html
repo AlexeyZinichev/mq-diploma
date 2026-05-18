@@ -511,28 +511,31 @@
 		 <img src="svg/svg/form-arrows.svg" alt="" class="select-arrow">
     </div>
   </div>
-
-			<div class="form-group">
+			
+	<div class="form-group">
   <label>Вы подписаны на e-mail рассылку?</label>
   <div class="radio-group">
     <div class="radio-button">
       <input type="radio" id="yes" name="subscription" value="yes">
       <label for="yes">
-        <img class="radio-icon" src="svg/svg/form-circle.svg" alt="Да">
+        <!-- Иконка "Нет" (пустая) -->
+        <img class="radio-icon radio-icon-empty" src="svg/svg/form-empty-circle.svg" alt="Нет">
+        <!-- Иконка "Да" (заполненная) -->
+        <img class="radio-icon radio-icon-filled" src="svg/svg/form-circle.svg" alt="Да">
         <span class="radio-label">Да</span>
       </label>
     </div>
     <div class="radio-button">
       <input type="radio" id="no" name="subscription" value="no">
       <label for="no">
-        <img class="radio-icon" src="svg/svg/form-empty-circle.svg" alt="Нет">
+        <img class="radio-icon radio-icon-empty" src="svg/svg/form-empty-circle.svg" alt="Нет">
+        <img class="radio-icon radio-icon-filled" src="svg/svg/form-circle.svg" alt="Да">
         <span class="radio-label">Нет</span>
       </label>
     </div>
   </div>
 </div>
-           
-        
+		 
         <!-- Вопрос 3: Предложение контента -->
         <label for="content-preference">Расскажите, какой контент вы хотели бы видеть на нашем сайте?</label>
 			<textarea id="content-preference" name="content-preference" rows="4" cols="30" placeholder="Напишите здесь ваш ответ..."></textarea>
