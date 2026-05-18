@@ -908,61 +908,50 @@ a:hover {
     margin-left: auto; /* Централизация */
     margin-right: auto; /* Централизация */
 }
-/* Общий стиль для всей группы */
-.dropdown {
-    position: relative; /* Необходим для стрелки */
-    display: block;
-	margin-top: 15px; 
+
+/* Стили для формы */
+.form-group {
+  margin-bottom: 1.5rem;
 }
-	
-/* Стилизация лейбл */
+
+/* Лейбл сверху */
 label {
-    display: block; /* Лейбл на отдельной строке */
-    margin-bottom: 10px; /* Отступ между лейблом и полем */
-    font-size: 16px;
-    font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
 }
-	
-/* Стилизация select */
-.select-styled {
-    appearance: none; /* Убираем стандартный дизайн */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    padding: 15px 50px 15px 20px; /* Место для стрелки */
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    background-color: #f3f7f5;
-    outline: none; /* Убираем фокус-обводку */
-    transition: border-color 0.2s ease;
+
+/* Контейнер для селекта и стрелки */
+.select-wrapper {
+  position: relative;
+  width: 100%;
 }
+
+/* Стилизация селекта */
+.styled-select {
+  width: 100%;
+  padding: 0.6rem 2.5rem 0.6rem 1rem; /* Отступ справа для иконки */
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  -webkit-appearance: none; /* Убираем стандартную стрелку в Safari */
+    -moz-appearance: none;     /* Убираем стандартную стрелку в Firefox */
+       appearance: none;
+}
+
+/* Иконка стрелки */
+.select-arrow {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; /* Не мешает кликам по селекту */
+}	
 
 /* Стилизуем фокус */
 .select-styled:focus {
     border-color: #b59f5b;
-}
-
-/* Стрелка */
-.dropdown-arrow {
-    position: absolute;
-    top: 50%;
-    right: 15px;
-    transform: translateY(-50%); /* Центр по вертикали */
-    pointer-events: none; /* Чтобы не мешала клику */
-    width: 15px; /* Размер иконки */
-    height: auto;
-}
-
-/* Скрываем нативную стрелку браузера */
-/* Для IE/Edge */
-select::-ms-expand {
-    display: none;
-}
-
-/* Для Chrome/Safari */
-select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
 }
 
 .radio-group {
