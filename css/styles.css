@@ -981,11 +981,7 @@ label {
     align-items: center;
     cursor: pointer;
     padding: 0.6rem 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
     position: relative; /* Важно для позиционирования иконок */
-    transition: background-color 0.2s, border-color 0.2s;
 }
 
 /* 3. Стили для текста */
