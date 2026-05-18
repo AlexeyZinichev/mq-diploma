@@ -1033,8 +1033,7 @@ label {
 
 /* --- 3. Эффект при фокусе (голубая граница) --- */
 .textarea-field:focus {
-    border-color: #b59f5b;
-    outline: none; /* Убираем стандартную синюю обводку */
+	border: 2px solid #b59f5b;
     box-shadow: 0 0 0 3px rgba(107, 190, 221, 0.2); /* Нежное свечение вокруг */
 }
 
@@ -1048,13 +1047,12 @@ label {
 /* --- 1. Основные стили кнопки --- */
 .submit-btn {
     display: inline-block; /* Позволяет центрировать */
+	width: 100%;
     padding: 0.8rem 1.5rem; /* Удобные отступы */
-    font-size: 1rem; /* Размер шрифта */
     font-weight: bold; /* Жирный текст */
     color: #fff; /* Белые буквы */
-    background: linear-gradient(to right, #B59F5B, #A08E4C); /* Золотисто-коричневый градиент */
+    background: #B59F5B;
     border: none; /* Без рамки */
-    border-radius: 6px; /* Закруглённые углы */
     cursor: pointer; /* Курсор руки */
     transition: all 0.2s ease; /* Плавные переходы */
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Лёгкая тень */
@@ -1063,7 +1061,7 @@ label {
 /* --- 2. Эффект при наведении (немного увеличивается и меняет цвет) --- */
 .submit-btn:hover {
     transform: scale(1.05); /* Немного увеличивает размер */
-    background: linear-gradient(to right, #C5AF6B, #B59F5B); /* Более яркий градиент */
+    background: #313131;
 }
 
 /* --- 3. Эффект при нажатии (выглядит "вдавленной") --- */
