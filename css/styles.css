@@ -979,12 +979,13 @@ label {
 .radio-group {
     display: flex; /* Включаем Flexbox для расположения в строку */
     gap: 1rem;      /* Добавляем отступ между кнопками (современный и удобный способ) */
-	 height: 100%;
+	height: 100%;
 }
 
 /* 3. Стили для отдельного варианта ответа (кнопки) */
 .radio-button {
     flex: 1; /* Позволяет кнопкам растягиваться и занимать доступное место равномерно */
+	position: relative; /* Нужно для позиционирования иконок и стилизации при наведении */
 }	
 
 .radio-button label {
@@ -992,17 +993,15 @@ label {
     align-items: center;
     cursor: pointer;
     padding: 0.6rem 1rem;
-    position: relative; /* Важно для позиционирования иконок */
 	/* Убираем рамку и фон, так как они будут у всего блока .radio-button */
     border: none;
     background-color: transparent;
+	 width: 100%;
 }
 
 .radio-label {
     margin-left: 0.8rem;
 }
-
-/* 4. Общие стили для иконок внутри лейбла */
 .radio-button label .radio-icon {
   position: absolute; /* Позиционируем относительно label */
   left: 0; /* Прижимаем к левому краю кликабельной области */
