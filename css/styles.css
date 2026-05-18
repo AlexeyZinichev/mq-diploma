@@ -1045,20 +1045,35 @@ label {
     font-weight: bold; /* Жирный шрифт для читаемости */
 }
 
-/* Основная стилизация кнопки */
+/* --- 1. Основные стили кнопки --- */
 .submit-btn {
-    display: inline-block; /* Блочно-строчный элемент */
-    font-weight: bold; /* Жирный шрифт */
-    color: #fff; /* Белый текст */
-    background-color: #b59f5b; 
+    display: inline-block; /* Позволяет центрировать */
+    padding: 0.8rem 1.5rem; /* Удобные отступы */
+    font-size: 1rem; /* Размер шрифта */
+    font-weight: bold; /* Жирный текст */
+    color: #fff; /* Белые буквы */
+    background: linear-gradient(to right, #B59F5B, #A08E4C); /* Золотисто-коричневый градиент */
     border: none; /* Без рамки */
-    border-radius: 5px; /* Скругленные углы */
-    cursor: pointer; /* Курсор-рука */
-    transition: background-color 0.2s ease, transform 0.2s ease; /* Плавные эффекты */
+    border-radius: 6px; /* Закруглённые углы */
+    cursor: pointer; /* Курсор руки */
+    transition: all 0.2s ease; /* Плавные переходы */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Лёгкая тень */
 }
 
-/* Эффект при наведении */
+/* --- 2. Эффект при наведении (немного увеличивается и меняет цвет) --- */
 .submit-btn:hover {
-    background-color: #313131; /* Темнее при наведении */
-    transform: scale(1.05); /* Незначительное увеличение */
+    transform: scale(1.05); /* Немного увеличивает размер */
+    background: linear-gradient(to right, #C5AF6B, #B59F5B); /* Более яркий градиент */
+}
+
+/* --- 3. Эффект при нажатии (выглядит "вдавленной") --- */
+.submit-btn:active {
+    transform: scale(0.95); /* Немного уменьшается */
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2); /* Внутренняя тень */
+}
+
+/* --- 4. Центрирование кнопки (если нужно выровнять по центру) --- */
+.submit-btn-center {
+    display: block; /* Преобразуем в блочный элемент */
+    margin: 1rem auto; /* Автоматически центрирует */
 }
