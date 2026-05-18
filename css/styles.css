@@ -967,27 +967,54 @@ label {
     box-shadow: 0 0 0 3px rgba(181, 159, 91, 0.3); /* Красивое свечение вокруг рамки */
 }
 
-.radio-group {
-    display: flex; /* Группировка в ряд */
-    gap: 20px; /* Промежуток между кнопками */
-    align-items: center; /* Выравнивание по вертикали */
+/* --- Блок для радиокнопок --- */
+
+/* 1. Прячем стандартный input */
+.radio-button input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
-.radio-button {
-    display: flex; /* Радиокнопка + текст в ряд */
-    align-items: center; /* Выравнивание по вертикали */
-    cursor: pointer; /* Курсор-рука */
+/* 2. Стили для лейбла (кликабельная область) */
+.radio-button label {
+    display: flex; /* Выравниваем иконку и текст по центру по вертикали */
+    align-items: center;
+    cursor: pointer; /* Показываем, что на элемент можно нажать */
+    padding: 0.6rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: background-color 0.2s, border-color 0.2s; /* Плавное изменение фона */
 }
 
-.radio-icon {
-    width: 20px; /* Размер иконки */
-    height: 20px;
-    margin-right: 5px; /* Отступ от текста */
+/* 3. Стили для текста рядом с иконкой */
+.radio-label {
+    margin-left: 0.8rem; /* Отступ между иконкой и текстом */
 }
 
-/* Скрываем стандартные радиокнопки */
-input[type="radio"] {
-    display: none;
+/* 4. Стилизация при наведении курсора */
+.radio-button label:hover {
+    background-color: #f5f5f5; /* Легкий фон при наведении */
+}
+
+/* --- Логика переключения (самое важное) --- */
+
+/* Если input выбран (:checked), то найти следующий за ним .radio-icon и показать его */
+.radio-button input[type="radio"]:checked + label .radio-icon {
+    content: url('svg/svg/form-circle.svg'); /* Меняем на "активную" иконку */
+}
+
+/* Для второй кнопки (Нет) логика такая же */
+.radio-button#no input[type="radio"]:checked + label .radio-icon {
+    content: url('svg/svg/form-circle.svg'); /* Меняем на "активную" иконку */
+}
+
+/* Дополнительная стилизация выбранного варианта */
+.radio-button input[type="radio"]:checked + label {
+    background-color: #fff;
+    border-color: #b59f5b; /* Тот же золотой цвет, что и у селекта */
 }
 
 /* Основная стилизация текстовой области */
