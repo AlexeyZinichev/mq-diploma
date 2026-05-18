@@ -498,19 +498,19 @@
 		
         <h3 class="popup-title">ВАШ ФИДБЕК</h3>
         
-        <form action="#0" method="post">
-            <label for="visit-frequency">Как часто вы заходите на сайт?</label>
-            <div class="dropdown">
-            <select id="visit-frequency" name="visit-frequency" class="select-styled">
-                <option value="daily">Почти каждый день</option>
-                <option value="weekly">Раз в несколько дней</option>
-                <option value="monthly">Раз в несколько недель</option>
-                <option value="year">Несколько раз в год</option>
-            </select>
-
-              <img class="dropdown-arrow" src="svg/svg/form-arrows.svg" alt="Бургер меню">
-
-            </div>
+        <form>
+            <div class="form-group">
+    <label for="visit-frequency">Как часто вы заходите на сайт?</label>
+    <div class="select-wrapper">
+      <select id="visit-frequency" name="visit-frequency" class="styled-select">
+        <option value="daily">Почти каждый день</option>
+        <option value="weekly">Раз в несколько дней</option>
+        <option value="monthly">Раз в несколько недель</option>
+        <option value="year">Несколько раз в год</option>
+      </select>
+      <img src="svg/svg/form-arrows.svg" alt="" class="select-arrow">
+    </div>
+  </div>
             
             <!-- Вопрос 2: Подписка на рассылку с SVG-радиокнопками -->
         <label>Вы подписаны на e-mail рассылку?</label>
