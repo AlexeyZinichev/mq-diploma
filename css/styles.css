@@ -999,22 +999,25 @@ label {
 /* --- РАБОЧИЙ КОД ДЛЯ ПЕРЕКЛЮЧЕНИЯ --- */
 
 /* По умолчанию показываем пустую иконку */
-.radio-button .radio-icon-empty {
-    display: block;
+.radio-button .radio-icon {
+    content: url("svg/svg/form-empty-circle.svg"); /* Пустая иконка */
 }
 
-/* Одновременно прячем пустую иконку */
-.radio-button input[type="radio"]:checked + label .radio-icon-empty {
-	content: url("svg/svg/form-circle.svg");
+/* Если input выбран, показываем заполненную иконку */
+.radio-button input[type="radio"]:checked + label .radio-icon {
+    content: url("svg/svg/form-filled-circle.svg"); /* Заполненная иконка */
 }
 
-	.radio-button input[type="radio"]:checked + label {
-    background-color: #fafafa;
+/* --- 6. Стили для активного состояния (визуально выделяется) --- */
+.radio-button input[type="radio"]:checked + label {
+    background-color: #fafafa; /* Очень легкий оттенок */
+}
 
-	.radio-button:hover label {
+/* --- 7. Эффект при наведении (легкое выделение) --- */
+.radio-button:hover label {
     background-color: #f5f5f5;
-}	
-		
+}
+	
 /* Эффект при фокусе */
 textarea:focus {
     border-color: #b59f5b;
