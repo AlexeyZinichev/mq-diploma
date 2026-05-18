@@ -973,48 +973,60 @@ label {
 .radio-button input[type="radio"] {
     position: absolute;
     opacity: 0;
-    width: 0;
-    height: 0;
 }
 
 /* 2. Стили для лейбла (кликабельная область) */
 .radio-button label {
-    display: flex; /* Выравниваем иконку и текст по центру по вертикали */
+    display: flex;
     align-items: center;
-    cursor: pointer; /* Показываем, что на элемент можно нажать */
+    cursor: pointer;
     padding: 0.6rem 1rem;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 1rem;
-    transition: background-color 0.2s, border-color 0.2s; /* Плавное изменение фона */
+    position: relative; /* Важно для позиционирования иконок */
+    transition: background-color 0.2s, border-color 0.2s;
 }
 
-/* 3. Стили для текста рядом с иконкой */
+/* 3. Стили для текста */
 .radio-label {
-    margin-left: 0.8rem; /* Отступ между иконкой и текстом */
+    margin-left: 0.8rem;
 }
 
-/* 4. Стилизация при наведении курсора */
-.radio-button label:hover {
-    background-color: #f5f5f5; /* Легкий фон при наведении */
+/* 4. Общие стили для иконок внутри лейбла */
+.radio-button label .radio-icon {
+  position: absolute; /* Позиционируем относительно label */
+  left: 0; /* Прижимаем к левому краю кликабельной области */
+  top: 50%;
+  transform: translateY(-50%); /* Центрируем по вертикали */
+  
+  /* --- Фиксируем размер иконок --- */
+  width: 1rem; 
+  height: auto;
 }
 
-/* --- Логика переключения (самое важное) --- */
+/* --- Логика переключения --- */
 
-/* Если input выбран (:checked), то найти следующий за ним .radio-icon и показать его */
-.radio-button input[type="radio"]:checked + label .radio-icon {
-    content: url('svg/svg/form-circle.svg'); /* Меняем на "активную" иконку */
+/* По умолчанию показываем "пустую" иконку */
+.radio-button label .radio-icon-empty {
+    display: block; /* Показываем */
+}
+.radio-button label .radio-icon-filled {
+    display: none; /* Скрываем заполненную */
 }
 
-/* Для второй кнопки (Нет) логика такая же */
-.radio-button#no input[type="radio"]:checked + label .radio-icon {
-    content: url('svg/svg/form-circle.svg'); /* Меняем на "активную" иконку */
+/* Если input выбран, меняем видимость иконок местами */
+.radio-button input[type="radio"]:checked + label .radio-icon-empty {
+    display: none; /* Прячем пустую */
+}
+.radio-button input[type="radio"]:checked + label .radio-icon-filled {
+    display: block; /* Показываем заполненную */
 }
 
-/* Дополнительная стилизация выбранного варианта */
+/* Стилизация выбранного варианта */
 .radio-button input[type="radio"]:checked + label {
     background-color: #fff;
-    border-color: #b59f5b; /* Тот же золотой цвет, что и у селекта */
+    border-color: #b59f5b;
 }
 	
 /* Основная стилизация текстовой области */
