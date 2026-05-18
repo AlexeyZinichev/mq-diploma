@@ -996,6 +996,7 @@ label {
 	/* Убираем рамку и фон, так как они будут у всего блока .radio-button */
     border: none;
     background-color: transparent;
+	min-height: 40px;
 }
 
 .radio-label {
@@ -1008,7 +1009,7 @@ label {
   transform: translateY(-50%); /* Центрируем по вертикали */
   
   /* --- Фиксируем размер иконок --- */
-  width: 1rem; 
+  width: 1.25rem; 
   height: auto;
 }
 
