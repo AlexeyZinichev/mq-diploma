@@ -996,7 +996,6 @@ label {
 	/* Убираем рамку и фон, так как они будут у всего блока .radio-button */
     border: none;
     background-color: transparent;
-	 width: 100%;
 }
 
 .radio-label {
