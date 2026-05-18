@@ -967,78 +967,77 @@ label {
     box-shadow: 0 0 0 3px rgba(181, 159, 91, 0.3); /* Красивое свечение вокруг рамки */
 }
 
-	/* --- Блок для радиокнопок --- */
+/* --- 1. Базовая настройка для всей группы (расположение в строку) --- */
+.radio-group {
+    display: flex; /* Включаем Flexbox */
+    gap: 1rem;      /* Расстояние между блоками "Да" и "Нет" */
+}
 
-/* 1. Прячем стандартный input */
-.radio-group input[type="radio"] {
+/* --- 2. Стили для одного варианта (радио-кнопки) --- */
+.radio-button {
+    display: flex; /* Выстраиваем элементы внутри кнопки в линию */
+    align-items: center; /* Вертикальное выравнивание по центру - РЕШАЕТ ПРОБЛЕМУ С ТЕКСТОМ */
+}
+
+/* --- 3. Прячем стандартный input и связываем его с лейблом --- */
+.radio-button input[type="radio"] {
     position: absolute;
     opacity: 0;
     width: 0;
     height: 0;
+    margin: 0; /* Убираем возможные отступы по умолчанию */
 }
 
-/* 2. Стили для общего контейнера группы */
-.radio-group {
-    display: flex; /* Включаем Flexbox для расположения в строку */
-    gap: 1rem;      /* Отступ между кнопками Да/Нет */
-}
-
-/* 3. Стили для кликабельной области (самой кнопки) */
-.radio-button {
-    display: flex; /* Выстраиваем иконку и текст в одну линию */
-    align-items: center; /* Центрируем по вертикали - ЭТО РЕШАЕТ ПРОБЛЕМУ С ВЫСОТОЙ ТЕКСТА */
+/* --- 4. Стили для кликабельной области (текста и иконки) --- */
+.radio-button label {
+    display: flex; /* Важно для выравнивания внутри себя */
+    align-items: center;
     cursor: pointer;
     padding: 0.6rem 1rem;
-    
-    border: 2px solid transparent; /* Рамка по умолчанию прозрачная */
+    border: 2px solid #ccc; /* Видимая рамка */
     border-radius: 6px;
-    background-color: #fff; /* Белый фон, чтобы не было прозрачности */
-    
-    transition: all 0.2s ease; /* Плавные переходы для наведения и выбора */
+    background-color: #fff; /* Белый фон */
+    transition: background-color 0.2s, border-color 0.2s; /* Плавные эффекты */
 }
 
-/* 4. Стили для текста */
+/* --- 5. Стили для текста и иконки --- */
 .radio-label {
     margin-left: 0.5rem; /* Сближаем текст с иконкой */
 }
 
-/* 5. Общие стили для иконок */
+/* Стили для самих иконок (размер) */
 .radio-button .radio-icon {
-  width: 1.5rem; /* УВЕЛИЧИЛИ ИКОНКУ! */
-  height: auto;
+    width: 1.5rem; /* УВЕЛИЧИЛИ ИКОНКУ! */
+    height: auto;
 }
 
-/* --- Логика переключения --- */
+/* --- 6. Логика переключения (самая важная часть) --- */
 
-/* По умолчанию показываем "пустую" иконку и скрываем заполненную */
-.radio-button .radio-icon-empty {
-    display: block;
-}
+/* Прячем заполненную иконку по умолчанию */
 .radio-button .radio-icon-filled {
     display: none;
 }
 
-/* Если input выбран, меняем видимость иконок местами */
-.radio-group input[type="radio"]:checked + label .radio-icon-empty {
-    display: none;
-}
-.radio-group input[type="radio"]:checked + label .radio-icon-filled {
+/* Когда радио-кнопка выбрана, показываем заполненную иконку и прячем пустую */
+.radio-button input[type="radio"]:checked ~ .radio-icon-filled {
     display: block;
 }
-
-/* --- Стили при наведении и выборе --- */
-
-/* Стиль при наведении курсора на кнопку */
-.radio-button:hover {
-    background-color: #f5f5f5; 
-    border-color: #b59f5b; /* Подкрашиваем рамку при наведении */
+.radio-button input[type="radio"]:checked ~ .radio-icon-empty {
+    display: none;
 }
 
-/* Стиль для выбранного варианта (более приоритетный) */
-.radio-group input[type="radio"]:checked + label {
+/* --- 7. Эффекты при наведении и выборе --- */
+
+/* Эффект при наведении курсора на кнопку */
+.radio-button:hover label {
+    background-color: #f5f5f5;
+}
+
+/* Стили для выбранной (активной) кнопки */
+.radio-button input[type="radio"]:checked + label {
     background-color: #fff;
-    border-color: #b59f5b; /* Золотистая рамка для активной кнопки */
-    box-shadow: 0 0 0 3px rgba(181, 159, 91, 0.2); /* Красивое свечение вокруг */
+    border-color: #b59f5b; /* Золотистый цвет рамки */
+    box-shadow: 0 0 0 3px rgba(181, 159, 91, 0.2); /* Свечение вокруг */
 }
 
 /* Эффект при фокусе */
