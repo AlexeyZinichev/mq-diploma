@@ -177,20 +177,20 @@ a:hover {
 }
 
 .trend-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;	
+	display: flex;
+	flex-wrap: nowrap;
+  gap: 5px;
   margin-top: 40px;
   justify-content: space-between;
 }
 
 .trend-article {
-  flex: 1 1 calc(25% - 15px);
+  flex: 1 1 auto;
   position: relative;
   overflow: hidden;
   background-size: cover;
   background-position: center;
-  min-height: 280px;
+  min-height: 320px;
 }
 
 .trend-article::before {
@@ -225,7 +225,7 @@ a:hover {
   position: absolute;
   left: 20px;
   bottom: 20px;
-  right: 20px;
+  right: 15px;
   padding: 20px;
   border: 2px solid #b59f5b;
   overflow: hidden;
@@ -839,6 +839,7 @@ a:hover {
     cursor: pointer;
     font-size: 16px;
     text-transform: uppercase;
+    z-index: 13;
 }
 
 /* --- Стили всплывающего окна --- */
@@ -865,6 +866,7 @@ a:hover {
 /* Логика показа окна (теперь работает) */
 #popup-open:checked + .popup {
     display: flex;
+}    
 
 .popup-content {
     position: relative;
@@ -989,35 +991,41 @@ label {
     align-items: center; /* Централизация по вертикали */
     cursor: pointer; /* Курсор руки */
     user-select: none; /* Запрет выделения текста */
+    position: relative;
+    padding-left: 20px;
 }	
-
-/* Стили для иконок (кружочки) */
-.radio-button img {
-    width: 1.25rem;
-    height: auto;
-    margin-right: 0.5rem;
-}
 
 /* --- РАБОЧИЙ КОД ДЛЯ ПЕРЕКЛЮЧЕНИЯ --- */
 
-/* По умолчанию показываем пустую иконку */
-.radio-button .radio-icon {
-    content: url("svg/svg/form-empty-circle.svg"); /* Пустая иконка */
+.radio-button label::before {
+    content: "";
+    background-image: url(../svg/form-empty-circle.svg); /* Пустая иконка по умолчанию */
+    background-size: contain; /* Масштабирует картинку, чтобы она целиком влезла в блок */
+    background-repeat: no-repeat;
+    width: 16px; /* Задаем размер иконки */
+    height: 16px;
+    position: absolute; /* Позиционируем относительно label */
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%); /* Центрируем по вертикали */
+}
+    
+
+.radio-button input[type="radio"]:checked + label::before {
+    background-image: url(../svg/form-circle.svg); /* Заполненная иконка */
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+    width: 16px;
+    height: 16px
 }
 
-/* Если input выбран, показываем заполненную иконку */
-.radio-button input[type="radio"]:checked + label .radio-icon {
-    content: url("svg/svg/form-filled-circle.svg"); /* Заполненная иконка */
-}
-
-/* --- 6. Стили для активного состояния (визуально выделяется) --- */
-.radio-button input[type="radio"]:checked + label {
-    background-color: #fafafa; /* Очень легкий оттенок */
-}
-
-/* --- 7. Эффект при наведении (легкое выделение) --- */
 .radio-button:hover label {
-    background-color: #f5f5f5;
+    background-color: #f5f5f5; /* Легкое выделение */
+}
+
+.radio-button input[type="radio"]:checked + label {
+    background-color: #fafafa; /* Легкий фон для выбранного */
 }
 	
 /* --- 1. Общие стили для текстовой области --- */
@@ -1026,6 +1034,8 @@ label {
     padding: 1rem; /* Удобные внутренние отступы */
     resize: vertical; /* Возможность растягивать только вертикально */
     transition: border-color 0.2s ease; /* Плавный переход границы */
+    border: none;
+    background-color: #f3f7f5;
 }
 
 /* --- 2. Стили для плейсхолдера (светло-серый текст) --- */
@@ -1035,21 +1045,21 @@ label {
 
 /* --- 3. Эффект при фокусе (голубая граница) --- */
 .textarea-field:focus {
+  outline: none; 
 	border: 2px solid #b59f5b;
-    box-shadow: 0 0 0 3px rgba(107, 190, 221, 0.2); /* Нежное свечение вокруг */
 }
 
 /* --- 4. Стили для лейбла (надписи) --- */
 .label-for-textarea {
-    display: block; /* Переносим на новую строку */
-    margin-bottom: 0.5rem; /* Небольшой отступ от текстового поля */
-    font-weight: bold; /* Жирный шрифт для читаемости */
+  display: block; /* Переносим на новую строку */
+  margin-bottom: 0.5rem; /* Небольшой отступ от текстового поля */
+  font-weight: bold; /* Жирный шрифт для читаемости */
 }
 
 /* --- 1. Основные стили кнопки --- */
 .submit-btn {
     display: inline-block; /* Позволяет центрировать */
-	width: 100%;
+	  width: 100%;
     padding: 0.8rem 1.5rem; /* Удобные отступы */
     font-weight: bold; /* Жирный текст */
     color: #fff; /* Белые буквы */
@@ -1074,6 +1084,6 @@ label {
 
 /* --- 4. Центрирование кнопки (если нужно выровнять по центру) --- */
 .submit-btn-center {
-    display: block; /* Преобразуем в блочный элемент */
-    margin: 1rem auto; /* Автоматически центрирует */
+    display: block;
+    margin: 1rem auto;
 }
