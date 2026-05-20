@@ -7,9 +7,7 @@
   padding: 0;
 }
 
-/* === Подключение шрифтов Open Sans === */
-
-/* Регулярный шрифт (Regular) */
+/* === Шрифты === */
 @font-face {
   font-family: 'Open Sans';
   src: url(..fonts/fonts/OpenSans-Regular.woff2),
@@ -18,7 +16,6 @@
   font-style: normal; /* Нормальный стиль */
 }
 
-/* Жирный шрифт (Bold) */
 @font-face {
   font-family: "Open Sans";
   src: url(..fonts/fonts/OpenSans-Bold.woff2),
@@ -32,13 +29,13 @@
   font-size: 16px;
   color: #333;
   background-color: #fff;
-  margin: 0 auto;
 }
 
 a {
   color: inherit;
   text-decoration: none;
   text-transform: uppercase;
+  transition: color 0.3s ease;		
 }
 
 a:focus,
@@ -52,9 +49,9 @@ a:hover {
   height: auto;
 }
 
-/* === Класс для скрытия текста (доступность) === */
+/* === Вспомогательные классы === */
 .visually-hidden {
-  position: absolute;
+  position: absolute !important;
   width: 1px;
   height: 1px;
   margin: -1px;
@@ -64,87 +61,86 @@ a:hover {
   overflow: hidden;
 }
 
-/* === Общий контейнер (.container) === */
+/* === Контейнеры и общая разметка === */
 .container {
   max-width: 1220px;
-  margin: 0 auto; /* Централизация */
-  padding: 0 20px; /* Боковые отступы */
+  margin: 0 auto;
+  padding: 0 20px; 
 }
 
-/* Шапка с фоновым рисунком */
+/* === Шапка сайта === */
 .site-header {
-  position: relative; /* Локальная система координат */
+  position: relative; 
   padding: 20px;
-  min-height: 300px; /* Минимальная высота шапки */
-  color: white; /* Белый текст для контраста */
+  min-height: 300px; 
+  color: white; 
   margin-bottom: 65px;
   background-image: url(../images/img/banner-bg.jpg);
-  background-size: cover; /* Масштабируем фон на всю область */
-  background-position: center; /* Центрируем фон */
-  background-repeat: no-repeat; /* Не повторяем фон */
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
 }
 
 .site-header::before {
-  content: ""; /* Пустой контент */
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Тёмный цвет с прозрачностью 50% */
-  z-index: 1; /* Поверх фона */
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 1; 
 }
 
-
-/* Логотип и навигация (внутри шапки) */
 .header-content {
-  position: relative; /* Над полупрозрачным слоем */
-  z-index: 2; /* Над полупрозрачным слоем */
-  display: flex; /* Гибкая сетка */
-  justify-content: space-between; /* Распределение по краям */
-  align-items: center; /* Выравнивание по вертикали */
-  margin-bottom: 129px; /* Небольшой отступ снизу */
+  position: relative; 
+  z-index: 2; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  margin-bottom: 130px; 
 }
 
 .logo img {
-  display: block; /* Устраняет лишние отступы */
-  width: 100%; /* Максимально широкая картинка */
-  height: auto; /* Сохраняет пропорции */
-  max-width: 200px; /* Ограничиваем максимальную ширину */
+  display: block; 
+  width: 100%; 
+  height: auto; 
+  max-width: 200px;
 }
-/* Навигационное меню */
+
+/* === Основное навигационное меню === */
 .main-navigation ul {
-  list-style: none; /* Убираем маркеры списка */
-  padding-left: 0; /* Убираем отступ слева */
-  display: flex; /* Гибкая сетка */
-  gap: 20px; /* Расстояние между пунктами */
+  list-style: none; 
+  padding-left: 0; 
+  display: flex; 
+  gap: 20px; 
 }
 
 .main-navigation a {
-  color: inherit; /* Наследуем цвет */
-  text-decoration: none; /* Без подчеркивания */
-  transition: color 0.3s; /* Плавный переход */
+  color: inherit; 
+  transition: color 0.3s; 
 }
 
 .main-navigation a:hover {
-  text-decoration: underline; /* Добавляем подчеркивание */
+  text-decoration: underline;
 }
 
 /* Главный заголовок */
 .hero-heading {
-  position: relative; /* Над полупрозрачным слоем */
-  z-index: 2; /* Над полупрозрачным слоем */
-  text-align: center; /* Центрируем текст */
-  font-size: 45px; /* Размер шрифта */
-  font-weight: bold; /* Жирный шрифт */
-  text-transform: uppercase; /* Заглавные буквы */
-  margin-bottom: 142px;
+  position: relative; 
+  z-index: 2;
+  text-align: center;
+  font-size: 45px; 
+  font-weight: bold; 
+  text-transform: uppercase; 
+  margin-bottom: 140px;
 }
 
+/* === Сейчас в тренде === */
 .trends-section {
   display: flex;
   flex-direction: column;
-	width: 100%;
+  width: 100%;
 }
 
 .trend-title {
@@ -152,28 +148,19 @@ a:hover {
 	font-size: 24px;
 	text-align: center;
   position: relative; 
-  text-align: center; /* Убедитесь, что текст по центру */
+  margin-bottom: 40px;	
 }
 
 .trend-title::after {
     content: "";
     display: block;
-    
-    /* Ширина и высота линии */
-    width: 80px; /* Немного длиннее, чтобы было заметнее */
-    height: 4px; /* Чуть толще */
-
-    /* Позиционирование */
+    width: 80px;
+    height: 4px;
     position: absolute;
-    bottom: -10px; /* Чуть больше отступа от текста */
+    bottom: -10px;
     left: 50%;
-    
-    /* Центровка линии по горизонтали */
     transform: translateX(-50%);
-
-    /* Стили линии */
-    background-color: #b59f5b; /* Золотой цвет, как в вашем примере */
-    border-radius: 2px; /* Небольшое скругление концов линии (опционально) */
+    background-color: #b59f5b;
 }
 
 .trend-grid {
@@ -250,83 +237,80 @@ a:hover {
   color: #fff;
 }
 
-/* 1. Подчеркивание категорий при наведении */
 .trend-first .trend-categories-item:hover {
-    text-decoration: underline; /* Добавляет подчеркивание */
-    text-decoration-color: #b59f5b; /* Цвет подчеркивания (как у рамки) */
+    text-decoration: underline; 
+    text-decoration-color: #b59f5b;
 }
 
-/* 2. Изменение цвета текста при наведении */
 .trend-first .trend-description a:hover {
-    color: #b59f5b; /* Меняет цвет текста на цвет рамки */
-    text-decoration: none; /* Убирает подчеркивание у самой ссылки, если оно есть */
+    color: #b59f5b;
+    text-decoration: none;
 }
 
+/* === Основная часть страницы === */
 .content-wrapper {
-  display: flex; /* Включаем flexbox */
-  gap: 120px; /* Промежуток между частями */
+  display: flex; 
+  gap: 120px; 
   margin-top: 63px;
 }
 
-/* === Основная часть страницы (.main-content) === */
+/* === Основная колонка === */
 .main {
-  flex: 2; /* Занимает больше места */
-  align-self: flex-start; /* Прижимаем к верхнему краю */
+  flex: 2; 
+  align-self: flex-start; 
 }
 
+/* === Боковая колонка === */
 .sidebar {
-  flex: 1; /* Занимает меньше места */
-  align-self: flex-start; /* Прижимаем к верхнему краю */
+  flex: 1;
+  align-self: flex-start;
+  max-width: 300px;	
 }
 
-/* === Основная статья (.featured-article) === */
+/* === Главная статья === */
 .featured-article {
   display: flex;
   gap: 28px;
-  margin-bottom: 53px; /* Расстояние между карточками */
+  margin-bottom: 53px;
   justify-content: space-between;
 }
 
-/* === Миниатюра статьи (.article-thumbnail) === */
 .article-thumbnail {
-  width: 380px; /* Ширина картинки */
+  width: 380px;
   height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Привязка к верхнему краю */
+  justify-content: flex-start;
 }
 
-/* === Основная информация (.article-info) === */
 .article-info {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Привязка к верхнему краю */
-  width: calc(100% - 380px); /* Оставшееся пространство */
+  justify-content: flex-start; 
+  width: calc(100% - 380px); 
 }
 
-/* === Категории статьи (.article-categories) === */
+/* === Категории статьи === */
 .article-categories {
   display: flex;
   color: #b59f5b;
   gap: 10px;
   margin-bottom: 10px;
-  align-self: flex-start; /* Выравнивание категорий слева */
-  list-style: none; /* Убираем маркеры списка */
+  align-self: flex-start; 
+  list-style: none; 
 }
-
-/* === Ссылки категорий (.category-link) === */
 .category-link {
   font-weight: bold;
   font-size: 14px;
 }
 
-/* === Заголовок статьи (.article-title) === */
+/* === Заголовок статьи === */
 .article-title {
   font-size: 20px;
   margin-bottom: 20px;
 }
 
-/* === Метаданные статьи (.article-meta) === */
+/* === Метаданные статьи === */
 .article-meta {
   font-size: 14px;
   margin-bottom: 20px;
@@ -334,10 +318,10 @@ a:hover {
 
 .article-meta span {
   font-weight: bold;
-  margin-left: 1em; /* Отступ слева */
+  margin-left: 1em;
 }
 
-/* === Описание статьи (.article-description) === */
+/* === Описание статьи === */
 .article-description>p {
   font-size: 15px;
   line-height: 22px;
@@ -348,90 +332,83 @@ a:hover {
   margin-top: 16px;
 }
 
-/* === Отступ между абзацами === */
 .article-description + .article-description {
-  margin-top: 10px; /* Устанавливаем отступ между абзацами */
+  margin-top: 10px;
 }
 
-/* Основной текст (статичен, не двигается) */
+/* === Эффекты при наведении === */
 .category-link,
 .article-title a {
-  color: inherit; /* Наследуем цвет */
-  transition: color 0.3s ease-in-out; /* Плавный переход цвета */
-  display: inline-block; /* Важно для работы псевдоэлемента */
-  text-transform: uppercase;
+  color: inherit; 
+  transition: color 0.3s ease-in-out;
 }
 
-/* Подчеркивание ссылки при наведении */
 .featured-article:nth-child(1) .article-categories:hover .category-link {
-  text-decoration: underline; /* Подчеркивание только для категории */
+  text-decoration: underline;
 }
 
-/* Эффект при наведении на первую ссылку (золотистый цвет) */
 .featured-article:first-of-type .article-title a:hover {
-  color: #b59f5b; /* Золотистый цвет */
+  color: #b59f5b; 
 }
 
-/* === Заголовки H4 === */
+/* === Виджеты боковой панели === */
 .widget-title {
   position: relative;
-  text-align: center; /* Выравнивание по центру */
-  margin-bottom: 44px; /* Отступ до следующей ссылки */
+  text-align: center;
+  margin-bottom: 44px; 
 }
 
 .widget-title::after {
-  content: ""; /* Пустой контент */
-  display: block; /* Блочный элемент */
+  content: ""; 
+  display: block; 
   width: 65px;
-  height: 3px; /* Толщина линии */
-  bottom: -12px; /* Расстояние между заголовком и линией */
-  background-color: #b59f5b; /* Золотой цвет */
-  position: absolute; /* Абсолютное позиционирование */
-  left: 50%; /* Центр линии */
-  transform: translateX(-50%); /* Точная центровка */
+  height: 3px; 
+  bottom: -12px;
+  background-color: #b59f5b;
+  position: absolute; 
+  left: 50%; 
+  transform: translateX(-50%); 
 }
 
+/* === Новые посты === */
 .new-posts-list {
-  list-style: none; /* Убираем маркеры списка */
-  padding-left: 0; /* Убираем отступ слева */
+  list-style: none;
+  padding-left: 0; 
 }
-
 .post-item {
-  display: flex; /* Горизонтальное расположение */
-  align-items: flex-start; /* Выравнивание по верхнему краю */
-  margin-bottom: 20px; /* Отступ снизу */
-  color: inherit; /* Наследует цвет текста */
-  transition: color 0.3s ease; /* Плавный переход */
+  display: flex;
+  align-items: flex-start; 
+  margin-bottom: 20px; 
+  color: inherit; 
+  transition: color 0.3s ease; 
   gap: 20px;
 }
-
-/* === Миниатюра поста (.post-thumbnail) === */
 .post-thumbnail {
-  flex: 1; /* Занимает часть ширины */
+  flex: 1;
 }
-
-/* === Информация о посте (.post-info) === */
 .post-info {
-  flex: 2; /* Занимает больше места */
-  display: flex; /* Включаем flexbox */
-  flex-direction: column; /* Вертикальное направление */
-  justify-content: flex-start; /* Выравнивание по верхнему краю */
+  flex: 2; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: flex-start;
 }
 
-/* Эффект при наведении на первую ссылку (золотистый цвет) */
+/* Эффект при наведении */
 .new-posts-list li:first-child .post-info a:hover {
-  color: #b59f5b; /* Золотистый цвет */
+  color: #b59f5b; 
 }
 
 .post-info .subtitle {
-  text-align: left; /* Выравнивание по левому краю */
+  text-align: left;
   width: 100%;
 }
+
+/* === Специальные стили для виджетов и изображений === */
 .widget-title a,
 .post-info .subtitle a {
-  color: inherit; /* Наследуем цвет */
-  transition: color 0.3s ease-in-out; /* Плавный переход цвета */
-  display: inline-block; /* Важно для работы псевдоэлемента */
+  color: inherit; 
+  transition: color 0.3s ease-in-out; 
+  display: inline-block; 
   text-transform: uppercase;
 }
 
@@ -439,25 +416,21 @@ a:hover {
   font-size: 0.8rem;
 }
 
-/* Переопределяем глобальные стили для изображений внутри .image-container */
 .image-container img {
-  width: 100%; /* Автоматически подстраиваемся под размеры изображения */
-  height: 100%; /* Сохраняем пропорции */
-  object-fit: cover; /* Сохраняем пропорции, обрезая лишнее */
-  object-position: center; /* Центрируем изображение */
-}
+  width: 100%;
+  height: 100%; 
+  object-fit: cover;
+  object-position: center;
 
-/* Контейнер для изображения */
 .image-container {
   position: relative;
   display: inline-block;
-  background-color: #f4f7f5; /* Фон маски */
-  overflow: hidden; /* Скрывает выходящие за границы элементы */
-  width: 100%; /* Занимаем всю ширину родителя */
-  height: 100%; /* Занимаем всю высоту родителя */
+  background-color: #f4f7f5; 
+  overflow: hidden; 
+  width: 100%; 
+  height: 100%; 
 }
 
-/* Псевдоэлемент для создания маски */
 .image-container::before {
   content: "";
   position: absolute;
@@ -465,12 +438,10 @@ a:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: inherit; /* Наследует фон родительского элемента */
-  z-index: -1; /* Размещаем маску под изображением */
-}
+  background-color: inherit;
+  z-index: -1; 
 
-
-/* Стилизация формы */
+/* === Поисковая форма === */
 .search-form {
   display: inline-flex;
   align-items: center;
@@ -479,7 +450,6 @@ a:hover {
   margin: 60px 0;
 }
 
-/* Стилизация поля ввода */
 .search-input {
   width: 100%;
   height: 48px;
@@ -498,7 +468,6 @@ a:hover {
   border-width: 2px; /* Толщина границы */
 }
 
-/* Стилизация кнопки поиска */
 .search-button {
   display: inline-block;
   width: 48px;
@@ -509,10 +478,9 @@ a:hover {
   background-color: #b59f5b;
   background-position: center;
   background-repeat: no-repeat;
-  transition: transform 0.3s, background-color 0.3s; /* Добавляем плавные переходы */
+  transition: transform 0.3s, background-color 0.3s;
 }
-
-/* Эффект при наведении: уменьшение и смена цвета фона */
+	
 .search-button:hover {
   background-color: black; /* Новый цвет фона */
 }
@@ -521,39 +489,37 @@ a:hover {
   display: block;
 }
 
-/* Поле ввода */
 .subscribe-form input[type="email"] {
   width: 100%;
   height: 48px;
   padding: 10px;
   border: none;
-  margin-bottom: 18px; /* Небольшой отступ снизу */
+  margin-bottom: 18px; 
   font-size: 1rem;
-  transition: border-color 0.3s; /* Плавный переход */
+  transition: border-color 0.3s; 
   background-color: #f3f7f5;
 }
 
 .subscribe-form input[type="email"]:focus {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  outline: none; /* Убираем стандартный контур */
-  border-color: #b59f5b ; /* Меняем цвет границы */
-  border-style: solid; /* Тип границы */
-  border-width: 2px; /* Толщина границы */
+  outline: none;
+  border-color: #b59f5b ; 
+  border-style: solid; 
+  border-width: 2px; 
 }
 
-/* Кнопка подписки */
 .subscribe-button {
   width: 100%;
   height: 48px;
   padding: 10px 20px;
   margin-bottom: 60px;
-  background-color: #b59f5b; /* Золотистый фон */
+  background-color: #b59f5b;
   color: white;
   border: none;
   font-size: 14px;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s; /* Плавный переход */
+  transition: background-color 0.3s; 
   text-transform: uppercase;
 }
 
@@ -561,42 +527,39 @@ a:hover {
   background-color: black;
 }
 
-/* Список тегов (используем flexbox) */
+/* Список тегов и тем */
 .tag-list {
-  list-style: none; /* Убираем маркеры списка */
-  padding-left: 0; /* Убираем отступ слева */
-  display: flex; /* Гибкая сетка */
-  flex-wrap: wrap; /* Перенос на новую строку */
-  gap: 10px; /* Расстояние между тегами */
+  list-style: none; 
+  padding-left: 0;
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 10px; 
   margin-bottom: 60px;
 }
 
 /* Оформление ссылок */
 .tag-list a {
-  display: inline-block; /* Нужен для псевдоэлемента */
+  display: inline-block;
   padding: 5px 20px;
-  border: 3px solid #ddd; /* Светло-серая рамка */
-  background-color: white; /* Белый фон */
+  border: 3px solid #ddd; 
+  background-color: white; 
   font-weight: bold;
   font-size: 12px;
-  color: inherit; /* Наследуем цвет */
-  transition: color 0.3s ease-in-out; /* Плавный переход цвета */
+  color: inherit; 
+  transition: color 0.3s ease-in-out;
   text-transform: uppercase;
 }
 
-/* Эффект при наведении (золотистая рамка) */
 .tag-list li:first-child a:hover {
-  border-color: #b59f5b; /* Золотистый цвет рамки */
+  border-color: #b59f5b; 
 }
 
-/* Список тем */
 .topic-list {
-  position: relative; /* Локальная система координат */
-  list-style: none; /* Убираем маркеры списка */
-  padding-left: 0; /* Убираем отступ слева */
+  position: relative;
+  list-style: none; 
+  padding-left: 0; 
 }
-
-/* Оформление ссылок */
+	
 .topic-list a {
   display: inline-block; /* Нужен для псевдоэлемента */
   color: inherit; /* Наследуем цвет */
@@ -607,42 +570,39 @@ a:hover {
   padding-bottom: 12px; /* Расстояние от текста до линии */
 }
 
-/* Количество постов (число сверху) */
 .topic-list span {
-  vertical-align: super; /* Поднимает число вверх */
-  font-size: 12px; /* Малый размер шрифта */
-  color: #b59f5b; /* Золотистый цвет */
+  vertical-align: super; 
+  font-size: 12px; 
+  color: #b59f5b;
   font-weight: bold;
   padding: 2px 5px;
 }
 
 .topic-list li {
-  position: relative; /* Для позиционирования ::after */
+  position: relative; 
   margin-bottom: 30px;
 }
 
-/* Подчёркивание через псевдоэлемент ::after */
+
 .topic-list li::after {
-  content: ""; /* Пустой контент */
+  content: ""; 
   position: absolute;
-  bottom: 0; /* Прикрепляем к низу ссылки */
+  bottom: 0;
   left: 0;
-  right: 0; /* Заполняет всю ширину ссылки */
-  height: 1px; /* Толщина подчёркивания */
-  background-color: #ddd; /* Цвет подчёркивания совпадает с текстом */
-  transition: opacity 0.3s ease-in-out; /* Плавный переход */
-  pointer-events: none; /* Игнорируем события мыши */
-  z-index: -1; /* Ниже основного текста */
+  right: 0; 
+  height: 1px; 
+  background-color: #ddd; 
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none; 
+  z-index: -1; 
 }
 
-/* Эффект при наведении (цвет и подчёркивание) */
 .topic-list a:hover {
-  color: #b59f5b; /* Золотистый цвет */
+  color: #b59f5b;
 }
 
-/* Убираем линию у последней ссылки */
 .topic-list li:last-child::after {
-  display: none; /* Убираем линию */
+  display: none;
 }
 
 .product-section {
@@ -656,29 +616,23 @@ a:hover {
 	font-size: 20px;
 	text-align: center;
   position: relative; 
-  text-align: center; /* Убедитесь, что текст по центру */
+  text-align: center;
   margin-bottom: 40px;
 }
 
 .product-title::after {
     content: "";
     display: block;
-    
-    /* Ширина и высота линии */
-    width: 80px; /* Немного длиннее, чтобы было заметнее */
-    height: 4px; /* Чуть толще */
-
-    /* Позиционирование */
+    width: 80px; 
+    height: 4px; 
     position: absolute;
-    bottom: -10px; /* Чуть больше отступа от текста */
+    bottom: -10px; 
     left: 50%;
-    
-    /* Центровка линии по горизонтали */
     transform: translateX(-50%);
 
     /* Стили линии */
-    background-color: #b59f5b; /* Золотой цвет, как в вашем примере */
-    border-radius: 2px; /* Небольшое скругление концов линии (опционально) */
+    background-color: #b59f5b; 
+    border-radius: 2px; 
 }
 
 .product-grid {
@@ -687,10 +641,10 @@ a:hover {
 }
 
 .product-card img {
-  width: 100%;       /* изображение заполнит всю ширину карточки */
-  height: auto;      /* сохранятся исходные пропорции */
-  object-fit: cover; /* изображение равномерно заполнит ячейку, обрезая лишнее */
-  display: block;    /* уберётся пустое пространство под картинкой */
+  width: 100%;       
+  height: auto;      
+  object-fit: cover; 
+  display: block;   
 }
 
 .product-card {
@@ -709,18 +663,17 @@ a:hover {
   position: relative;
 }
 
-/* Маска под изображением */
 .img-wrp::after {
-  content: ""; /* Обязательное свойство для псевдоэлемента */
+  content: ""; 
   position: absolute;
-  bottom: 0; /* Маска снизу */
+  bottom: 0;
   left: 20px;
   right: 20px;
-  width: calc(100% - 40px); /* Минус удвоенная ширина отступов */
-  height: 50%; /* Высота маски (можно регулировать) */
-  background-color: #eff5f1; /* Светло-зеленый цвет маски */
-  z-index: -1; /* Маска ПОД изображением */
-  filter: blur(10px); /* Размытие для мягкости эффекта */
+  width: calc(100% - 40px); 
+  height: 50%; 
+  background-color: #eff5f1; 
+  z-index: -1; 
+  filter: blur(10px); 
 }
 
 .product-info {
@@ -784,18 +737,17 @@ a:hover {
 }
 
 .social-icons-list {
-  list-style: none; /* Убираем маркеры списка */
-  display: flex; /* Гибкое размещение */
-  justify-content: center; /* Выравнивание по центру */
-  gap: 20px; /* Промежуток между иконками */
-  padding: 30px 0; /* Равномерные вертикальные отступы */
+  list-style: none; 
+  display: flex; 
+  justify-content: center; 
+  gap: 20px; 
+  padding: 30px 0; 
   background-color: #f3f7f5;
 }
 
-/* Отдельная иконка */
 .social-icon {
   display: block;
-  width: 24px; /* Размер иконки */
+  width: 24px;
   height: 24px;
   background-repeat: no-repeat;
   background-position: center center;
@@ -815,14 +767,15 @@ a:hover {
 }
 
 /* Раздел с копирайтом */
+	
 .copyright {
-  text-align: center; /* Централизация текста */
+  text-align: center; 
   margin-top: 70px;
 }
 
 .copyright a {
-  color: #333; /* Цвет ссылки */
-  text-decoration: none; /* Без подчеркивания */
+  color: #333; 
+  text-decoration: none; 
   font-size: 12px;
   font-weight: bold;
 }
@@ -843,8 +796,6 @@ a:hover {
 }
 
 /* --- Стили всплывающего окна --- */
-
-/* 1. Скрываем сам чекбокс */
 #popup-open {
     display: none;	
 }
@@ -858,12 +809,9 @@ a:hover {
     background: rgba(0, 0, 0, 0.7);
     justify-content: center;
     align-items: center;
-    
-    /* Убираем огромный z-index */
-    z-index: 10; /* Вполне достаточно */
+    z-index: 10; 
 }
 
-/* Логика показа окна (теперь работает) */
 #popup-open:checked + .popup {
     display: flex;
 }    
@@ -875,9 +823,7 @@ a:hover {
     height: auto;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    
-    /* Убираем лишний z-index */
-    z-index: 11; /* Просто чуть выше фона */
+    z-index: 11;
 }
 
 .close-icon {
@@ -885,9 +831,7 @@ a:hover {
     top: -50px;
     right: 0;
     cursor: pointer;
-    
-    /* Убираем гигантский z-index */
-    z-index: 12; /* Просто выше всего */
+    z-index: 12; 
 }
 
 .btn {
@@ -896,79 +840,62 @@ a:hover {
 }
 
 .popup-title {
-    font-size: 20px; /* Размер шрифта по вкусу */
-    margin-bottom: 10px; /* Расстояние до черты */
-    position: relative; /* Для добавления линии */
+    font-size: 20px; 
+    margin-bottom: 10px; 
+    position: relative; 
 	text-align: center;
 }
 
 .popup-title::after {
-    content: ""; /* Создание псевдоэлемента */
-    display: block; /* Превращаем в блочный элемент */
-    width: 30%; /* Длина черты (можно регулировать) */
-    height: 3px; /* Толщина черты */
-    background-color: #b59f5b; /* Цвет черты */
-    margin-top: 10px; /* Расстояние от текста */
-    margin-left: auto; /* Централизация */
-    margin-right: auto; /* Централизация */
+    content: ""; 
+    display: block;
+    width: 30%; 
+    height: 3px; 
+    background-color: #b59f5b; 
+    margin-top: 10px;
+    margin-left: auto; 
+    margin-right: auto; 
 }
 
-/* 1. Базовые стили для контейнера группы */
 .form-group {
   margin-bottom: 1.5rem;
 }
 
-/* 2. Стили для лейбла */
 label {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 600;
 }
 
-/* 3. Контейнер для селекта (относительное позиционирование нужно для абсолютного размещения иконки) */
 .select-wrapper {
   position: relative;
   width: 100%;
 }
 
-/* 4. Стилизация самого селекта */
 .styled-select {
   width: 100%;
-  padding: 0.6rem 1rem; /* Убрал большой отступ справа */  
-  border: 2px solid transparent; /* Прозрачная рамка по умолчанию */
-  border-radius: 4px;
-  background-color: #f3f7f5;
-  /* --- Ключевое исправление для позиционирования иконки --- */
+  padding: 0.6rem 1rem; 
+  border: 2px solid transparent; 
   position: relative;
-  /* Убираем стандартную стрелку */
   -webkit-appearance: none;
      -moz-appearance: none;
         appearance: none;  
 }
-
-	/* Иконка стрелки (теперь она снова работает) */
+	
 .select-arrow {
   position: absolute;
-  
-  /* --- Ключевое исправление --- */
-  right: 1rem; /* Отступ от правого края */
-  top: 50%;
-  
+  right: 1rem;
+  top: 50%; 
   transform: translateY(-50%);
-  
-  width: 1rem; /* Явно задаем размер иконки */
+  width: 1rem;
   height: auto; 
-  
   pointer-events: none;
 }
-	
-/* Стили при фокусе на поле */
+
 .styled-select:focus {
-    /* Убираем стандартную обводку браузера */
     outline: none; 
-    /* Задаем нашу рамку золотистого цвета */
     border-color: #b59f5b;
-    box-shadow: 0 0 0 3px rgba(181, 159, 91, 0.3); /* Красивое свечение вокруг рамки */
+    box-shadow: 0 0 0 3px rgba(181, 159, 91, 0.3);
 }
 
 /* --- Радиокнопки (блок подписки) --- */
@@ -978,7 +905,6 @@ label {
     margin-top: 1rem;
 }
 
-/* Прячем стандартный input */
 .radio-button input[type="radio"] {
     position: absolute;
     opacity: 0;
@@ -987,10 +913,10 @@ label {
 }
 
 .radio-button label {
-    display: flex; /* Выравнивает иконку и текст в одну линию */
-    align-items: center; /* Централизация по вертикали */
-    cursor: pointer; /* Курсор руки */
-    user-select: none; /* Запрет выделения текста */
+    display: flex; 
+    align-items: center; 
+    cursor: pointer; 
+    user-select: none; 
     position: relative;
     padding-left: 20px;
 }	
@@ -1000,89 +926,78 @@ label {
 .radio-button label::before {
     content: "";
     background-image: url(../svg/form-empty-circle.svg); /* Пустая иконка по умолчанию */
-    background-size: contain; /* Масштабирует картинку, чтобы она целиком влезла в блок */
+    background-size: contain;
     background-repeat: no-repeat;
-    width: 16px; /* Задаем размер иконки */
+    width: 16px; 
     height: 16px;
-    position: absolute; /* Позиционируем относительно label */
+    position: absolute;
     left: 0;
     top: 50%;
-    transform: translateY(-50%); /* Центрируем по вертикали */
+    transform: translateY(-50%); 
 }
     
 
 .radio-button input[type="radio"]:checked + label::before {
-    background-image: url(../svg/form-circle.svg); /* Заполненная иконка */
+    background-image: url(../svg/form-circle.svg); 
     background-size: contain;
     background-repeat: no-repeat;
-    
     width: 16px;
     height: 16px
 }
 
 .radio-button:hover label {
-    background-color: #f5f5f5; /* Легкое выделение */
+    background-color: #f5f5f5; /*
 }
 
 .radio-button input[type="radio"]:checked + label {
-    background-color: #fafafa; /* Легкий фон для выбранного */
+    background-color: #fafafa; 
 }
 	
-/* --- 1. Общие стили для текстовой области --- */
 .textarea-field {
-    width: 100%; /* Занимает всю ширину контейнера */
-    padding: 1rem; /* Удобные внутренние отступы */
-    resize: vertical; /* Возможность растягивать только вертикально */
-    transition: border-color 0.2s ease; /* Плавный переход границы */
+    width: 100%; 
+    padding: 1rem; 
+    resize: vertical; 
+    transition: border-color 0.2s ease; 
     border: none;
     background-color: #f3f7f5;
 }
 
-/* --- 2. Стили для плейсхолдера (светло-серый текст) --- */
 .textarea-field::placeholder {
-    color: #aaa; /* Светло-серый цвет подсказки */
+    color: #aaa;
 }
 
-/* --- 3. Эффект при фокусе (голубая граница) --- */
 .textarea-field:focus {
   outline: none; 
 	border: 2px solid #b59f5b;
 }
 
-/* --- 4. Стили для лейбла (надписи) --- */
 .label-for-textarea {
-  display: block; /* Переносим на новую строку */
-  margin-bottom: 0.5rem; /* Небольшой отступ от текстового поля */
-  font-weight: bold; /* Жирный шрифт для читаемости */
+  display: block; 
+  margin-bottom: 0.5rem; 
+  font-weight: bold; 
 }
-
-/* --- 1. Основные стили кнопки --- */
 .submit-btn {
-    display: inline-block; /* Позволяет центрировать */
+    display: inline-block; 
 	  width: 100%;
-    padding: 0.8rem 1.5rem; /* Удобные отступы */
-    font-weight: bold; /* Жирный текст */
-    color: #fff; /* Белые буквы */
+    padding: 0.8rem 1.5rem;
+    font-weight: bold;
+    color: #fff; 
     background: #B59F5B;
-    border: none; /* Без рамки */
-    cursor: pointer; /* Курсор руки */
-    transition: all 0.2s ease; /* Плавные переходы */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Лёгкая тень */
+    border: none; 
+    cursor: pointer; 
+    transition: all 0.2s ease; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* --- 2. Эффект при наведении (немного увеличивается и меняет цвет) --- */
 .submit-btn:hover {
-    transform: scale(1.05); /* Немного увеличивает размер */
+    transform: scale(1.05); 
     background: #313131;
 }
 
-/* --- 3. Эффект при нажатии (выглядит "вдавленной") --- */
 .submit-btn:active {
-    transform: scale(0.95); /* Немного уменьшается */
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2); /* Внутренняя тень */
-}
+    transform: scale(0.95);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2); 
 
-/* --- 4. Центрирование кнопки (если нужно выровнять по центру) --- */
 .submit-btn-center {
     display: block;
     margin: 1rem auto;
