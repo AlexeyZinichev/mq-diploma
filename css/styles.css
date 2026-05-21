@@ -1087,3 +1087,162 @@ label {
     display: block;
     margin: 1rem auto;
 }
+
+/* === Медиа-запросы для адаптивности === */
+
+/* Планшетный ландшафтный режим (641px - 1200px) */
+@media screen and (min-width: 641px) and (max-width: 1200px) {
+  .content-wrapper {
+    gap: 60px;
+  }
+  
+  .sidebar {
+    max-width: 250px;
+  }
+  
+  /* Карточки трендов */
+  .trend-grid {
+    flex-wrap: wrap;
+  }
+  
+  @media screen and (orientation: portrait) {
+    .trend-grid {
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+    
+    .trend-article {
+      flex: 0 0 calc(50% - 10px);
+      margin-bottom: 20px;
+    }
+  }
+  
+  @media screen and (orientation: landscape) {
+    .trend-article {
+      flex: 0 0 calc(25% - 10px);
+      margin-bottom: 20px;
+    }
+  }
+}
+
+/* Мобильный режим (до 640px) */
+@media screen and (max-width: 640px) {
+  .container {
+    padding: 0 10px;
+  }
+  
+  .site-header {
+    padding: 10px;
+    min-height: 200px;
+  }
+  
+  .hero-heading {
+    font-size: 30px;
+    margin-bottom: 70px;
+  }
+  
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .logo img {
+    max-width: 150px;
+    margin-bottom: 10px;
+  }
+  
+  .main-navigation ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .content-wrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .main {
+    order: 1;
+  }
+  
+  .sidebar {
+    order: 2;
+    max-width: 100%;
+  }
+  
+  /* Карточки трендов */
+  .trend-grid {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  
+  @media screen and (orientation: portrait) {
+    .trend-article {
+      flex: 0 0 100%;
+      margin-bottom: 20px;
+    }
+  }
+  
+  @media screen and (orientation: landscape) {
+    .trend-article {
+      flex: 0 0 calc(50% - 10px);
+      margin-bottom: 20px;
+    }
+  }
+  
+  /* Главная статья */
+  .featured-article {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .article-thumbnail {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .article-info {
+    width: 100%;
+  }
+  
+  /* Новые посты */
+  .post-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .post-thumbnail {
+    margin-bottom: 10px;
+  }
+  
+  .post-info {
+    width: 100%;
+  }
+  
+  /* Продукты */
+  .product-grid {
+    flex-wrap: wrap;
+  }
+  
+  .product-card {
+    flex: 0 0 calc(50% - 20px);
+    margin-bottom: 20px;
+  }
+  
+  @media screen and (orientation: landscape) {
+    .product-card {
+      flex: 0 0 calc(33.33% - 20px);
+    }
+  }
+}
+
+/* Дополнительные мелкие оптимизации */
+input[type="email"],
+textarea {
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  border-radius: 4px;
+}
