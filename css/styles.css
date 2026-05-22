@@ -1093,7 +1093,7 @@ label {
 /* Планшетный ландшафтный режим (641px - 1200px) */
 @media screen and (min-width: 641px) and (max-width: 1200px) {
   .content-wrapper {
-    gap: 60px;
+    gap: 30px;
   }
 	
 	.main {
@@ -1125,6 +1125,21 @@ label {
     flex: 0 0 calc(50% - 20px); /* Ровно половина ширины */
     margin-bottom: 20px;
   }
+
+.featured-article {
+    flex-direction: column; /* Важное изменение! */
+    align-items: flex-start; /* Выравнивание по левому краю */
+  }
+  
+  .article-thumbnail {
+    width: 100%; /* Изображение займёт всю ширину */
+    margin-bottom: 20px; /* Отступ между изображением и текстом */
+  }
+  
+  .article-info {
+    width: 100%; /* Текст займёт всю ширину */
+  }
+}	
   
   @media screen and (orientation: portrait) {
     .trend-grid {
