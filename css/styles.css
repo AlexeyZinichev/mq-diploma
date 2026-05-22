@@ -1093,12 +1093,22 @@ label {
 /* Планшетный ландшафтный режим (641px - 1200px) */
 @media screen and (min-width: 641px) and (max-width: 1200px) {
   .content-wrapper {
-    gap: 60px;
+	flex-direction: column;  
+    gap: 30px;
+  }
+	
+  .main,
+  .sidebar {
+    max-width: 100%;
+  }
+
+	.main {
+    order: 1;
   }
   
   .sidebar {
-    max-width: 250px;
-  }
+    order: 2;
+  }	
   
   /* Карточки трендов */
   .trend-grid {
