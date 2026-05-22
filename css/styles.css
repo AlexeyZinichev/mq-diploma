@@ -282,12 +282,13 @@ a:hover {
   display: flex;
   gap: 28px;
   margin-bottom: 53px; /* Расстояние между карточками */
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 /* === Миниатюра статьи (.article-thumbnail) === */
 .article-thumbnail {
-  width: 380px; /* Ширина картинки */
+ width: 100%;
+  max-width: 380px;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -1096,13 +1097,12 @@ label {
   }
 	
 	.main {
-    flex: 2;
+    flex: 0 0 70%;
   }
   
   .sidebar {
-    flex: 1;
-	max-width: 300px;  
-  }	
+    flex: 0 0 30%;
+  }
   
   /* Карточки трендов */
   .trend-grid {
