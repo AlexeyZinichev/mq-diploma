@@ -1093,6 +1093,7 @@ label {
 /* Планшетный ландшафтный режим (641px - 1200px) */
 @media screen and (min-width: 641px) and (max-width: 1200px) {
   .content-wrapper {
+	flex-direction: row;  
     gap: 30px;
   }
 	
