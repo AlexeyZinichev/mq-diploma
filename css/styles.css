@@ -9,7 +9,6 @@
 
 /* === Подключение шрифтов Open Sans === */
 
-/* Регулярный шрифт (Regular) */
 @font-face {
   font-family: 'Open Sans';
   src: url(..fonts/fonts/OpenSans-Regular.woff2),
@@ -18,7 +17,6 @@
   font-style: normal; /* Нормальный стиль */
 }
 
-/* Жирный шрифт (Bold) */
 @font-face {
   font-family: "Open Sans";
   src: url(..fonts/fonts/OpenSans-Bold.woff2),
