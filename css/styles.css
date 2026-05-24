@@ -1,4 +1,4 @@
-/* === Общие настройки === */
+ /* === Общие настройки === */
 *,
 *::before,
 *::after {
@@ -9,6 +9,7 @@
 
 /* === Подключение шрифтов Open Sans === */
 
+/* Регулярный шрифт (Regular) */
 @font-face {
   font-family: 'Open Sans';
   src: url(..fonts/fonts/OpenSans-Regular.woff2),
@@ -17,6 +18,7 @@
   font-style: normal; /* Нормальный стиль */
 }
 
+/* Жирный шрифт (Bold) */
 @font-face {
   font-family: "Open Sans";
   src: url(..fonts/fonts/OpenSans-Bold.woff2),
@@ -110,6 +112,13 @@ a:hover {
   height: auto; /* Сохраняет пропорции */
   max-width: 200px; /* Ограничиваем максимальную ширину */
 }
+
+.main-navigation {
+  z-index: 2;
+  position: relative;
+  overflow: visible;
+}
+
 /* Навигационное меню */
 .main-navigation ul {
   list-style: none; /* Убираем маркеры списка */
@@ -124,18 +133,57 @@ a:hover {
   transition: color 0.3s; /* Плавный переход */
 }
 
+/* Прячем сам флажок */
+#nav-checkbox {
+    display: none;
+}
+
+.burger-button {
+    display: inline-flex; 
+    justify-content: center; 
+    align-items: center; 
+    width: 35px; 
+    height: 24px; 
+    padding: 0; 
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+/* Рисуем три полоски с помощью псевдоэлементов */
+.burger-button::before,
+.burger-button::after,
+.burger-button .burger-icon {
+    content: '';
+    display: block; 
+    width: 25px; 
+    height: 3px; 
+    background-color: white; 
+    margin: 0 2px; 
+}
+
+/* Верхняя полоска */
+.burger-button::before {
+    margin-bottom: 6px; 
+}
+
+/* Нижняя полоска */
+.burger-button::after {
+    margin-top: 6px; 
+}
+
 .main-navigation a:hover {
-  text-decoration: underline; /* Добавляем подчеркивание */
+  text-decoration: underline; 
 }
 
 /* Главный заголовок */
 .hero-heading {
-  position: relative; /* Над полупрозрачным слоем */
-  z-index: 2; /* Над полупрозрачным слоем */
-  text-align: center; /* Центрируем текст */
-  font-size: 45px; /* Размер шрифта */
-  font-weight: bold; /* Жирный шрифт */
-  text-transform: uppercase; /* Заглавные буквы */
+  position: relative; 
+  z-index: 2; 
+  text-align: center; 
+  font-size: 44px; 
+  font-weight: bold; 
+  text-transform: uppercase; 
   margin-bottom: 142px;
 }
 
@@ -282,13 +330,12 @@ a:hover {
   display: flex;
   gap: 28px;
   margin-bottom: 53px; /* Расстояние между карточками */
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 
 /* === Миниатюра статьи (.article-thumbnail) === */
 .article-thumbnail {
- width: 100%;
-  max-width: 380px;
+  width: 380px; /* Ширина картинки */
   height: auto;
   display: flex;
   flex-direction: column;
@@ -503,7 +550,7 @@ a:hover {
   width: 48px;
   height: 48px;
   border: none;
-  background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/search.svg);
+  background-image: url(../svg/search.svg);
   background-size: 20px;
   background-color: #b59f5b;
   background-position: center;
@@ -802,15 +849,15 @@ a:hover {
 }
 
 .social-icon-dribbble {
-  background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/social/001-dribbble.svg);
+  background-image: url(../svg/001-dribbble.svg);
 }
 
 .social-icon-pinterest {
-   background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/social/002-pinterest.svg);
+   background-image: url(../svg/001-pinterest.svg);
 }
 
 .social-icon-tumblr {
-   background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/social/003-tumblr.svg);
+   background-image: url(../svg/003-tumblr.svg);
 }
 
 /* Раздел с копирайтом */
@@ -1087,6 +1134,8 @@ label {
     margin: 1rem auto;
 }
 
+/* === Медиа-запросы для адаптивности === */
+
 /* Планшетный режим (641px - 1200px) */
 @media screen and (min-width: 641px) and (max-width: 1200px) {
   .content-wrapper {
@@ -1101,7 +1150,64 @@ label {
   .sidebar {
     flex: 0 0 30%; /* Боковая панель занимает 30% */
   }
-  
+
+     /* --- 1. Прячем десктопное меню и показываем бургер --- */
+    .main-navigation ul {
+        display: none; /* Прячем меню по умолчанию */
+    }
+    
+    .burger-button {
+        display: block; /* Показываем кнопку бургера */
+        color: white; /* Делаем полоски видимыми */
+    }
+
+    /* --- 2. Стили для выпадающего списка (РАБОЧИЙ ВАРИАНТ) --- */
+    #nav-checkbox:checked + label ~ .menu-wrapper ul {
+        display: block;
+        position: absolute; 
+        top: calc(100% + 15px); 
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 15px 0;
+        z-index: 50;
+        width: 240px; /* Фиксированная ширина */
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        a {
+            display: block;
+            padding: 8px 20px;
+            color: white;
+            text-decoration: none;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: center; /* Ссылки по центру в блоке меню */
+            width: 100%;
+        }
+    }
+
+    .main-navigation {
+        position: relative;
+        z-index: 5; 
+        overflow: visible; 
+    }
+
+    .main-navigation {
+        position: relative;
+        z-index: 5; 
+        overflow: visible; /* Важно, чтобы меню не обрезалось */
+    }
+
+    .header-content {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        width: 100%;
+    }
+    
   /* Карточки трендов */
   .trend-grid {
     flex-wrap: wrap;
@@ -1140,8 +1246,10 @@ label {
   }
 }
 
+
 /* Планшет в альбомной ориентации (641px - 1200px) */
 @media screen and (min-width: 641px) and (max-width: 1200px) and (orientation: landscape) {
+
   /* Карточки трендов */
   .trend-article {
     flex: 0 0 calc(33.33% - 20px); /* Три карточки в ряд */
@@ -1165,27 +1273,19 @@ label {
     padding: 10px;
     min-height: 200px;
   }
-  
+
   .hero-heading {
     font-size: 30px;
     margin-bottom: 70px;
   }
   
-  .header-content {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+  
   
   .logo img {
     max-width: 150px;
     margin-bottom: 10px;
   }
-  
-  .main-navigation ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-  
+
   .content-wrapper {
     flex-direction: column;
     gap: 30px;
@@ -1245,7 +1345,7 @@ label {
     flex: 0 0 calc(50% - 20px); /* Две карточки в ряд */
     margin-bottom: 20px;
   }
-}
+
 
 /* Телефон в портретной ориентации (до 640px) */
 @media screen and (max-width: 640px) and (orientation: portrait) {
@@ -1275,4 +1375,15 @@ label {
     flex: 0 0 calc(50% - 20px); /* Два продукта в ряд */
     margin-bottom: 20px;
   }
+}
+}
+
+@media screen and (min-width: 1201px) {
+    .main-navigation ul {
+        display: flex; /* Убедимся, что меню видно на десктопе */
+    }
+
+    .burger-button {
+        display: none; /* Прячем кнопку на десктопе */
+    }
 }
