@@ -1151,56 +1151,7 @@ label {
     flex: 0 0 30%; /* Боковая панель занимает 30% */
   }
 
-     /* --- 1. Прячем десктопное меню и показываем бургер --- */
-    .main-navigation ul {
-        display: none; /* Прячем меню по умолчанию */
-    }
-    
-    .burger-button {
-        display: block; /* Показываем кнопку бургера */
-        color: white; /* Делаем полоски видимыми */
-    }
-
-    /* --- 2. Стили для выпадающего списка (РАБОЧИЙ ВАРИАНТ) --- */
-    #nav-checkbox:checked + label ~ .menu-wrapper ul {
-        display: block;
-        position: absolute; 
-        top: calc(100% + 15px); 
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 15px 0;
-        z-index: 50;
-        width: 240px; /* Фиксированная ширина */
-        
-        li {
-            margin-bottom: 8px;
-        }
-        
-        a {
-            display: block;
-            padding: 8px 20px;
-            color: white;
-            text-decoration: none;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            text-align: center; /* Ссылки по центру в блоке меню */
-            width: 100%;
-        }
-    }
-
-    .main-navigation {
-        position: relative;
-        z-index: 5; 
-        overflow: visible; 
-    }
-
-    .header-content {
-        position: sticky;
-        top: 0;
-        z-index: 10;
-        width: 100%;
-    }
+     
     
   /* Карточки трендов */
   .trend-grid {
