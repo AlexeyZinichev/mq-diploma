@@ -1341,7 +1341,7 @@ label {
     }
 
     /* --- 2. Стили для выпадающего списка --- */
-    #nav-checkbox:checked + label ~ ul {
+    #nav-checkbox:checked + label ~ .main-navigation > ul {
         display: block;
         position: absolute; 
         top: calc(100% + 15px); 
