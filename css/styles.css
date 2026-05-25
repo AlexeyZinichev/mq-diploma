@@ -1372,12 +1372,4 @@ label {
 }
 }
 
-@media screen and (min-width: 1201px) {
-    .main-navigation ul {
-        display: flex; /* Убедимся, что меню видно на десктопе */
-    }
 
-    .burger-button {
-        display: none; /* Прячем кнопку на десктопе */
-    }
-}
