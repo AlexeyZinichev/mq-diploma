@@ -172,6 +172,10 @@ a:hover {
     margin-top: 6px; 
 }
 
+.burger-button {
+    display: none; /* Кнопки нет на экране */
+}
+
 .main-navigation a:hover {
   text-decoration: underline; 
 }
