@@ -1340,6 +1340,23 @@ label {
         color: white; /* Делаем полоски видимыми */
     }
 
+	 .main-navigation ul a {
+        display: block;
+        padding: 8px 20px;
+        color: white;
+        text-decoration: none;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Стили для пунктов списка */
+    .main-navigation ul li {
+        margin-bottom: 8px;
+    }
+
     /* --- 2. Стили для выпадающего списка --- */
     #nav-checkbox:checked + label ~ .main-navigation > ul {
         display: block;
@@ -1350,22 +1367,6 @@ label {
         padding: 15px 0;
         z-index: 50;
         width: 240px; /* Фиксированная ширина */
-        
-        li {
-            margin-bottom: 8px;
-        }
-        
-        a {
-            display: block;
-            padding: 8px 20px;
-            color: white;
-            text-decoration: none;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            text-align: center;
-            width: 100%;
-        }
     }
 
     .main-navigation {
