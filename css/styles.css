@@ -66,7 +66,7 @@ a:hover {
 
 /* === Общий контейнер (.container) === */
 .container {
-  max-width: 1220px;
+  max-width: 1200px;
   margin: 0 auto; /* Централизация */
   padding: 0 20px; /* Боковые отступы */
 }
