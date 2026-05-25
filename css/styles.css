@@ -125,6 +125,7 @@ a:hover {
   padding-left: 0; /* Убираем отступ слева */
   display: flex; /* Гибкая сетка */
   gap: 20px; /* Расстояние между пунктами */
+  align-items: center;	
 }
 
 .main-navigation a {
