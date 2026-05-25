@@ -1328,4 +1328,57 @@ label {
 }
 }
 
+/* === МЕДИА-ЗАПРОС ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ (до 1199px) === */
+@media screen and (max-width: 1199px) {
 
+    /* --- 1. Прячем десктопное меню и показываем бургер --- */
+    .main-navigation ul {
+        display: none; /* Прячем меню */
+    }
+    
+    .burger-button {
+        display: block; /* Показываем кнопку бургера */
+        color: white; /* Делаем полоски видимыми */
+    }
+
+    /* --- 2. Стили для выпадающего списка --- */
+    #nav-checkbox:checked + label ~ .menu-wrapper ul {
+        display: block;
+        position: absolute; 
+        top: calc(100% + 15px); 
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 15px 0;
+        z-index: 50;
+        width: 240px; /* Фиксированная ширина */
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        a {
+            display: block;
+            padding: 8px 20px;
+            color: white;
+            text-decoration: none;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: center;
+            width: 100%;
+        }
+    }
+
+    .main-navigation {
+        position: relative;
+        z-index: 5; 
+        overflow: visible; 
+    }
+
+    .header-content {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        width: 100%;
+    }
+}
