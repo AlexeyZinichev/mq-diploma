@@ -6,24 +6,21 @@
   padding: 0;
 }
 
-/* === Подключение шрифтов Open Sans === */
-
-/* Регулярный шрифт (Regular) */
+/* Подключаем шрифт Open Sans */
 @font-face {
-  font-family: 'Open Sans';
-  src: url(..fonts/fonts/OpenSans-Regular.woff2),
-       url(..fonts/fonts/OpenSans-Regular.woff);
-  font-weight: normal; /* Обычный вес */
-  font-style: normal; /* Нормальный стиль */
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans-Regular.woff2') format('woff2'),
+         url('../fonts/OpenSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
-/* Жирный шрифт (Bold) */
 @font-face {
-  font-family: "Open Sans";
-  src: url(..fonts/fonts/OpenSans-Bold.woff2),
-       url(..fonts/fonts/OpenSans-Bold.woff);
-  font-weight: 700; /* Жирный вес */
-  font-style: normal; /* Нормальный стиль */
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans-Bold.woff2') format('woff2'),
+         url('../fonts/OpenSans-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
 }
 
 .app {
