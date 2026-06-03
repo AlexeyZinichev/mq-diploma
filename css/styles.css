@@ -71,7 +71,6 @@ a:hover {
 .site-header {
   position: relative; /* Локальная система координат */
   padding: 20px;
-  min-height: 300px; /* Минимальная высота шапки */
   color: white; /* Белый текст для контраста */
   margin-bottom: 65px;
   background-image: url(../images/img/banner-bg.jpg);
@@ -102,11 +101,11 @@ a:hover {
   margin-bottom: 129px; /* Небольшой отступ снизу */
 }
 
-.logo img {
-  display: block; /* Устраняет лишние отступы */
-  width: 100%; /* Максимально широкая картинка */
-  height: auto; /* Сохраняет пропорции */
-  max-width: 200px; /* Ограничиваем максимальную ширину */
+.logo a img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 200px;
 }
 
 .main-navigation {
