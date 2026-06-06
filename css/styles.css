@@ -68,22 +68,23 @@
   padding: 20px;
   color: white; /* Белый текст для контраста */
   margin-bottom: 65px;
-  background-image: url(../images/img/banner-bg.jpg);
-  background-position: center; /* Центрируем фон */
-  background-repeat: no-repeat; /* Не повторяем фон */
 }
 
-.site-header::before {
-  content: ""; /* Пустой контент */
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Тёмный цвет с прозрачностью 50% */
-  z-index: 1; /* Поверх фона */
+.full-width-banner {
+  position: relative;
+  width: 100vw; /* Весь экран */
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
 }
 
+.header-bg {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
 
 /* Логотип и навигация (внутри шапки) */
 .header-content {
