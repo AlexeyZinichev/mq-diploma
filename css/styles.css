@@ -68,7 +68,6 @@
   color: white; /* Белый текст для контраста */
   margin-bottom: 65px;
   background-image: url(../images/img/banner-bg.jpg);
-  background-size: contain; /* Масштабируем фон на всю область */
   background-position: center; /* Центрируем фон */
   background-repeat: no-repeat; /* Не повторяем фон */
 }
