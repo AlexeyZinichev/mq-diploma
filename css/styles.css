@@ -62,13 +62,7 @@
   padding: 0 20px; /* Боковые отступы */
 }
 
-/* Шапка с фоновым рисунком */
-.site-header {
-  position: relative; /* Локальная система координат */
-  padding: 20px;
-  color: white; /* Белый текст для контраста */
-  margin-bottom: 65px;
-}
+
 
 .full-width-banner {
   position: relative;
