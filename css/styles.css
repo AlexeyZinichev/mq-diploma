@@ -65,7 +65,7 @@
 .site-header {
 	display: flex;
 	flex-direction: column;
-	color: white;
+	
 	padding-top: 60px;
 	background: 
 		linear-gradient(rgba(0, 0, 0, 0.5),
@@ -160,7 +160,8 @@
 .hero-heading {
   text-align: center; 
   font-size: 44px; 
-  font-weight: bold; 
+  font-weight: bold;
+	color: white;
   text-transform: uppercase; 
   margin-bottom: 142px;
 }
