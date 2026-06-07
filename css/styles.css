@@ -108,6 +108,21 @@
   transition: color 0.3s; /* Плавный переход */
 }
 
+.main-navigation a:hover {
+  text-decoration: underline; 
+}
+
+/* Главный заголовок */
+.hero-heading {
+  text-align: center; 
+  font-size: 44px; 
+  font-weight: bold;
+	color: white;
+  text-transform: uppercase; 
+  margin-bottom: 142px;
+}
+
+
 /* Прячем сам флажок */
 #nav-checkbox {
     display: none;
@@ -149,20 +164,6 @@
 
 .burger-button {
     display: none; /* Кнопки нет на экране */
-}
-
-.main-navigation a:hover {
-  text-decoration: underline; 
-}
-
-/* Главный заголовок */
-.hero-heading {
-  text-align: center; 
-  font-size: 44px; 
-  font-weight: bold;
-	color: white;
-  text-transform: uppercase; 
-  margin-bottom: 142px;
 }
 
 .trends-section {
