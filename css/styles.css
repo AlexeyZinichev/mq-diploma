@@ -81,11 +81,10 @@
   margin-bottom: 129px; /* Небольшой отступ снизу */
 }
 
-.logo a img {
+.container img {
     display: block;
     width: 100%;
     height: auto;
-    max-width: 200px;
 }
 
 .main-navigation {
