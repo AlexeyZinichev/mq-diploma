@@ -1,3 +1,4 @@
+ /* === Общие настройки === */
 *,
 *::before,
 *::after {
@@ -6,21 +7,24 @@
   padding: 0;
 }
 
-/* Подключаем шрифт Open Sans */
+/* === Подключение шрифтов Open Sans === */
+
+/* Регулярный шрифт (Regular) */
 @font-face {
-    font-family: 'Open Sans';
-    src: url('../fonts/OpenSans-Regular.woff2') format('woff2'),
-         url('../fonts/OpenSans-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'Open Sans';
+  src: url(..fonts/fonts/OpenSans-Regular.woff2),
+       url(..fonts/fonts/OpenSans-Regular.woff);
+  font-weight: normal; /* Обычный вес */
+  font-style: normal; /* Нормальный стиль */
 }
 
+/* Жирный шрифт (Bold) */
 @font-face {
-    font-family: 'Open Sans';
-    src: url('../fonts/OpenSans-Bold.woff2') format('woff2'),
-         url('../fonts/OpenSans-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
+  font-family: "Open Sans";
+  src: url(..fonts/fonts/OpenSans-Bold.woff2),
+       url(..fonts/fonts/OpenSans-Bold.woff);
+  font-weight: 700; /* Жирный вес */
+  font-style: normal; /* Нормальный стиль */
 }
 
 .app {
@@ -29,18 +33,23 @@
   color: #333;
   background-color: #fff;
   margin: 0 auto;
-  padding-bottom: 60px;	
 }
 
-/* Общие стили для всех ссылок */
-.link,
-.trend-categories-item,
-.category-link,
-.social-icon {
-    color: inherit; /* наследуем цвет родителя */
-    text-decoration: none; /* убираем подчёркивание */
-    text-transform: uppercase; /* заглавные буквы */
-    transition: color 0.3s ease; /* плавный переход цвета */
+a {
+  color: inherit;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+a:focus,
+a:hover {
+  text-decoration: none;
+}
+
+ img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 /* === Класс для скрытия текста (доступность) === */
@@ -57,34 +66,51 @@
 
 /* === Общий контейнер (.container) === */
 .container {
-  max-width: 1200px;
+  max-width: 1220px;
   margin: 0 auto; /* Централизация */
   padding: 0 20px; /* Боковые отступы */
 }
 
+/* Шапка с фоновым рисунком */
 .site-header {
-	display: flex;
-	flex-direction: column;
-	
-	padding-top: 60px;
-	background: 
-		linear-gradient(rgba(0, 0, 0, 0.2),
-		rgba(0, 0, 0, 0.2)),
-		url('../images/img/banner-bg.jpg');
+  position: relative; /* Локальная система координат */
+  padding: 20px;
+  min-height: 300px; /* Минимальная высота шапки */
+  color: white; /* Белый текст для контраста */
+  margin-bottom: 65px;
+  background-image: url(../images/img/banner-bg.jpg);
+  background-size: cover; /* Масштабируем фон на всю область */
+  background-position: center; /* Центрируем фон */
+  background-repeat: no-repeat; /* Не повторяем фон */
 }
+
+.site-header::before {
+  content: ""; /* Пустой контент */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Тёмный цвет с прозрачностью 50% */
+  z-index: 1; /* Поверх фона */
+}
+
 
 /* Логотип и навигация (внутри шапки) */
 .header-content {
+  position: relative; /* Над полупрозрачным слоем */
+  z-index: 2; /* Над полупрозрачным слоем */
   display: flex; /* Гибкая сетка */
   justify-content: space-between; /* Распределение по краям */
   align-items: center; /* Выравнивание по вертикали */
   margin-bottom: 129px; /* Небольшой отступ снизу */
 }
 
-.container img {
-    display: block;
-    width: 100%;
-    height: auto;
+.logo img {
+  display: block; /* Устраняет лишние отступы */
+  width: 100%; /* Максимально широкая картинка */
+  height: auto; /* Сохраняет пропорции */
+  max-width: 200px; /* Ограничиваем максимальную ширину */
 }
 
 .main-navigation {
@@ -99,7 +125,6 @@
   padding-left: 0; /* Убираем отступ слева */
   display: flex; /* Гибкая сетка */
   gap: 20px; /* Расстояние между пунктами */
-  align-items: center;	
 }
 
 .main-navigation a {
@@ -107,21 +132,6 @@
   text-decoration: none; /* Без подчеркивания */
   transition: color 0.3s; /* Плавный переход */
 }
-
-.main-navigation a:hover {
-  text-decoration: underline; 
-}
-
-/* Главный заголовок */
-.hero-heading {
-  text-align: center; 
-  font-size: 44px; 
-  font-weight: bold;
-	color: white;
-  text-transform: uppercase; 
-  margin-bottom: 142px;
-}
-
 
 /* Прячем сам флажок */
 #nav-checkbox {
@@ -162,8 +172,19 @@
     margin-top: 6px; 
 }
 
-.burger-button {
-    display: none; /* Кнопки нет на экране */
+.main-navigation a:hover {
+  text-decoration: underline; 
+}
+
+/* Главный заголовок */
+.hero-heading {
+  position: relative; 
+  z-index: 2; 
+  text-align: center; 
+  font-size: 44px; 
+  font-weight: bold; 
+  text-transform: uppercase; 
+  margin-bottom: 142px;
 }
 
 .trends-section {
@@ -182,12 +203,23 @@
 
 .trend-title::after {
     content: "";
-    display: inline-block;
-    width: 80px;
-    height: 4px;
-    background-color: #b59f5b;
-    margin: 0 auto;
-    margin-top: 10px;
+    display: block;
+    
+    /* Ширина и высота линии */
+    width: 80px; /* Немного длиннее, чтобы было заметнее */
+    height: 4px; /* Чуть толще */
+
+    /* Позиционирование */
+    position: absolute;
+    bottom: -10px; /* Чуть больше отступа от текста */
+    left: 50%;
+    
+    /* Центровка линии по горизонтали */
+    transform: translateX(-50%);
+
+    /* Стили линии */
+    background-color: #b59f5b; /* Золотой цвет, как в вашем примере */
+    border-radius: 2px; /* Небольшое скругление концов линии (опционально) */
 }
 
 .trend-grid {
@@ -199,10 +231,12 @@
 }
 
 .trend-article {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: stretch;
+  flex: 1 1 auto;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  min-height: 320px;
 }
 
 .trend-article::before {
@@ -234,16 +268,19 @@
 }
 
 .trend-info {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  right: 15px;
   padding: 20px;
   border: 2px solid #b59f5b;
+  overflow: hidden;
   z-index: 2;
 }
 
 .trend-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
+  position: relative;
+  height: 100%;
 }
 
 .trends-categories {
@@ -279,14 +316,13 @@
 
 /* === Основная часть страницы (.main-content) === */
 .main {
-  flex: 3; /* Занимает больше места */
+  flex: 2; /* Занимает больше места */
   align-self: flex-start; /* Прижимаем к верхнему краю */
 }
 
 .sidebar {
   flex: 1; /* Занимает меньше места */
   align-self: flex-start; /* Прижимаем к верхнему краю */
-  max-width: 300px;
 }
 
 /* === Основная статья (.featured-article) === */
@@ -311,7 +347,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start; /* Привязка к верхнему краю */
-  flex-grow: 1;	
+  width: calc(100% - 380px); /* Оставшееся пространство */
 }
 
 /* === Категории статьи (.article-categories) === */
@@ -350,7 +386,7 @@
 /* === Описание статьи (.article-description) === */
 .article-description>p {
   font-size: 15px;
-  line-height: 1.5px;
+  line-height: 22px;
   margin: 0;
 }
 
@@ -608,9 +644,11 @@
 
 /* Оформление ссылок */
 .topic-list a {
-  display: inline-block; 
+  display: inline-block; /* Нужен для псевдоэлемента */
+  color: inherit; /* Наследуем цвет */
   font-size: 14px;
   font-weight: bold;
+  transition: color 0.3s ease-in-out; /* Плавный переход цвета */
   position: relative;
   padding-bottom: 12px; /* Расстояние от текста до линии */
 }
@@ -629,14 +667,28 @@
   margin-bottom: 30px;
 }
 
+/* Подчёркивание через псевдоэлемент ::after */
+.topic-list li::after {
+  content: ""; /* Пустой контент */
+  position: absolute;
+  bottom: 0; /* Прикрепляем к низу ссылки */
+  left: 0;
+  right: 0; /* Заполняет всю ширину ссылки */
+  height: 1px; /* Толщина подчёркивания */
+  background-color: #ddd; /* Цвет подчёркивания совпадает с текстом */
+  transition: opacity 0.3s ease-in-out; /* Плавный переход */
+  pointer-events: none; /* Игнорируем события мыши */
+  z-index: -1; /* Ниже основного текста */
+}
+
 /* Эффект при наведении (цвет и подчёркивание) */
 .topic-list a:hover {
   color: #b59f5b; /* Золотистый цвет */
 }
 
 /* Убираем линию у последней ссылки */
-.topic-list li:last-child a {
-  display: none;
+.topic-list li:last-child::after {
+  display: none; /* Убираем линию */
 }
 
 .product-section {
@@ -688,12 +740,13 @@
 }
 
 .product-card {
-  width: calc(100% / 3 - 20px);
+  max-width: 350px;
+  height: auto;
   overflow: hidden;
   position: relative;
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
+  margin-bottom: 65px;
 }
 
 .img-wrp {
@@ -724,13 +777,6 @@
   border: 2px solid #b59f5b;
   padding: 55px 25px 25px;
   margin-top: -30px;
-  z-index: 1;
-  position: relative;
-}
-
-.product-image {
-    position: relative;
-    z-index: 0; /* опускаем фото под рамку */
 }
 
 .product-discription a {
@@ -814,14 +860,7 @@
    background-image: url(../svg/003-tumblr.svg);
 }
 
-.social-icon-twitter {
-   background-image: url(../svg/004-twitter.svg);
-}
 /* Раздел с копирайтом */
-.site-footer {
-	padding-bottom: 30px; /* минимальный отступ */
-}
-
 .copyright {
   text-align: center; /* Централизация текста */
   margin-top: 70px;
@@ -1112,7 +1151,62 @@ label {
     flex: 0 0 30%; /* Боковая панель занимает 30% */
   }
 
-     
+     /* --- 1. Прячем десктопное меню и показываем бургер --- */
+    .main-navigation ul {
+        display: none; /* Прячем меню по умолчанию */
+    }
+    
+    .burger-button {
+        display: block; /* Показываем кнопку бургера */
+        color: white; /* Делаем полоски видимыми */
+    }
+
+    /* --- 2. Стили для выпадающего списка (РАБОЧИЙ ВАРИАНТ) --- */
+    #nav-checkbox:checked + label ~ .menu-wrapper ul {
+        display: block;
+        position: absolute; 
+        top: calc(100% + 15px); 
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 15px 0;
+        z-index: 50;
+        width: 240px; /* Фиксированная ширина */
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        a {
+            display: block;
+            padding: 8px 20px;
+            color: white;
+            text-decoration: none;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: center; /* Ссылки по центру в блоке меню */
+            width: 100%;
+        }
+    }
+
+    .main-navigation {
+        position: relative;
+        z-index: 5; 
+        overflow: visible; 
+    }
+
+    .main-navigation {
+        position: relative;
+        z-index: 5; 
+        overflow: visible; /* Важно, чтобы меню не обрезалось */
+    }
+
+    .header-content {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        width: 100%;
+    }
     
   /* Карточки трендов */
   .trend-grid {
@@ -1158,7 +1252,7 @@ label {
 
   /* Карточки трендов */
   .trend-article {
-    flex: 0 0 calc(25% - 20px); /* Три карточки в ряд */
+    flex: 0 0 calc(33.33% - 20px); /* Три карточки в ряд */
     margin-bottom: 20px;
   }
   
@@ -1184,7 +1278,9 @@ label {
     font-size: 30px;
     margin-bottom: 70px;
   }
-    
+  
+  
+  
   .logo img {
     max-width: 150px;
     margin-bottom: 10px;
@@ -1282,58 +1378,12 @@ label {
 }
 }
 
-/* === МЕДИА-ЗАПРОС ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ (до 1199px) === */
-@media screen and (max-width: 1199px) {
-
-    /* --- 1. Прячем десктопное меню и показываем бургер --- */
+@media screen and (min-width: 1201px) {
     .main-navigation ul {
-        display: none; /* Прячем меню */
+        display: flex; /* Убедимся, что меню видно на десктопе */
     }
-    
+
     .burger-button {
-        display: block; /* Показываем кнопку бургера */
-        color: white; /* Делаем полоски видимыми */
-    }
-
-	 .main-navigation ul a {
-        display: block;
-        padding: 8px 20px;
-        color: white;
-        text-decoration: none;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        text-align: center;
-        width: 100%;
-    }
-
-    /* Стили для пунктов списка */
-    .main-navigation ul li {
-        margin-bottom: 8px;
-    }
-
-    /* --- 2. Стили для выпадающего списка --- */
-    #nav-checkbox:checked + label + ul {
-        display: block;
-        position: absolute; 
-        top: calc(100% + 15px); 
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 15px 0;
-        z-index: 50;
-        width: 240px;
-    }
-
-    .main-navigation {
-        position: relative;
-        z-index: 5; 
-        overflow: visible; 
-    }
-
-    .header-content {
-        position: sticky;
-        top: 0;
-        z-index: 10;
-        width: 100%;
+        display: none; /* Прячем кнопку на десктопе */
     }
 }
