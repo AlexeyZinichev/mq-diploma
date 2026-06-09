@@ -205,6 +205,13 @@ a:hover {
   position: relative; 
 }
 
+.trend-image {
+    flex: 1; /* Картинка занимает все свободное место по ширине */
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 .trend-title::after,
 .product-title::after {
     content: "";
