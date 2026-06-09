@@ -418,7 +418,8 @@ a:hover {
   margin-bottom: 44px; /* Отступ до следующей ссылки */
 }
 
-.widget-title::after {
+.widget-title::after,
+.product-title::after {
   content: ""; /* Пустой контент */
   display: block; /* Блочный элемент */
   width: 80px;
@@ -693,29 +694,7 @@ a:hover {
 	font-size: 20px;
 	text-align: center;
   position: relative; 
-  text-align: center; /* Убедитесь, что текст по центру */
   margin-bottom: 40px;
-}
-
-.product-title::after {
-    content: "";
-    display: block;
-    
-    /* Ширина и высота линии */
-    width: 80px; /* Немного длиннее, чтобы было заметнее */
-    height: 4px; /* Чуть толще */
-
-    /* Позиционирование */
-    position: absolute;
-    bottom: -10px; /* Чуть больше отступа от текста */
-    left: 50%;
-    
-    /* Центровка линии по горизонтали */
-    transform: translateX(-50%);
-
-    /* Стили линии */
-    background-color: #b59f5b; /* Золотой цвет, как в вашем примере */
-    border-radius: 2px; /* Небольшое скругление концов линии (опционально) */
 }
 
 .product-grid {
