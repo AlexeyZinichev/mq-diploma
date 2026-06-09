@@ -228,12 +228,9 @@ a:hover {
 }
 
 .trend-article {
-  flex: 1 1 auto;
-  position: relative;
+  display: flex;
   overflow: hidden;
-  background-size: cover;
-  background-position: center;
-  min-height: 320px;
+  position: relative;
 }
 
 .trend-article::before {
@@ -247,37 +244,13 @@ a:hover {
   z-index: 1;
 }
 
-
-.trend-first {
-  background-image: url(../images/img/trend1.jpg);
-}
-
-.trend-second {
-  background-image: url(../images/img/trend2.jpg);
-}
-
-.trend-third {
-  background-image: url(../images/img/trend3.jpg);
-}
-
-.trend-fourth {
-  background-image: url(../images/img/trend4.jpg);
-}
-
 .trend-info {
-  position: absolute;
-  left: 20px;
-  bottom: 20px;
-  right: 15px;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border: 2px solid #b59f5b;
-  overflow: hidden;
-  z-index: 2;
-}
-
-.trend-content {
-  position: relative;
-  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .trends-categories {
