@@ -180,15 +180,6 @@ a:hover {
   margin-bottom: 142px;
 }
 
-.trends-section,
-.widget new-posts-widget,
-.widget subscribe-widget,
-.widget tags-cloud,
-.widget topics-widget {
-  flex-direction: column;
-  justify-content: center;	
-	width: 100%;
-}
 
 .trend-title {
 	font-weight: bold;
