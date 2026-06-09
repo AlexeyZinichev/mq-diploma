@@ -190,6 +190,7 @@ a:hover {
 .trends-section {
   display: flex;
   flex-direction: column;
+  justify-content: center;	
 	width: 100%;
 }
 
@@ -198,7 +199,6 @@ a:hover {
 	font-size: 24px;
 	text-align: center;
   position: relative; 
-  text-align: center; /* Убедитесь, что текст по центру */
 }
 
 .trend-title::after {
