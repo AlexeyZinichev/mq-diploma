@@ -218,8 +218,6 @@ a:hover {
 /* Стили для каждой отдельной карточки */
 .trend-article {
     width: calc(25% - 15px);
-    max-width: 350px;
-    
     position: relative; /* Контекст для z-index */
     display: flex;
     flex-direction: column;
