@@ -182,24 +182,24 @@ a:hover {
 
 
 .trend-title {
-	font-weight: bold;
-	font-size: 24px;
-	text-align: center;
-  position: relative; 
+   font-weight: bold;
+   font-size: 24px;
+   text-align: center;
+   position: relative; 
 }
 
 .trend-image {
-    flex: 1; /* Картинка занимает все свободное место по ширине */
     width: 100%;
-    height: auto;
+    height: 100%;
+	object-fit: cover;
     display: block;
+	z-index: 2;
 }
 
 .trend-title::after,
 .product-title::after {
     content: "";
-    display: block;
-    
+    display: block;  
     /* Ширина и высота линии */
     width: 80px; 
     height: 4px; 
@@ -210,37 +210,34 @@ a:hover {
 }
 
 .trend-grid {
-	display: flex;
-	flex-wrap: nowrap;
+  display: flex;
   gap: 5px;
   margin-top: 40px;
-  justify-content: space-between;
-}
-
-.trend-article {
-  display: flex;
-  overflow: hidden;
-  position: relative;
-}
-
-.trend-article::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(128, 128, 128, 0.3);
-  z-index: 1;
 }
 
 .trend-info {
-  padding: 20px;
+  padding: 8px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: 2px solid #b59f5b;
-  background-color: rgba(255, 255, 255, 0.8);
+  border: 3px solid #b59f5b;
+  margin-top: auto;
+  z-index: 3;
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+.image-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 0; /* Растягивает по всем сторонам родителя */
+    background: linear-gradient(to top, rgba(128, 128, 128, 0.3), transparent); /* Градиентная подложка */
+    z-index: 1; /* Слой ниже изображения */
 }
 
 .trends-categories {
