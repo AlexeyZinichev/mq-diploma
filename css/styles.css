@@ -185,7 +185,6 @@ a:hover {
 .widget subscribe-widget,
 .widget tags-cloud,
 .widget topics-widget {
-  display: flex;
   flex-direction: column;
   justify-content: center;	
 	width: 100%;
