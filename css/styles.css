@@ -69,7 +69,6 @@ a:hover {
 .site-header {
   position: relative; /* Локальная система координат */
   padding: 20px;
- 
   color: white; /* Белый текст для контраста */
   margin-bottom: 65px;
   background-image: url(../images/img/banner-bg.jpg);
