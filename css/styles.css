@@ -201,7 +201,8 @@ a:hover {
   position: relative; 
 }
 
-.trend-title::after {
+.trend-title::after,
+.product-title::after {
     content: "";
     display: block;
     
