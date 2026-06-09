@@ -253,13 +253,13 @@ a:hover {
 }
 
 /* 1. Подчеркивание категорий при наведении */
-.trend-first .trend-categories-item:hover {
+.trend-categories-item:hover {
     text-decoration: underline; /* Добавляет подчеркивание */
     text-decoration-color: #b59f5b; /* Цвет подчеркивания (как у рамки) */
 }
 
 /* 2. Изменение цвета текста при наведении */
-.trend-first .trend-description a:hover {
+.trend-description a:hover {
     color: #b59f5b; /* Меняет цвет текста на цвет рамки */
     text-decoration: none; /* Убирает подчеркивание у самой ссылки, если оно есть */
 }
