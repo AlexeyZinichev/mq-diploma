@@ -181,70 +181,99 @@ a:hover {
 }
 
 
+.trends-section {
+  display: flex;
+  flex-direction: column;
+	width: 100%;
+}
+
 .trend-title {
-   font-weight: bold;
-   font-size: 24px;
-   text-align: center;
-   position: relative; 
+	font-weight: bold;
+	font-size: 24px;
+	text-align: center;
+  position: relative; 
+  text-align: center; /* Убедитесь, что текст по центру */
 }
 
-.trend-image {
-    width: 100%;
-    height: 100%;
-	object-fit: cover;
-    display: block;
-	z-index: 2;
-}
-
-.trend-title::after,
-.product-title::after {
+.trend-title::after {
     content: "";
-    display: block;  
+    display: block;
+    
     /* Ширина и высота линии */
-    width: 80px; 
-    height: 4px; 
-    margin: 15px auto 0;
+    width: 80px; /* Немного длиннее, чтобы было заметнее */
+    height: 4px; /* Чуть толще */
+
+    /* Позиционирование */
+    position: absolute;
+    bottom: -10px; /* Чуть больше отступа от текста */
+    left: 50%;
+    
+    /* Центровка линии по горизонтали */
+    transform: translateX(-50%);
+
     /* Стили линии */
-    background-color: #b59f5b; 
-    border-radius: 2px; 
+    background-color: #b59f5b; /* Золотой цвет, как в вашем примере */
+    border-radius: 2px; /* Небольшое скругление концов линии (опционально) */
 }
 
 .trend-grid {
-  display: flex;
+	display: flex;
+	flex-wrap: nowrap;
   gap: 5px;
   margin-top: 40px;
+  justify-content: space-between;
 }
 
-/* Стили для каждой отдельной карточки */
 .trend-article {
-    width: calc(25% - 15px);
-    position: relative; /* Контекст для z-index */
-    display: flex;
-    flex-direction: column;
+  flex: 1 1 auto;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  min-height: 320px;
+}
+
+.trend-article::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(128, 128, 128, 0.3);
+  z-index: 1;
+}
+
+.trend-first {
+  background-image: url(../images/img/trend1.jpg);
+}
+
+.trend-second {
+  background-image: url(../images/img/trend2.jpg);
+}
+
+.trend-third {
+  background-image: url(../images/img/trend3.jpg);
+}
+
+.trend-fourth {
+  background-image: url(../images/img/trend4.jpg);
 }
 
 .trend-info {
-  padding: 8px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border: 3px solid #b59f5b;
-  margin-top: auto;
-  z-index: 3;
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  right: 15px;
+  padding: 20px;
+  border: 2px solid #b59f5b;
+  overflow: hidden;
+  z-index: 2;
 }
 
-.image-wrapper {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-}
-
-.image-wrapper::before {
-    content: "";
-    position: absolute;
-    inset: 0; /* Растягивает по всем сторонам родителя */
-    background: linear-gradient(to top, rgba(128, 128, 128, 0.3), transparent); /* Градиентная подложка */
-    z-index: 1; /* Слой ниже изображения */
+.trend-content {
+  position: relative;
+  height: 100%;
 }
 
 .trends-categories {
@@ -261,13 +290,13 @@ a:hover {
 }
 
 /* 1. Подчеркивание категорий при наведении */
-.trend-categories-item:hover {
+.trend-first .trend-categories-item:hover {
     text-decoration: underline; /* Добавляет подчеркивание */
     text-decoration-color: #b59f5b; /* Цвет подчеркивания (как у рамки) */
 }
 
 /* 2. Изменение цвета текста при наведении */
-.trend-description a:hover {
+.trend-first .trend-description a:hover {
     color: #b59f5b; /* Меняет цвет текста на цвет рамки */
     text-decoration: none; /* Убирает подчеркивание у самой ссылки, если оно есть */
 }
