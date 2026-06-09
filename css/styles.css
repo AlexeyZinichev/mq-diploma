@@ -420,13 +420,11 @@ a:hover {
 .widget-title::after {
   content: ""; /* Пустой контент */
   display: block; /* Блочный элемент */
-  width: 65px;
-  height: 3px; /* Толщина линии */
-  bottom: -12px; /* Расстояние между заголовком и линией */
+  width: 80px;
+  height: 4px; /* Толщина линии */
+  margin: 15px auto 0;
   background-color: #b59f5b; /* Золотой цвет */
-  position: absolute; /* Абсолютное позиционирование */
-  left: 50%; /* Центр линии */
-  transform: translateX(-50%); /* Точная центровка */
+  border-radius: 2px;
 }
 
 .new-posts-list {
