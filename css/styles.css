@@ -187,7 +187,11 @@ a:hover {
   margin-bottom: 142px;
 }
 
-.trends-section {
+.trends-section,
+.widget new-posts-widget,
+.widget subscribe-widget,
+.widget tags-cloud,
+.widget topics-widget {
   display: flex;
   flex-direction: column;
   justify-content: center;	
