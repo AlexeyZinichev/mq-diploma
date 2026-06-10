@@ -202,7 +202,9 @@ a:hover {
 }
 
 .trend-article {
+  display: flex;
   flex: 1 1 0;
+  align-items: flex-end;
   overflow: hidden;
    min-height: 320px;
   background: 
@@ -231,6 +233,9 @@ a:hover {
  justify-content: flex-end;
  padding: 20px;
  border: 2px solid #b59f5b;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
 }
 
 .trends-categories {
