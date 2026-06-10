@@ -209,26 +209,22 @@ a:hover {
 }
 
 .trend-first {
-  linear-gradient(rgba(128, 128, 128, 0.3), rgba(128, 128, 128, 0.3)),
-  background-image: url(../images/img/trend1.jpg);
+  linear-gradient(rgba(128, 128, 128, 0.3), rgba(128, 128, 128, 0.3)), url(../images/img/trend1.jpg);
   background-size: cover;
 }
 
 .trend-second {
-  linear-gradient(rgba(128, 128, 128, 0.3), rgba(128, 128, 128, 0.3)),
-  background-image: url(../images/img/trend2.jpg);
+  linear-gradient(rgba(128, 128, 128, 0.3), rgba(128, 128, 128, 0.3)), url(../images/img/trend2.jpg);
   background-size: cover;
 }
 
 .trend-third {
-  linear-gradient(rgba(128, 128, 128, 0.3), rgba(128, 128, 128, 0.3)),
-  background-image: url(../images/img/trend3.jpg);
+  linear-gradient(rgba(128, 128, 128, 0.3), rgba(128, 128, 128, 0.3)), url(../images/img/trend3.jpg);
   background-size: cover;
 }
 
 .trend-fourth {
-  linear-gradient(rgba(128, 128, 128, 0.3), rgba(128, 128, 128, 0.3)),
-  background-image: url(../images/img/trend4.jpg);
+  linear-gradient(rgba(128, 128, 128, 0.3), rgba(128, 128, 128, 0.3)), url(../images/img/trend4.jpg);
   background-size: cover;
 }
 
