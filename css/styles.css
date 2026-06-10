@@ -67,7 +67,7 @@ a:hover {
 
 /* Шапка с фоновым рисунком */
 .site-header {
-  position: relative; /* Локальная система координат */
+  position: relative; /* Локальная система координат */			
   padding: 20px;
   color: white; /* Белый текст для контраста */
   margin-bottom: 65px;
@@ -203,29 +203,25 @@ a:hover {
 
 .trend-article {
   flex: 1 1 auto;
+  background-image: 
+    linear-gradient(rgba(128, 128, 128, 0.3), rgba(128, 128, 128, 0.3)),
+    url(../images/img/trend1.jpg);
   overflow: hidden;
   background-position: center;
-  min-height: 320px;
-}
-
-.trend-first {
-  linear-gradient(rgba(128, 128, 128, 0.3), rgba(128, 128, 128, 0.3)), url(../images/img/trend1.jpg);
   background-size: cover;
+  min-height: 320px;
 }
 
 .trend-second {
   linear-gradient(rgba(128, 128, 128, 0.3), rgba(128, 128, 128, 0.3)), url(../images/img/trend2.jpg);
-  background-size: cover;
 }
 
 .trend-third {
   linear-gradient(rgba(128, 128, 128, 0.3), rgba(128, 128, 128, 0.3)), url(../images/img/trend3.jpg);
-  background-size: cover;
 }
 
 .trend-fourth {
   linear-gradient(rgba(128, 128, 128, 0.3), rgba(128, 128, 128, 0.3)), url(../images/img/trend4.jpg);
-  background-size: cover;
 }
 
 .trend-info {
