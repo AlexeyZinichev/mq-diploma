@@ -673,7 +673,8 @@ a:hover {
 	font-weight: bold;
 	font-size: 20px;
 	text-align: center;
-  position: relative; 
+  position: relative;
+	margin-bottom: 40px;
 
 }
 
