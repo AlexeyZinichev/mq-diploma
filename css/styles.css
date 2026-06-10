@@ -204,36 +204,32 @@ a:hover {
 .trend-article {
   flex: 1 1 auto;
   overflow: hidden;
-  background-size: cover;
   background-position: center;
   min-height: 320px;
 }
 
-.trend-article::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(128, 128, 128, 0.3);
-  z-index: 1;
-}
-
 .trend-first {
+  linear-gradient(rgba(128, 128, 128, 0.3), rgba(128, 128, 128, 0.3)),
   background-image: url(../images/img/trend1.jpg);
+  background-size: cover;
 }
 
 .trend-second {
+  linear-gradient(rgba(128, 128, 128, 0.3), rgba(128, 128, 128, 0.3)),
   background-image: url(../images/img/trend2.jpg);
+  background-size: cover;
 }
 
 .trend-third {
+  linear-gradient(rgba(128, 128, 128, 0.3), rgba(128, 128, 128, 0.3)),
   background-image: url(../images/img/trend3.jpg);
+  background-size: cover;
 }
 
 .trend-fourth {
+  linear-gradient(rgba(128, 128, 128, 0.3), rgba(128, 128, 128, 0.3)),
   background-image: url(../images/img/trend4.jpg);
+  background-size: cover;
 }
 
 .trend-info {
@@ -242,8 +238,6 @@ a:hover {
  justify-content: flex-end;
  padding: 20px;
  border: 2px solid #b59f5b;
- position: relative;
- z-index: 2;
 }
 
 .trends-categories {
