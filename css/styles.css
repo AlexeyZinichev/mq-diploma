@@ -242,10 +242,8 @@ a:hover {
  justify-content: flex-end;
  padding: 20px;
  border: 2px solid #b59f5b;
-}
-
-.trend-content {
-  position: relative;
+ position: relative;
+ z-index: 2;
 }
 
 .trends-categories {
