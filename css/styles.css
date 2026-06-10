@@ -203,25 +203,26 @@ a:hover {
 
 .trend-article {
   flex: 1 1 0;
-  background-image: 
-    linear-gradient(rgba(128, 128, 128, 0.3), rgba(128, 128, 128, 0.3)),
-    url(../images/img/trend1.jpg);
   overflow: hidden;
-  background-position: center;
-  background-size: cover;
-  min-height: 320px;
+   min-height: 320px;
+  background: 
+    linear-gradient(rgba(128, 128, 128, 0.3), rgba(128, 128, 128, 0.3)),
+    url(../images/img/trend1.jpg) center/cover;
 }
 
 .trend-second {
-  linear-gradient(rgba(128, 128, 128, 0.3), rgba(128, 128, 128, 0.3)), url(../images/img/trend2.jpg);
+  background:
+  linear-gradient(rgba(128, 128, 128, 0.3), rgba(128, 128, 128, 0.3)), url(../images/img/trend2.jpg) center/cover;
 }
 
 .trend-third {
-  linear-gradient(rgba(128, 128, 128, 0.3), rgba(128, 128, 128, 0.3)), url(../images/img/trend3.jpg);
+	background:
+  linear-gradient(rgba(128, 128, 128, 0.3), rgba(128, 128, 128, 0.3)), url(../images/img/trend3.jpg) center/cover;
 }
 
 .trend-fourth {
-  linear-gradient(rgba(128, 128, 128, 0.3), rgba(128, 128, 128, 0.3)), url(../images/img/trend4.jpg);
+	background:
+  linear-gradient(rgba(128, 128, 128, 0.3), rgba(128, 128, 128, 0.3)), url(../images/img/trend4.jpg) center/cover;
 }
 
 .trend-info {
