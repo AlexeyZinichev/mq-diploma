@@ -202,7 +202,7 @@ a:hover {
 }
 
 .trend-article {
-  flex: 1 1 auto;
+  flex: 1 1 0;
   background-image: 
     linear-gradient(rgba(128, 128, 128, 0.3), rgba(128, 128, 128, 0.3)),
     url(../images/img/trend1.jpg);
