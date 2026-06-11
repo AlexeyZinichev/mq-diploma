@@ -628,7 +628,7 @@ a:hover {
 }
 
 /* Убираем линию у последней ссылки */
-.topic-list li:last-child::after {
+.topic-list li:last-child: {
   display: none; /* Убираем линию */
 }
 
