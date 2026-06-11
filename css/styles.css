@@ -262,24 +262,27 @@ a:hover {
     text-decoration: none;
 }
 
+/* === Общий контейнер === */
 .content-wrapper {
-  display: flex; /* Включаем flexbox */
-  gap: 6rem; /* Промежуток между частями */
+  display: flex;
+  gap: 6rem; /* Большой зазор для десктопов */
   padding: 2rem;
   max-width: 1400px; /* Ограничиваем общую ширину страницы */
-  margin: 0 auto; /* Центрируем страницу */
+  margin: 0 auto; /* Центрируем контейнер */
 }
 
-/* === Основная часть страницы (.main-content) === */
+/* === Основная часть страницы (.main) === */
 .main {
   flex-grow: 3; /* Основной контент растет в 3 раза быстрее сайдбара */
   flex-basis: 500px; /* Минимальная начальная ширина */
 }
 
+/* === Боковая панель (.sidebar) === */
 .sidebar {
   flex-basis: 300px;
   flex-grow: 1; /* Сайдбар растет медленнее */
   padding: 1.5rem;
+  background-color: #f0f0f0; /* Для наглядности */
 }
 
 /* === Основная статья (.featured-article) === */
@@ -288,10 +291,11 @@ a:hover {
   gap: 2rem;
   margin-bottom: 3rem;
   padding: 1.5rem;
+  background-color: #fff;
 }
 
 .article-thumbnail {
-  width: 180px; 
+  width: 180px;
   height: 120px;
   overflow: hidden;
 }
@@ -306,9 +310,8 @@ a:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
- flex-grow: 1;
+  flex-grow: 1; /* Позволяет блоку с текстом занимать оставшееся место */
 }
-
 /* === Категории статьи (.article-categories) === */
 .article-categories {
   display: flex;
