@@ -275,33 +275,37 @@ a:hover {
 }
 
 .sidebar {
-  flex: 1; /* Занимает меньше места */
-  align-self: flex-start; /* Прижимаем к верхнему краю */
+  flex-basis: 300px;
+  max-width: 300px;
+  align-self: flex-start;
 }
 
 /* === Основная статья (.featured-article) === */
 .featured-article {
   display: flex;
   gap: 28px;
-  margin-bottom: 53px; /* Расстояние между карточками */
+  margin-bottom: 53px;
   justify-content: space-between;
 }
 
-/* === Миниатюра статьи (.article-thumbnail) === */
 .article-thumbnail {
-  width: 380px; /* Ширина картинки */
+  width: 380px; 
   height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Привязка к верхнему краю */
+  justify-content: flex-start; 
 }
 
-/* === Основная информация (.article-info) === */
+.article-thumbnail img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
 .article-info {
   display: flex;
   flex-direction: column;
   justify-content: flex-start; /* Привязка к верхнему краю */
-  width: calc(100% - 380px); /* Оставшееся пространство */
 }
 
 /* === Категории статьи (.article-categories) === */
