@@ -291,9 +291,7 @@ a:hover {
 .article-thumbnail {
   width: 380px; 
   height: 250px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; 
+  overflow: hidden;
 }
 
 .article-thumbnail img {
