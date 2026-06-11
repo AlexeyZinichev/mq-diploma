@@ -283,8 +283,8 @@ a:hover {
 /* === Основная статья (.featured-article) === */
 .featured-article {
   display: flex;
-  gap: 28px;
-  margin-bottom: 53px;
+  /* gap: 28px;
+  margin-bottom: 53px; */
 }
 
 .article-thumbnail {
