@@ -618,22 +618,8 @@ a:hover {
 }
 
 .topic-list li {
-  position: relative; /* Для позиционирования ::after */
   margin-bottom: 30px;
-}
-
-/* Подчёркивание через псевдоэлемент ::after */
-.topic-list li::after {
-  content: ""; /* Пустой контент */
-  position: absolute;
-  bottom: 0; /* Прикрепляем к низу ссылки */
-  left: 0;
-  right: 0; /* Заполняет всю ширину ссылки */
-  height: 1px; /* Толщина подчёркивания */
-  background-color: #ddd; /* Цвет подчёркивания совпадает с текстом */
-  transition: opacity 0.3s ease-in-out; /* Плавный переход */
-  pointer-events: none; /* Игнорируем события мыши */
-  z-index: -1; /* Ниже основного текста */
+  border-bottom: 2px solid #ccc;
 }
 
 /* Эффект при наведении (цвет и подчёркивание) */
