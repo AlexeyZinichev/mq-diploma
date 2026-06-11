@@ -270,7 +270,7 @@ a:hover {
 
 /* === Основная часть страницы (.main-content) === */
 .main {
-  width: 1000px;
+  width: 4000px;
   align-self: flex-start; /* Прижимаем к верхнему краю */
 }
 
