@@ -760,13 +760,6 @@ a:hover {
    background-color: #000;
 }
 
-.footer-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
 .social-icons-list {
   list-style: none; /* Убираем маркеры списка */
   display: flex; /* Гибкое размещение */
@@ -1065,77 +1058,279 @@ label {
 
 /* === Медиа-запросы для адаптивности === */
 
-@media (min-width: 1201px) {
+/* Планшетный режим (641px - 1200px) */
+@media screen and (min-width: 641px) and (max-width: 1200px) {
+  .content-wrapper {
+    flex-direction: row; /* Боковая панель и контент рядом */
+    gap: 30px; /* Промежуток между блоками */
+  }
+  
+  .main {
+    flex: 0 0 70%; /* Основное содержимое занимает 70% */
+  }
+  
+  .sidebar {
+    flex: 0 0 30%; /* Боковая панель занимает 30% */
+  }
+
+     /* --- 1. Прячем десктопное меню и показываем бургер --- */
   .main-navigation ul {
-    display: flex;
+    display: none; /* Прячем меню по умолчанию */
   }
-
+    
   .burger-button {
-    display: none;
-  }
+        display: block; /* Показываем кнопку бургера */
+        color: white; /* Делаем полоски видимыми */
+    }
 
+    /* --- 2. Стили для выпадающего списка (РАБОЧИЙ ВАРИАНТ) --- */
+    #nav-checkbox:checked + label ~ .menu-wrapper ul {
+        display: block;
+        position: absolute; 
+        top: calc(100% + 15px); 
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 15px 0;
+        z-index: 50;
+        width: 240px; /* Фиксированная ширина */
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        a {
+            display: block;
+            padding: 8px 20px;
+            color: white;
+            text-decoration: none;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: center; /* Ссылки по центру в блоке меню */
+            width: 100%;
+        }
+    }
+
+    .main-navigation {
+        position: relative;
+        z-index: 5; 
+        overflow: visible; 
+    }
+
+    .header-content {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        width: 100%;
+    }
+    
+  /* Карточки трендов */
+  .trend-grid {
+    flex-wrap: wrap;
+    gap: 20px; /* Промежуток между карточками */
+  }
+  
   .trend-article {
-    flex: 1 1 calc(25% - 20px);
+    flex: 0 0 calc(50% - 20px); /* Две карточки в ряд */
+    margin-bottom: 20px;
   }
-
+  
+  /* Продукты */
+  .product-grid {
+    flex-wrap: wrap;
+    gap: 20px; /* Промежуток между карточками */
+  }
+  
   .product-card {
-    flex: 1 1 calc(33.33% - 20px);
+    flex: 0 0 calc(50% - 20px); /* Две карточки в ряд */
+    margin-bottom: 20px;
+  }
+  
+  /* Главная статья */
+  .featured-article {
+    flex-direction: column; /* Текст под изображением */
+    align-items: flex-start; /* Выравнивание по левому краю */
+  }
+  
+  .article-thumbnail {
+    width: 100%; /* Изображение на всю ширину */
+    margin-bottom: 20px; /* Отступ между изображением и текстом */
+  }
+  
+  .article-info {
+    width: 100%; /* Текст на всю ширину */
+  }
+}
+
+
+/* Планшет в альбомной ориентации (641px - 1200px) */
+@media screen and (min-width: 641px) and (max-width: 1200px) and (orientation: landscape) {
+
+  /* Карточки трендов */
+  .trend-article {
+    flex: 0 0 calc(33.33% - 20px); /* Три карточки в ряд */
+    margin-bottom: 20px;
+  }
+  
+  /* Продукты */
+  .product-card {
+    flex: 0 0 calc(33.33% - 20px); /* Три карточки в ряд */
+    margin-bottom: 20px;
+  }
+}
+
+/* Мобильный режим (до 640px) */
+@media screen and (max-width: 640px) {
+  .container {
+    padding: 0 10px;
+  }
+  
+  .site-header {
+    padding: 10px;
+    min-height: 200px;
   }
 
-  .featured-article {
+  .hero-heading {
+    font-size: 30px;
+    margin-bottom: 70px;
+  }
+  
+  
+  
+  .logo img {
+    max-width: 150px;
+    margin-bottom: 10px;
+  }
+
+  .content-wrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .main {
+    order: 1;
+    flex: 1; /* Только гибкость, без width */
+  }
+  
+  .sidebar {
+    order: 2;
+    flex: 1; /* Только гибкость, без width */
+  }
+  
+  /* Карточки трендов */
+  .trend-grid {
+    flex-wrap: wrap;
     flex-direction: row;
   }
-}
-
-@media (max-width: 1200px) {
-  .trend-article {
-    flex: 1 1 calc(50% - 20px);
-  }
-
-  .product-card {
-    flex: 1 1 calc(50% - 20px);
-  }
-
-  .featured-article {
-    gap: 10px;
-  }
-}
-
-@media (max-width: 1200px) and (orientation: landscape) {
-  .trend-article {
-    flex: 1 1 calc(25% - 20px);
-  }
-
-  .product-card {
-    flex: 1 1 calc(33.33% - 20px);
-  }
-}
-
-@media (max-width: 640px) {
-  .trend-article {
-    flex: 1 1 100%;
-  }
-
-  .product-card {
-    flex: 1 1 100%;
-  }
-
+  
+  /* Главная статья */
   .featured-article {
     flex-direction: column;
+    align-items: flex-start;
   }
-}
-
-@media (max-width: 640px) and (orientation: landscape) {
-  .trend-article {
-    flex: 1 1 calc(50% - 20px);
+  
+  .article-thumbnail {
+    width: 100%;
+    margin-bottom: 20px;
   }
-
+  
+  .article-info {
+    width: 100%;
+  }
+  
+  /* Новые посты */
+  .post-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .post-thumbnail {
+    margin-bottom: 10px;
+  }
+  
+  .post-info {
+    width: 100%;
+  }
+  
+  /* Продукты */
+  .product-grid {
+    flex-wrap: wrap;
+  }
+  
   .product-card {
-    flex: 1 1 calc(50% - 20px);
+    flex: 0 0 calc(50% - 20px); /* Две карточки в ряд */
+    margin-bottom: 20px;
   }
 
-  .featured-article {
-    flex-direction: row;
+
+/* Телефон в портретной ориентации (до 640px) */
+@media screen and (max-width: 640px) and (orientation: portrait) {
+  /* Карточки трендов */
+  .trend-article {
+    flex: 0 0 100%; /* Одна карточка на всю ширину */
+    margin-bottom: 20px;
+  }
+  
+  /* Продукты */
+  .product-card {
+    flex: 0 0 100%; /* Один продукт на всю ширину */
+    margin-bottom: 20px;
   }
 }
 
+/* Телефон в альбомной ориентации (до 640px) */
+@media screen and (max-width: 640px) and (orientation: landscape) {
+  /* Карточки трендов */
+  .trend-article {
+    flex: 0 0 calc(50% - 10px); /* Две карточки в ряд */
+    margin-bottom: 20px;
+  }
+  
+  /* Продукты */
+  .product-card {
+    flex: 0 0 calc(50% - 20px); /* Два продукта в ряд */
+    margin-bottom: 20px;
+  }
+}
+}
+
+@media screen and (min-width: 1201px) {
+    .main-navigation ul {
+        display: flex; /* Убедимся, что меню видно на десктопе */
+    }
+
+    .burger-button {
+        display: none; /* Прячем кнопку на десктопе */
+    }
+}
+
+/* Мобильная версия (телефон) */
+@media (max-width: 360px) {
+    .site-header {
+        display: flex;
+        flex-direction: column; /* Столбцы */
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        min-height: 200px;
+    }
+
+    /* Меняем порядок */
+    .logo {
+        order: 2; /* Логотип вторым */
+        margin-bottom: 20px;
+    }
+
+    .burger-button {
+        order: 1; /* Бургер первым */
+        margin-left: auto; /* Прилепляем к правому краю */
+    }
+
+    .hero-heading {
+        order: 3; /* Заголовок третьим */
+        margin-top: 20px;
+        font-size: 24px;
+        text-align: center;
+        width: 100%;
+    }
+}
