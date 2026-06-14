@@ -1131,3 +1131,18 @@ label {
     flex-direction: row;
   }
 }
+
+@media (max-width: 360px) {
+  .header-content {
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  .logo {
+    margin-left: auto;
+  }
+
+  .burger-button {
+    margin-left: 20px;
+  }
+}
