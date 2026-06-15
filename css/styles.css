@@ -671,7 +671,6 @@ a:hover {
 
 .product-card {
   width: calc(33.333% - 20px);
-  /* max-width: 350px; */
   height: auto;
   overflow: hidden;
   position: relative;
@@ -681,9 +680,11 @@ a:hover {
 }
 
 .img-wrp {
-  display: block;
-  padding: 0 20px;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 0;
 }
 
 /* Маска под изображением */
@@ -702,6 +703,7 @@ a:hover {
 
 .product-info {
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: flex-start;
   flex-grow: 1;
