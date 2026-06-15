@@ -767,8 +767,6 @@ a:hover {
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  background-color: #f3f7f5;
-  padding: 30px 0;
 }
 
 .social-icons-list {
@@ -776,6 +774,8 @@ a:hover {
   display: flex; /* Гибкое размещение */
   justify-content: center; /* Выравнивание по центру */
   gap: 20px; /* Промежуток между иконками */
+   background-color: #f3f7f5;
+  padding: 30px 0;
 }
 
 /* Отдельная иконка */
