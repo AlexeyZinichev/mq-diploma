@@ -762,7 +762,7 @@ a:hover {
    background-color: #000;
 }
 
-.footer-content {
+.site-footer {
   display: flex;
   flex-direction: column;
   align-items: center;
