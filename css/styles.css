@@ -760,6 +760,13 @@ a:hover {
    background-color: #000;
 }
 
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
 .social-icons-list {
   list-style: none; /* Убираем маркеры списка */
   display: flex; /* Гибкое размещение */
