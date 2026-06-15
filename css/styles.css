@@ -640,7 +640,6 @@ a:hover {
   color: #b59f5b; /* Золотистый цвет */
 }
 
-
 .product-section {
   display: flex;
   flex-direction: column;
@@ -747,6 +746,7 @@ a:hover {
   font-weight: bold;
   font-size: 18px;
 }  
+
 
 .buy-button {
   min-width: 120px;
