@@ -773,10 +773,14 @@ a:hover {
   background-color: #f3f7f5;
   padding: 30px 0;
   width: 100%;
-   list-style: none; /* Убираем маркеры списка */
-  display: flex; /* Гибкое размещение */
-  justify-content: center; /* Выравнивание по центру */
-  gap: 20px; /* Промежуток между иконками */
+}
+
+.social-icons-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
 }
 
 /* Отдельная иконка */
@@ -804,7 +808,8 @@ a:hover {
 /* Раздел с копирайтом */
 .copyright {
   text-align: center; /* Централизация текста */
-  margin-top: 70px;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 
 .copyright a {
