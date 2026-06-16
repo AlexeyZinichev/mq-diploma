@@ -101,7 +101,6 @@ a:hover {
 }
 
 .logo img {
-  display: block; /* Устраняет лишние отступы */
   width: 100%; /* Максимально широкая картинка */
   height: auto; /* Сохраняет пропорции */
   max-width: 200px; /* Ограничиваем максимальную ширину */
@@ -208,7 +207,7 @@ a:hover {
 
 .trend-article {
   display: flex;
-  flex: 1 1 0;
+  flex: 0 0 calc(25% - 5px);
   align-items: flex-end;
   overflow: hidden;
   min-height: 320px;
@@ -640,6 +639,7 @@ a:hover {
   color: #b59f5b; /* Золотистый цвет */
 }
 
+
 .product-section {
   display: flex;
   flex-direction: column;
@@ -651,7 +651,6 @@ a:hover {
 	font-size: 20px;
 	text-align: center;
   position: relative; 
-  text-align: center; /* Убедитесь, что текст по центру */
   margin-bottom: 40px;
 }
 
@@ -683,7 +682,6 @@ a:hover {
   display: block;
   padding: 0 20px;
   position: relative;
-  z-index: 0;
 }
 
 /* Маска под изображением */
@@ -746,7 +744,6 @@ a:hover {
   font-size: 18px;
 }  
 
-
 .buy-button {
   min-width: 120px;
   padding: 15px 30px;
@@ -776,11 +773,11 @@ a:hover {
 }
 
 .social-icons-list {
-  display: flex;
-  justify-content: center;
+  list-style: none; 
+  display: flex; 
+  justify-content: center; 
   gap: 20px;
-  list-style: none;
-  padding: 0;
+  padding: 0; 
 }
 
 /* Отдельная иконка */
@@ -1071,96 +1068,41 @@ label {
   margin: 1rem auto;
 }
 
-/* === Медиа-запросы для адаптивности === */
 
-/* Планшетный режим (641px - 1200px) */
 @media screen and (min-width: 641px) and (max-width: 1200px) {
+  
   .content-wrapper {
     flex-direction: row; /* Боковая панель и контент рядом */
     gap: 30px; /* Промежуток между блоками */
   }
   
   .main {
-    flex: 0 0 70%; /* Основное содержимое занимает 70% */
+    flex: 0 0 70%;
   }
-  
+
   .sidebar {
-    flex: 0 0 30%; /* Боковая панель занимает 30% */
+    flex: 0 0 30%;
   }
 
-     /* --- 1. Прячем десктопное меню и показываем бургер --- */
-  .main-navigation ul {
-    display: none; /* Прячем меню по умолчанию */
-  }
-    
-  .burger-button {
-        display: block; /* Показываем кнопку бургера */
-        color: white; /* Делаем полоски видимыми */
-    }
-
-    /* --- 2. Стили для выпадающего списка (РАБОЧИЙ ВАРИАНТ) --- */
-    #nav-checkbox:checked + label ~ .menu-wrapper ul {
-        display: block;
-        position: absolute; 
-        top: calc(100% + 15px); 
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 15px 0;
-        z-index: 50;
-        width: 240px; /* Фиксированная ширина */
-        
-        li {
-            margin-bottom: 8px;
-        }
-        
-        a {
-            display: block;
-            padding: 8px 20px;
-            color: white;
-            text-decoration: none;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            text-align: center; /* Ссылки по центру в блоке меню */
-            width: 100%;
-        }
-    }
-
-    .main-navigation {
-        position: relative;
-        z-index: 5; 
-        overflow: visible; 
-    }
-
-    .header-content {
-        position: sticky;
-        top: 0;
-        z-index: 10;
-        width: 100%;
-    }
-    
-  /* Карточки трендов */
   .trend-grid {
     flex-wrap: wrap;
-    gap: 20px; /* Промежуток между карточками */
   }
-  
+
+  /* Карточки трендов */
   .trend-article {
-    flex: 0 0 calc(50% - 20px); /* Две карточки в ряд */
-    margin-bottom: 20px;
+    flex: 0 0 calc(50% - 20px);
   }
-  
+
   /* Продукты */
   .product-grid {
     flex-wrap: wrap;
-    gap: 20px; /* Промежуток между карточками */
   }
-  
+
+  /* Карточки товаров */
   .product-card {
-    flex: 0 0 calc(50% - 20px); /* Две карточки в ряд */
-    margin-bottom: 20px;
+    flex: 0 0 calc(50% - 20px);
   }
-  
+
   /* Главная статья */
   .featured-article {
     flex-direction: column; /* Текст под изображением */
@@ -1175,47 +1117,17 @@ label {
   .article-info {
     width: 100%; /* Текст на всю ширину */
   }
-}
 
-
-/* Планшет в альбомной ориентации (641px - 1200px) */
-@media screen and (min-width: 641px) and (max-width: 1200px) and (orientation: landscape) {
-
-  /* Карточки трендов */
-  .trend-article {
-    flex: 0 0 calc(33.33% - 20px); /* Три карточки в ряд */
-    margin-bottom: 20px;
-  }
-  
-  /* Продукты */
-  .product-card {
-    flex: 0 0 calc(33.33% - 20px); /* Три карточки в ряд */
-    margin-bottom: 20px;
+  /* Ориентация */
+  @media (orientation: landscape) {
+    .trend-article {
+      flex: 0 0 calc(25% - 20px);
+    }
   }
 }
 
 /* Мобильный режим (до 640px) */
 @media screen and (max-width: 640px) {
-  .container {
-    padding: 0 10px;
-  }
-  
-  .site-header {
-    padding: 10px;
-    min-height: 200px;
-  }
-
-  .hero-heading {
-    font-size: 30px;
-    margin-bottom: 70px;
-  }
-  
-  
-  
-  .logo img {
-    max-width: 150px;
-    margin-bottom: 10px;
-  }
 
   .content-wrapper {
     flex-direction: column;
@@ -1231,27 +1143,26 @@ label {
     order: 2;
     flex: 1; /* Только гибкость, без width */
   }
-  
-  /* Карточки трендов */
-  .trend-grid {
-    flex-wrap: wrap;
-    flex-direction: row;
+
+   .trend-grid {
+    flex-direction: column;
+  }
+
+  .trend-article {
+    flex: 0 0 100%;
+    margin-bottom: 20px;
   }
   
   /* Главная статья */
   .featured-article {
     flex-direction: column;
-    align-items: flex-start;
   }
   
   .article-thumbnail {
     width: 100%;
-    margin-bottom: 20px;
+    height: auto;;
   }
   
-  .article-info {
-    width: 100%;
-  }
   
   /* Новые посты */
   .post-item {
@@ -1272,80 +1183,105 @@ label {
     flex-wrap: wrap;
   }
   
+  /* Карточки товаров */
   .product-card {
-    flex: 0 0 calc(50% - 20px); /* Две карточки в ряд */
-    margin-bottom: 20px;
-  }
-
-
-/* Телефон в портретной ориентации (до 640px) */
-@media screen and (max-width: 640px) and (orientation: portrait) {
-  /* Карточки трендов */
-  .trend-article {
-    flex: 0 0 100%; /* Одна карточка на всю ширину */
+    flex: 0 0 100%;
     margin-bottom: 20px;
   }
   
-  /* Продукты */
-  .product-card {
-    flex: 0 0 100%; /* Один продукт на всю ширину */
-    margin-bottom: 20px;
-  }
-}
-
 /* Телефон в альбомной ориентации (до 640px) */
-@media screen and (max-width: 640px) and (orientation: landscape) {
-  /* Карточки трендов */
-  .trend-article {
-    flex: 0 0 calc(50% - 10px); /* Две карточки в ряд */
-    margin-bottom: 20px;
-  }
-  
-  /* Продукты */
-  .product-card {
-    flex: 0 0 calc(50% - 20px); /* Два продукта в ряд */
-    margin-bottom: 20px;
-  }
-}
-}
-
-@media screen and (min-width: 1201px) {
-    .main-navigation ul {
-        display: flex; /* Убедимся, что меню видно на десктопе */
-    }
-
-    .burger-button {
-        display: none; /* Прячем кнопку на десктопе */
+@media (orientation: landscape) {
+  .trend-article,
+    .product-card {
+      flex: 0 0 calc(50% - 20px);
     }
 }
+}
 
-/* Мобильная версия (телефон) */
 @media (max-width: 360px) {
-    .site-header {
-        display: flex;
-        flex-direction: column; /* Столбцы */
-        justify-content: center;
-        align-items: center;
-        padding: 10px;
-        min-height: 200px;
+  .site-header {
+    padding: 10px;
+    min-height: 200px;
+  }
+
+  .header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 0;
+    justify-content: flex-start; /* ← ключевой момент */
+  }
+
+  .burger-button {
+    order: 1;
+    margin-left: auto;
+    margin-top: 0;
+  }
+
+  .logo {
+    order: 2;
+    margin-top: 129px;
+    margin-bottom: 20px;
+  }
+
+  .hero-heading {
+    order: 3;
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .main-navigation ul {
+    display: none;
+  }
+
+  .burger-button {
+    display: block;
+  }
+
+  #nav-checkbox:checked + label ~ .menu-wrapper ul {
+    display: block;
+    position: absolute;
+    top: calc(100% + 15px);
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 0;
+    z-index: 50;
+    width: 240px;
+
+    li {
+      margin-bottom: 8px;
     }
 
-    /* Меняем порядок */
-    .logo {
-        order: 2; /* Логотип вторым */
-        margin-bottom: 20px;
+    a {
+      display: block;
+      padding: 8px 20px;
+      color: white;
+      text-decoration: none;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: center;
+      width: 100%;
     }
+  }
 
-    .burger-button {
-        order: 1; /* Бургер первым */
-        margin-left: auto; /* Прилепляем к правому краю */
-    }
+  .main-navigation {
+    position: relative;
+    z-index: 5;
+    overflow: visible;
+  }
+}
 
-    .hero-heading {
-        order: 3; /* Заголовок третьим */
-        margin-top: 20px;
-        font-size: 24px;
-        text-align: center;
-        width: 100%;
-    }
+@media (min-width: 1201px) {
+  .main-navigation ul {
+    display: flex;
+  }
+
+  .burger-button {
+    display: none;
+  }
 }
