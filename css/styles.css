@@ -35,14 +35,14 @@
   margin: 0 auto;
 }
 
-a {
+.app a {
   color: inherit;
   text-decoration: none;
   text-transform: uppercase;
 }
 
-a:focus,
-a:hover {
+.app a:focus,
+.app a:hover {
   text-decoration: none;
 }
 
@@ -172,17 +172,12 @@ a:hover {
 /* Главный заголовок */
 .hero-heading {
   position: relative; 
-  z-index: 2; 
+  z-index: 2;
   text-align: center; 
   font-size: 44px; 
   font-weight: bold; 
   text-transform: uppercase; 
   margin-bottom: 142px;
-}
-
-.hard-line-break::before {
-    content: '\A'; /* Перевод строки */
-    white-space: pre; /* Сохраняет перенос */
 }
 
 .trends-section {
@@ -206,36 +201,51 @@ a:hover {
 }
 
 .trend-article {
+  position: relative;
   display: flex;
   flex: 0 0 calc(25% - 5px);
   align-items: flex-end;
   overflow: hidden;
   min-height: 320px;
-  background: 
-    linear-gradient(rgba(128, 128, 128, 0.3), rgba(128, 128, 128, 0.3)),
-    url(../images/img/trend1.jpg) center/cover;
+  background-size: cover;
+  background-position: center;
+}
+
+.trend-article::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(128, 128, 128, 0.3);
+  z-index: 1;
+}
+
+.trend-first {
+  background-image: url(../images/img/trend1.jpg);
 }
 
 .trend-second {
-  background:
-  linear-gradient(rgba(128, 128, 128, 0.3), rgba(128, 128, 128, 0.3)), url(../images/img/trend2.jpg) center/cover;
+  background-image: url(../images/img/trend2.jpg);
 }
 
 .trend-third {
-	background:
-  linear-gradient(rgba(128, 128, 128, 0.3), rgba(128, 128, 128, 0.3)), url(../images/img/trend3.jpg) center/cover;
+	background-image: url(../images/img/trend3.jpg);
 }
 
 .trend-fourth {
-	background:
-  linear-gradient(rgba(128, 128, 128, 0.3), rgba(128, 128, 128, 0.3)), url(../images/img/trend4.jpg) center/cover;
+	background-image: url(../images/img/trend4.jpg);
 }
 
 .trend-info {
+  position: relative;
+  z-index: 2;
+  width: calc(100% - 20px);
+  padding: 15px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 20px;
   border: 2px solid #b59f5b;
   margin-left: 20px;
   margin-right: 20px;
@@ -255,13 +265,13 @@ a:hover {
   color: #fff;
 }
 
-.trend-first .trend-categories-item:hover {
+.trend-article .trend-categories-item:hover {
   text-decoration: underline;
   text-decoration-color: #b59f5b;
 }
 
 /* 2. Изменение цвета текста при наведении */
-.trend-first .trend-description a:hover {
+.trend-description a:hover {
   color: #b59f5b;
   text-decoration: none;
 }
@@ -275,11 +285,11 @@ a:hover {
 
 /* === Основная часть страницы (.main-content) === */
 .main {
-  flex: 2; /* Занимает больше места */
+  flex: 2;
 }
 
 .sidebar {
-  flex: 1; /* Занимает меньше места */
+  flex: 0 0 270px; 
 }
 
 /* === Основная статья (.featured-article) === */
@@ -293,7 +303,6 @@ a:hover {
 /* === Миниатюра статьи (.article-thumbnail) === */
 .article-thumbnail {
   flex: 0 0 380px;
-  height: 250px;
   overflow: hidden;
 }
 
@@ -370,12 +379,12 @@ a:hover {
 }
 
 /* Подчеркивание ссылки при наведении */
-.featured-article:nth-child(1) .article-categories:hover .category-link {
+.featured-article .article-categories:hover .category-link {
   text-decoration: underline; /* Подчеркивание только для категории */
 }
 
 /* Эффект при наведении на первую ссылку (золотистый цвет) */
-.featured-article:first-of-type .article-title a:hover {
+.featured-article .article-title a:hover {
   color: #b59f5b; /* Золотистый цвет */
 }
 
@@ -426,7 +435,7 @@ a:hover {
 }
 
 /* Эффект при наведении на первую ссылку (золотистый цвет) */
-.new-posts-list li:first-child .post-info a:hover {
+.new-posts-list .post-info a:hover {
   color: #b59f5b; /* Золотистый цвет */
 }
 
@@ -592,7 +601,7 @@ a:hover {
 }
 
 /* Эффект при наведении (золотистая рамка) */
-.tag-list li:first-child a:hover {
+.tag-list a:hover {
   border-color: #b59f5b; /* Золотистый цвет рамки */
 }
 
@@ -627,7 +636,6 @@ a:hover {
   position: relative; /* Для позиционирования ::after */
   margin-bottom: 30px;
   border-bottom: 1px solid #ddd;
-  padding-right: 2em;
 }
 
 .topic-list li:last-child {
@@ -718,7 +726,7 @@ a:hover {
   text-transform: none;
 }
 
-.product-first .product-discription a:hover {
+.product-discription a:hover {
   text-decoration: underline;
 }
 
@@ -862,20 +870,24 @@ a:hover {
   height: auto;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);  
-  z-index: 11; /* Просто чуть выше фона */
+  z-index: 11; 
 }
 
 .close-icon {
   position: absolute;
-  top: -50px;
+  top: -30px;
   right: 0;
   cursor: pointer;
   z-index: 12; /* Просто выше всего */
-}
-
-.btn {
-  width: 30px;
-  height: 30px;
+  font-size: 0;
+  overflow: hidden;
+  width: 21px;
+  height: 21px;
+  background-image: url(../svg/form-x.svg);
+  background-color: transparent;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .popup-title {
@@ -898,14 +910,14 @@ a:hover {
 
 /* 1. Базовые стили для контейнера группы */
 .form-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 /* 2. Стили для лейбла */
 label {
   display: block;
   margin-bottom: 0.5rem;
-  font-weight: 600;
+  font-size: 15px;
 }
 
 /* 3. Контейнер для селекта (относительное позиционирование нужно для абсолютного размещения иконки) */
@@ -917,34 +929,22 @@ label {
 /* 4. Стилизация самого селекта */
 .styled-select {
   width: 100%;
-  padding: 0.6rem 1rem; /* Убрал большой отступ справа */  
+  padding: 0.6rem 1rem;
   border: 2px solid transparent; /* Прозрачная рамка по умолчанию */
   border-radius: 4px;
   background-color: #f3f7f5;
   /* --- Ключевое исправление для позиционирования иконки --- */
   position: relative;
-  /* Убираем стандартную стрелку */
   -webkit-appearance: none;
      -moz-appearance: none;
-        appearance: none;  
+        appearance: none;
+  cursor: pointer;
+  background-image: url(../svg/form-arrows.svg);
+  background-size: 11px 20px;
+  background-position: right center;
+  background-repeat: no-repeat;        
 }
 
-	/* Иконка стрелки (теперь она снова работает) */
-.select-arrow {
-  position: absolute;
-  
-  /* --- Ключевое исправление --- */
-  right: 1rem; /* Отступ от правого края */
-  top: 50%;
-  
-  transform: translateY(-50%);
-  
-  width: 1rem; /* Явно задаем размер иконки */
-  height: auto; 
-  
-  pointer-events: none;
-}
-	
 /* Стили при фокусе на поле */
 .styled-select:focus {
   outline: none; 
@@ -1033,7 +1033,7 @@ label {
 .label-for-textarea {
   display: block; /* Переносим на новую строку */
   margin-bottom: 0.5rem; /* Небольшой отступ от текстового поля */
-  font-weight: bold; /* Жирный шрифт для читаемости */
+  font-size: 15px;
 }
 
 /* --- 1. Основные стили кнопки --- */
@@ -1068,7 +1068,6 @@ label {
   margin: 1rem auto;
 }
 
-
 @media screen and (min-width: 641px) and (max-width: 1200px) {
   
   .content-wrapper {
@@ -1081,7 +1080,7 @@ label {
   }
 
   .sidebar {
-    flex: 0 0 30%;
+    flex: 0 0 270px;
   }
 
   .trend-grid {
@@ -1166,6 +1165,7 @@ label {
   
   /* Новые посты */
   .post-item {
+    max-width: 300px;
     flex-direction: column;
     align-items: flex-start;
   }
@@ -1173,6 +1173,12 @@ label {
   .post-thumbnail {
     margin-bottom: 10px;
   }
+
+  .post-thumbnail img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
   
   .post-info {
     width: 100%;
@@ -1207,26 +1213,24 @@ label {
   .header-content {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
     width: 100%;
     margin-bottom: 0;
-    justify-content: flex-start; /* ← ключевой момент */
   }
 
   .burger-button {
     order: 1;
-    margin-left: auto;
     margin-top: 0;
   }
 
   .logo {
     order: 2;
     margin-top: 129px;
+    margin-right: 50px;
     margin-bottom: 20px;
   }
 
   .hero-heading {
-    order: 3;
     font-size: 24px;
     margin-top: 0;
     margin-bottom: 20px;

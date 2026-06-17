@@ -13,11 +13,11 @@
     <div class="container">
       <div class="header-content">
         <!-- Логотип -->
-        <h1 class="logo">
+        <div class="logo">
           <a href="#0">
             <img src="svg/noemi-logo.svg" alt="Logo Noë">
           </a>
-        </h1>
+        </div>
         <nav class="main-navigation">
           <input type="checkbox" id="nav-checkbox">
           <label for="nav-checkbox" class="burger-button">
@@ -37,9 +37,7 @@
       </div>
       <!-- Заголовок -->
       <h1 class="hero-heading">
-        <a href="#0">Блок о творчестве, спорте, 
-           <span class="hard-line-break">и образе жизни</span>
-        </a>
+        Блок о творчестве, спорте, и образе жизни
       </h1>
     </div>
   </header>
@@ -409,7 +407,8 @@
      <article class="product-card product-first">
       <div class="img-wrp">
         <picture>
-        <source srcset="images/img/shop-item-desk1.jpg">
+        <source media="(max-width: 640px)" srcset="images/img/shop-item-mobile1.jpg">
+        <source media="(max-width: 1200px)" srcset="images/img/shop-item-tablet1.jpg">
         <img class="product-image" src="images/img/shop-item-desk1.jpg" alt="Подушки на диван">
         </picture>
       </div>
@@ -432,7 +431,8 @@
 
       <div class="img-wrp">
       <picture>
-      <source  src="images/img/shop-item-desk2.jpg">
+      <source media="(max-width: 640px)" srcset="images/img/shop-item-mobile2.jpg">
+      <source media="(max-width: 1200px)" srcset="images/img/shop-item-tablet2.jpg">
       <img class="product-image" src="images/img/shop-item-desk2.jpg" alt="Кукла">
       </picture>
       </div>
@@ -454,7 +454,8 @@
 
       <div class="img-wrp">
       <picture>
-      <source src="images/img/shop-item-desk3.jpg">    
+      <source media="(max-width: 640px)" srcset="images/img/shop-item-mobile3.jpg">
+      <source media="(max-width: 1200px)" srcset="images/img/shop-item-tablet3.jpg">    
       <img class="product-image" src="images/img/shop-item-desk3.jpg" alt="Рамка">
       </picture>
       </div>
@@ -511,9 +512,9 @@
 	<div class="popup">
   
     <div class="popup-content">
-		<label for="popup-open" class="close-icon">
-		<img class="btn" src="svg/form-x.svg" alt="Закрытие">
-		</label>
+		<button class="close-icon">
+      Закрыть
+    </button>
 		
         <h3 class="popup-title">ВАШ ФИДБЕК</h3>
         
@@ -527,7 +528,6 @@
         <option value="monthly">Раз в несколько недель</option>
         <option value="year">Несколько раз в год</option>
       </select>
-		 <img src="svg/form-arrows.svg" alt="" class="select-arrow">
     </div>
   </div>
 			
